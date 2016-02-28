@@ -16,7 +16,7 @@ public class Pika extends JButton implements ActionListener{
 
 	private Pika() {
 		try {
-			Image img = ImageIO.read(getClass().getResource("/skin/pika/normal.png"));
+			Image img = ImageIO.read(getClass().getResource(Helbideak.pikaNormal));
 			this.setIcon(new ImageIcon(img));
 		} catch (IOException e) {}
 		this.setBorder(BorderFactory.createEmptyBorder());

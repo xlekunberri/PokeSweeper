@@ -2,7 +2,8 @@ package org.pokesweeper;
 
 public class Helbideak {
 	
-	public static String iturria = "src/skin/font/pkm.ttf";
+	public static String iturria = "src/skin/font/normala.ttf";
+	public static String unownIturria = "src/skin/font/unown.ttf";	
 	public static String ikonoa = "src/skin/ikonoa.png";
 	public static String kursorea = "src/skin/kursorea.png";
 	
@@ -31,13 +32,13 @@ public class Helbideak {
 	public static String belar_normal_8 = "/skin/belarra/normala/8.png";
 	public static String belar_normal_9 = "/skin/belarra/normala/9.png";
 	
-	public static String belar_mugimendu_1 = "/skin/belarra/mugimendua/1.png";
-	public static String belar_mugimendu_2 = "/skin/belarra/mugimendua/2.png";
-	public static String belar_mugimendu_3 = "/skin/belarra/mugimendua/3.png";
-	public static String belar_mugimendu_4 = "/skin/belarra/mugimendua/4.png";
-	public static String belar_mugimendu_5 = "/skin/belarra/mugimendua/5.png";
-	public static String belar_mugimendu_6 = "/skin/belarra/mugimendua/6.png";
-	public static String belar_mugimendu_7 = "/skin/belarra/mugimendua/7.png";
-	public static String belar_mugimendu_8 = "/skin/belarra/mugimendua/8.png";
-	public static String belar_mugimendu_9 = "/skin/belarra/mugimendua/9.png";
+	public static String belar_mugimendu_1 = "/skin/belarra/mugimendua/1/1.gif";
+	public static String belar_mugimendu_2 = "/skin/belarra/mugimendua/2/2.gif";
+	public static String belar_mugimendu_3 = "/skin/belarra/mugimendua/3/3.gif";
+	public static String belar_mugimendu_4 = "/skin/belarra/mugimendua/4/4.gif";
+	public static String belar_mugimendu_5 = "/skin/belarra/mugimendua/5/5.gif";
+	public static String belar_mugimendu_6 = "/skin/belarra/mugimendua/6/6.gif";
+	public static String belar_mugimendu_7 = "/skin/belarra/mugimendua/7/7.gif";
+	public static String belar_mugimendu_8 = "/skin/belarra/mugimendua/8/8.gif";
+	public static String belar_mugimendu_9 = "/skin/belarra/mugimendua/9/9.gif";
 }
