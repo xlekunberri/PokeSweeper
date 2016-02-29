@@ -17,6 +17,7 @@ import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -34,7 +35,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	public JokoaUI() throws FileNotFoundException, FontFormatException, IOException {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.setTitle("Pok�Sweeper");
+		this.setTitle("PokéSweeper");
 		this.setIconImage(new ImageIcon(Helbideak.ikonoa).getImage());
 		
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -42,9 +43,10 @@ public class JokoaUI extends JFrame implements ActionListener{
 		Cursor c = toolkit.createCustomCursor(image , new Point(3, 30), "img");
 		this.setCursor(c);
 		
-		Font f = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream(Helbideak.iturria))).deriveFont(15F);
+		Font f = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream(Helbideak.iturria))).deriveFont(12F);
 		UIManager.put("Menu.font", f);
 		UIManager.put("MenuItem.font", f);
+		
 		
 		this.setJMenuBar(new MenuaUI());
 		
@@ -53,6 +55,9 @@ public class JokoaUI extends JFrame implements ActionListener{
 		goikoPanela.setLayout(new BorderLayout(0, 0));
 		getContentPane().add(goikoPanela, BorderLayout.NORTH);
 		
+		JPanel goikoPanelaGoian = new JPanel();
+		goikoPanelaGoian.setBackground(new Color(112, 200, 160));
+		goikoPanela.add(goikoPanelaGoian, BorderLayout.NORTH);
 		
 		PikaUI.getNirePika().addActionListener(this);
 		goikoPanela.add(PikaUI.getNirePika(), BorderLayout.CENTER);

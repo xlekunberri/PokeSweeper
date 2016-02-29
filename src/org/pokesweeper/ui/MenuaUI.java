@@ -1,9 +1,12 @@
 package org.pokesweeper.ui;
 
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.Box;
 
 public class MenuaUI extends JMenuBar{
 	
@@ -13,6 +16,7 @@ public class MenuaUI extends JMenuBar{
 	public MenuaUI() {
 		this.setBorder(null);
 		this.setBackground(new Color(89, 153, 124));
+		this.add(Box.createRigidArea(new Dimension(5, 25)));
 		menuaEraiki();
 	}
 	
