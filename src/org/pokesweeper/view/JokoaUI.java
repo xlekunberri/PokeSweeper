@@ -24,7 +24,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 	public JokoaUI() throws FileNotFoundException, FontFormatException, IOException {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.setTitle("Pok√©Sweeper");
+		this.setTitle("PokÈSweeper");
+		Helbideak.denakKargatu();
 		this.setIconImage(Helbideak.ikonoa);
 		this.setCursor(Helbideak.kursorea);
 		UIManager.put("Menu.font", Helbideak.iturria);

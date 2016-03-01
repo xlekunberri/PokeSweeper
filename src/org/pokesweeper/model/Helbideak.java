@@ -28,49 +28,58 @@ public class Helbideak {
 	public static Icon voltorb;
 	
 	public static Icon[] lurra = new Icon[9];
-	private Icon lurra_1;
-	private Icon lurra_2;
-	private Icon lurra_3;
-	private Icon lurra_4;
-	private Icon lurra_5;
-	private Icon lurra_6;
-	private Icon lurra_7;
-	private Icon lurra_8;
-	private Icon lurra_9; 
+	private static Icon lurra_1;
+	private static Icon lurra_2;
+	private static Icon lurra_3;
+	private static Icon lurra_4;
+	private static Icon lurra_5;
+	private static Icon lurra_6;
+	private static Icon lurra_7;
+	private static Icon lurra_8;
+	private static Icon lurra_9; 
 	
 	public static Icon[] belar_normal = new Icon[9];
-	private Icon belar_normal_1;
-	private Icon belar_normal_2;
-	private Icon belar_normal_3;
-	private Icon belar_normal_4;
-	private Icon belar_normal_5;
-	private Icon belar_normal_6;
-	private Icon belar_normal_7;
-	private Icon belar_normal_8;
-	private Icon belar_normal_9;
+	private static Icon belar_normal_1;
+	private static Icon belar_normal_2;
+	private static Icon belar_normal_3;
+	private static Icon belar_normal_4;
+	private static Icon belar_normal_5;
+	private static Icon belar_normal_6;
+	private static Icon belar_normal_7;
+	private static Icon belar_normal_8;
+	private static Icon belar_normal_9;
 	
 	public static Icon[] belar_mugimendu = new Icon[9];
-	private Icon belar_mugimendu_1;
-	private Icon belar_mugimendu_2;
-	private Icon belar_mugimendu_3;
-	private Icon belar_mugimendu_4;
-	private Icon belar_mugimendu_5;
-	private Icon belar_mugimendu_6;
-	private Icon belar_mugimendu_7;
-	private Icon belar_mugimendu_8;
-	private Icon belar_mugimendu_9;
+	private static Icon belar_mugimendu_1;
+	private static Icon belar_mugimendu_2;
+	private static Icon belar_mugimendu_3;
+	private static Icon belar_mugimendu_4;
+	private static Icon belar_mugimendu_5;
+	private static Icon belar_mugimendu_6;
+	private static Icon belar_mugimendu_7;
+	private static Icon belar_mugimendu_8;
+	private static Icon belar_mugimendu_9;
 	
 	public static Icon[] zenbaki = new Icon[8];
-	private Icon zenbaki_1;
-	private Icon zenbaki_2;
-	private Icon zenbaki_3;
-	private Icon zenbaki_4;
-	private Icon zenbaki_5;
-	private Icon zenbaki_6;
-	private Icon zenbaki_7;
-	private Icon zenbaki_8;
+	private static Icon zenbaki_1;
+	private static Icon zenbaki_2;
+	private static Icon zenbaki_3;
+	private static Icon zenbaki_4;
+	private static Icon zenbaki_5;
+	private static Icon zenbaki_6;
+	private static Icon zenbaki_7;
+	private static Icon zenbaki_8;
 	
-	public void besteakKargatu(){
+	public static void denakKargatu(){
+		Helbideak.besteakKargatu();
+		Helbideak.belarraKargatu();
+		Helbideak.lurraKargatu();
+		Helbideak.mugimenduaKargatu();
+		Helbideak.pikaKargatu();
+		Helbideak.zenbakiakKargatu();
+	}
+	
+	private static void besteakKargatu(){
 		try{
 			iturria = (Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/normala.ttf"))).deriveFont(12F);
 			unownIturria = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/unown.ttf"))).deriveFont(12F);
@@ -82,15 +91,14 @@ public class Helbideak {
 		}
 	}
 		
-	public void pikaKargatu(){
+	private static void pikaKargatu(){
 		pikaNormal = new ImageIcon("/skin/pika/normal.png");
 		pikaIrabazi = new ImageIcon("/skin/pika/irabazi.png");
 		pikaGaldu = new ImageIcon("/skin/pika/galdu.png");
 		pikaKlik = new ImageIcon("/skin/pika/klik.png");
 	}
 		
-	public void lurraKargatu(){
-
+	private static void lurraKargatu(){
 		lurra_1 = new ImageIcon("/skin/lurra/1.png");
 		lurra_2 = new ImageIcon("/skin/lurra/2.png");
 		lurra_3 = new ImageIcon("/skin/lurra/3.png");
@@ -112,7 +120,7 @@ public class Helbideak {
 		
 	}
 	
-	public void belarraKargatu(){
+	private static void belarraKargatu(){
 		belar_normal_1 = new ImageIcon("/skin/belarra/normala/1.png");
 		belar_normal_2 = new ImageIcon("/skin/belarra/normala/2.png");
 		belar_normal_3 = new ImageIcon("/skin/belarra/normala/3.png");
@@ -133,7 +141,7 @@ public class Helbideak {
 		belar_normal[8] = belar_normal_9;
 	}
 	
-	public void mugimenduaKargatu(){
+	private static void mugimenduaKargatu(){
 		belar_mugimendu_1 = new ImageIcon("/skin/belarra/mugimendua/1/1.gif");
 		belar_mugimendu_2 = new ImageIcon("/skin/belarra/mugimendua/2/2.gif");
 		belar_mugimendu_3 = new ImageIcon("/skin/belarra/mugimendua/3/3.gif");
@@ -154,7 +162,7 @@ public class Helbideak {
 		belar_mugimendu[8] = belar_mugimendu_9;
 	}
 	
-	public void zenbakiakKargatu(){
+	private static void zenbakiakKargatu(){
 		//TODO: CARGAR LOS ZENBAKIZ!
 		zenbaki[0] = zenbaki_1;
 		zenbaki[1] = zenbaki_2;
