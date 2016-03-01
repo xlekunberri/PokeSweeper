@@ -10,6 +10,7 @@ import javax.swing.Box;
 
 public class MenuaUI extends JMenuBar{
 	
+	private static final long serialVersionUID = 1L;
 	private JMenuItem berria, maila1, maila2, maila3;
 	private JMenuItem irten, nolaJokatu;
 	

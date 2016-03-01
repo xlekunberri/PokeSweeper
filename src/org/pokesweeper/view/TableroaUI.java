@@ -9,9 +9,12 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 
+<<<<<<< Updated upstream
 import org.pokesweeper.controller.Kontrolatzailea;
 import org.pokesweeper.model.LaukiFactory;
 
+=======
+>>>>>>> Stashed changes
 public class TableroaUI extends JPanel{
 	
 	/**
