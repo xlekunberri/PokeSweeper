@@ -8,6 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+<<<<<<< HEAD
+
+import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+=======
+>>>>>>> branch 'master' of https://lexusbest@github.com/Xabiier/PokeSweeper.git
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -87,6 +93,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		JDialog.setDefaultLookAndFeelDecorated(true);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
