@@ -30,7 +30,7 @@ public class TableroaUI extends JPanel{
 		this.setBackground(new Color(160, 224, 192));	
 		this.errenkada = tableroLogikoa.getErrenkadaKop() + 2;
 		this.zutabe = tableroLogikoa.getZutabeKop() + 2;
-		//(errenkadaKopurua, zutabeKopurua) -- GridLayout 
+									  //(errenkadaKopurua, zutabeKopurua) -- GridLayout 
 		GridLayout grid = new GridLayout(this.errenkada, this.zutabe, 0, 0);
 		this.setLayout(grid);
 		this.setMaximumSize(new Dimension(this.zutabe * this.laukiTamaina, this.errenkada * laukiTamaina));

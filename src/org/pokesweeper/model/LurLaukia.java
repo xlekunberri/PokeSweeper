@@ -6,10 +6,6 @@ import org.pokesweeper.view.TableroaUI;
 public class LurLaukia extends BarruLaukia{
 	
 	//Atributoak
-	private int errenkada;
-	private int zutabea;
-	private int egoera;
-	private int ikonoZenb;
 	private LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 	
 	//Eraikitzailea

@@ -3,14 +3,9 @@ package org.pokesweeper.model;
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
 
-
 public class ZenbLaukia extends BarruLaukia{
 	
 	//Atributoak
-	private int errenkada;
-	private int zutabea;
-	private int egoera;
-	private int ikonoZenb;
 	private int ingurukoMinaKop;
 	private LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 	
