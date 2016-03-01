@@ -21,6 +21,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import org.pokesweeper.model.Helbideak;
+
 
 public class JokoaUI extends JFrame implements ActionListener{
 	

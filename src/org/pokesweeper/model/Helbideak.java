@@ -1,4 +1,4 @@
-package org.pokesweeper.ui;
+package org.pokesweeper.model;
 
 public class Helbideak {
 	

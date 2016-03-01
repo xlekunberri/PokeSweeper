@@ -10,6 +10,8 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import org.pokesweeper.model.Helbideak;
+
 public class PikaUI extends JButton implements ActionListener{
 	
 	private static PikaUI nirePika;
