@@ -20,6 +20,10 @@ public class LaukiaUI extends JButton implements MouseListener {
 	private int ikonoZenb;
 	private Kontrolatzailea kontrolatzailea = Kontrolatzailea.getNireKontrolatzailea();
 	
+	public LaukiaUI(int pEgoera, int pZabalera, int pAltuera, int pIkonoZenb) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		kontrolatzailea.mouseClicked(this.zabalera, this.altuera, this.egoera, this.ikonoZenb);

@@ -24,12 +24,14 @@ import org.pokesweeper.model.Helbideak;
 
 public class MenuaUI extends JMenuBar implements ActionListener{
 	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private JMenuItem maila1, maila2, maila3;
-	private JMenuItem irten, nolaJokatu,honiBuruz;
+	private JMenuItem irten, nolaJokatu, honiBuruz;
+
 	
 	public MenuaUI() {
 		this.setBorder(null);

@@ -2,31 +2,28 @@ package org.pokesweeper.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.EventQueue;
-import java.awt.Font;
 import java.awt.FontFormatException;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+<<<<<<< HEAD
 
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
+=======
+>>>>>>> branch 'master' of https://lexusbest@github.com/Xabiier/PokeSweeper.git
 import javax.swing.JFrame;
-import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 import org.pokesweeper.model.Helbideak;
-
+import org.pokesweeper.model.Tableroa;
 
 public class JokoaUI extends JFrame implements ActionListener{
 	
+	private static final long serialVersionUID = 1L;
 	private JPanel goikoPanela, behekoPanela;
 
 	/**
@@ -39,16 +36,10 @@ public class JokoaUI extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setTitle("PokéSweeper");
-		this.setIconImage(new ImageIcon(Helbideak.ikonoa).getImage());
-		
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		Image image = toolkit.getImage(Helbideak.kursorea);
-		Cursor c = toolkit.createCustomCursor(image , new Point(3, 30), "img");
-		this.setCursor(c);
-		
-		Font f = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream(Helbideak.iturria))).deriveFont(12F);
-		UIManager.put("Menu.font", f);
-		UIManager.put("MenuItem.font", f);
+		this.setIconImage(Helbideak.ikonoa);
+		this.setCursor(Helbideak.kursorea);
+		UIManager.put("Menu.font", Helbideak.iturria);
+		UIManager.put("MenuItem.font", Helbideak.iturria);
 		
 		
 		this.setJMenuBar(new MenuaUI());

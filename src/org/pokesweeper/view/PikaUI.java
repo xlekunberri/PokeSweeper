@@ -1,26 +1,19 @@
 package org.pokesweeper.view;
 
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import org.pokesweeper.model.Helbideak;
 
 public class PikaUI extends JButton implements ActionListener{
 	
+	private static final long serialVersionUID = 1L;
 	private static PikaUI nirePika;
 
 	private PikaUI() {
-		try {
-			Image img = ImageIO.read(getClass().getResource(Helbideak.pikaNormal));
-			this.setIcon(new ImageIcon(img));
-		} catch (IOException e) {}
+		this.setIcon(Helbideak.pikaNormal);
 		this.setBorder(BorderFactory.createEmptyBorder());
 		this.setContentAreaFilled(false);
 	}
@@ -33,24 +26,20 @@ public class PikaUI extends JButton implements ActionListener{
 	}
 	
 	public void setPikaEgoera(String pEgoera) {
-		String helbidea;
-		if(pEgoera.equals("normal")) {
-			helbidea = Helbideak.pikaNormal;
+		switch (pEgoera) {
+		case "normal":
+			this.setIcon(Helbideak.pikaNormal);
+			break;
+		case "irabazi":
+			this.setIcon(Helbideak.pikaIrabazi);
+			break;
+		case "galdu":
+			this.setIcon(Helbideak.pikaGaldu);
+			break;
+		case "klik":
+			this.setIcon(Helbideak.pikaKlik);
+			break;
 		}
-		else if(pEgoera.equals("irabazi")) {
-			helbidea = Helbideak.pikaIrabazi;
-		}
-		else if(pEgoera.equals("galdu")) {
-			helbidea = Helbideak.pikaGaldu;
-		}
-		else {
-			helbidea = Helbideak.pikaKlik;
-		}
-		
-		try {
-			Image img = ImageIO.read(getClass().getResource(helbidea));
-			this.setIcon(new ImageIcon(img));
-		} catch (IOException e) {}
 	}
 
 	@Override
