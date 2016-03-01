@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
@@ -104,6 +105,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		JDialog.setDefaultLookAndFeelDecorated(true);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
