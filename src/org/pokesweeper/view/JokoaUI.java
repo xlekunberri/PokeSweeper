@@ -17,15 +17,11 @@ import org.pokesweeper.model.Tableroa;
 
 public class JokoaUI extends JFrame implements ActionListener{
 	
+	//Atributoak
 	private static final long serialVersionUID = 1L;
 	private JPanel goikoPanela, behekoPanela;
 
-	/**
-	 * Create the frame.
-	 * @throws IOException 
-	 * @throws FontFormatException 
-	 * @throws FileNotFoundException 
-	 */
+	//Eraikitzailea
 	public JokoaUI() throws FileNotFoundException, FontFormatException, IOException {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
@@ -60,7 +56,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 		this.setVisible(true);
 		this.pack();
 	}
-
+	
+	//Beste metodoak
 	private void panelakEraiki() {
 		
 		JPanel panelIpar = new JPanel();

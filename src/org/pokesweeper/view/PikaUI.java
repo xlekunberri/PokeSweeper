@@ -9,9 +9,11 @@ import org.pokesweeper.model.Helbideak;
 
 public class PikaUI extends JButton implements ActionListener{
 	
+	//Atributoak
 	private static final long serialVersionUID = 1L;
 	private static PikaUI nirePika;
 
+	//Eraikitzailea
 	private PikaUI() {
 		this.setIcon(Helbideak.pikaNormal);
 		this.setBorder(BorderFactory.createEmptyBorder());
@@ -25,6 +27,7 @@ public class PikaUI extends JButton implements ActionListener{
 		return nirePika;
 	}
 	
+	//Beste metodoak
 	public void setPikaEgoera(String pEgoera) {
 		switch (pEgoera) {
 		case "normal":

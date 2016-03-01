@@ -1,44 +1,45 @@
 package org.pokesweeper.model;
 
-public class BarruLaukia {
+import org.pokesweeper.view.LaukiaUI;
+import org.pokesweeper.view.PikaUI;
+import org.pokesweeper.view.TableroaUI;
+
+public class BarruLaukia extends Laukia{
 	
-	private boolean mina;
-	private boolean aztertuta;
-	private int zenbakia;
-	private int egoera;
+	//Atributoak
+	protected int errenkada;
+	protected int zutabea;
+	protected int egoera;
+	protected int ikonoZenb;
+	private LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 	
-	public BarruLaukia() {}
+	//Beste metodoak
+	public void mouseClicked() {
 
-	public boolean isMina() {
-		return mina;
-	}
-
-	public void setMina(boolean pMina) {
-		this.mina = pMina;
-	}
-
-	public boolean isAztertuta() {
-		return aztertuta;
-	}
-
-	public void setAztertuta(boolean pAztertuta) {
-		this.aztertuta = pAztertuta;
-	}
-
-	public int getEgoera() {
-		return egoera;
-	}
-
-	public void setEgoera(int pEgoera) {
-		this.egoera = pEgoera;
 	}
 	
-	public int getZenbakia() {
-		return zenbakia;
+	public void mouseEntered() {
+        	if(this.egoera != 3) {
+        		laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
+        		laukiHonenUI.repaint();
+        	}
 	}
-
-	public void setZenbakia(int pZenbakia) {
-		this.zenbakia = pZenbakia;
+	
+	public void mouseExited() {
+		if(this.egoera != 3) {
+			laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
+			laukiHonenUI.repaint();
+    	}
+	}
+	
+	public void mousePressed() {
+    	if(this.egoera != 3) {
+    		PikaUI.getNirePika().setPikaEgoera("click");
+    	}
+	}
+	
+	public void mouseReleased() {
+    	PikaUI.getNirePika().setPikaEgoera("normal");
 	}
 
 }

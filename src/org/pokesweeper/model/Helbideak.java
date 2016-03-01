@@ -25,36 +25,50 @@ public class Helbideak {
 	public static Icon pikaGaldu;
 	public static Icon pikaKlik;
 	
-	public static Icon lurra_1;
-	public static Icon lurra_2;
-	public static Icon lurra_3;
-	public static Icon lurra_4;
-	public static Icon lurra_5;
-	public static Icon lurra_6;
-	public static Icon lurra_7;
-	public static Icon lurra_8;
-	public static Icon lurra_9; 
+	public static Icon voltorb;
 	
-	public static Icon belar_normal_1;
-	public static Icon belar_normal_2;
-	public static Icon belar_normal_3;
-	public static Icon belar_normal_4;
-	public static Icon belar_normal_5;
-	public static Icon belar_normal_6;
-	public static Icon belar_normal_7;
-	public static Icon belar_normal_8;
-	public static Icon belar_normal_9;
+	public static Icon[] lurra = new Icon[9];
+	private Icon lurra_1;
+	private Icon lurra_2;
+	private Icon lurra_3;
+	private Icon lurra_4;
+	private Icon lurra_5;
+	private Icon lurra_6;
+	private Icon lurra_7;
+	private Icon lurra_8;
+	private Icon lurra_9; 
 	
-	public static Icon belar_mugimendu_1;
-	public static Icon belar_mugimendu_2;
-	public static Icon belar_mugimendu_3;
-	public static Icon belar_mugimendu_4;
-	public static Icon belar_mugimendu_5;
-	public static Icon belar_mugimendu_6;
-	public static Icon belar_mugimendu_7;
-	public static Icon belar_mugimendu_8;
-	public static Icon belar_mugimendu_9;
+	public static Icon[] belar_normal = new Icon[9];
+	private Icon belar_normal_1;
+	private Icon belar_normal_2;
+	private Icon belar_normal_3;
+	private Icon belar_normal_4;
+	private Icon belar_normal_5;
+	private Icon belar_normal_6;
+	private Icon belar_normal_7;
+	private Icon belar_normal_8;
+	private Icon belar_normal_9;
 	
+	public static Icon[] belar_mugimendu = new Icon[9];
+	private Icon belar_mugimendu_1;
+	private Icon belar_mugimendu_2;
+	private Icon belar_mugimendu_3;
+	private Icon belar_mugimendu_4;
+	private Icon belar_mugimendu_5;
+	private Icon belar_mugimendu_6;
+	private Icon belar_mugimendu_7;
+	private Icon belar_mugimendu_8;
+	private Icon belar_mugimendu_9;
+	
+	public static Icon[] zenbaki = new Icon[8];
+	private Icon zenbaki_1;
+	private Icon zenbaki_2;
+	private Icon zenbaki_3;
+	private Icon zenbaki_4;
+	private Icon zenbaki_5;
+	private Icon zenbaki_6;
+	private Icon zenbaki_7;
+	private Icon zenbaki_8;
 	
 	public void besteakKargatu(){
 		try{
@@ -62,6 +76,7 @@ public class Helbideak {
 			unownIturria = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/unown.ttf"))).deriveFont(12F);
 			ikonoa = ImageIO.read(new File("src/skin/ikonoa.png"));
 			kursorea = Toolkit.getDefaultToolkit().createCustomCursor(Toolkit.getDefaultToolkit().getImage("src/skin/kursorea.png") , new Point(3, 30), "img");
+			//TODO: CARGAR EL VOLTORB!
 		}catch (IOException | FontFormatException e){
 			 e.printStackTrace();
 		}
@@ -75,6 +90,7 @@ public class Helbideak {
 	}
 		
 	public void lurraKargatu(){
+
 		lurra_1 = new ImageIcon("/skin/lurra/1.png");
 		lurra_2 = new ImageIcon("/skin/lurra/2.png");
 		lurra_3 = new ImageIcon("/skin/lurra/3.png");
@@ -84,6 +100,16 @@ public class Helbideak {
 		lurra_7 = new ImageIcon("/skin/lurra/7.png");
 		lurra_8 = new ImageIcon("/skin/lurra/8.png");
 		lurra_9 = new ImageIcon("/skin/lurra/9.png");
+		lurra[0] = lurra_1;
+		lurra[1] = lurra_2;
+		lurra[2] = lurra_3;
+		lurra[3] = lurra_4;
+		lurra[4] = lurra_5;
+		lurra[5] = lurra_6;
+		lurra[6] = lurra_7;
+		lurra[7] = lurra_8;
+		lurra[8] = lurra_9;		
+		
 	}
 	
 	public void belarraKargatu(){
@@ -96,6 +122,15 @@ public class Helbideak {
 		belar_normal_7 = new ImageIcon("/skin/belarra/normala/7.png");
 		belar_normal_8 = new ImageIcon("/skin/belarra/normala/8.png");
 		belar_normal_9 = new ImageIcon("/skin/belarra/normala/9.png");
+		belar_normal[0] = belar_normal_1;
+		belar_normal[1] = belar_normal_2;
+		belar_normal[2] = belar_normal_3;
+		belar_normal[3] = belar_normal_4;
+		belar_normal[4] = belar_normal_5;
+		belar_normal[5] = belar_normal_6;
+		belar_normal[6] = belar_normal_7;
+		belar_normal[7] = belar_normal_8;
+		belar_normal[8] = belar_normal_9;
 	}
 	
 	public void mugimenduaKargatu(){
@@ -108,5 +143,26 @@ public class Helbideak {
 		belar_mugimendu_7 = new ImageIcon("/skin/belarra/mugimendua/7/7.gif");
 		belar_mugimendu_8 = new ImageIcon("/skin/belarra/mugimendua/8/8.gif");
 		belar_mugimendu_9 = new ImageIcon("/skin/belarra/mugimendua/9/9.gif");
+		belar_mugimendu[0] = belar_mugimendu_1;
+		belar_mugimendu[1] = belar_mugimendu_2;
+		belar_mugimendu[2] = belar_mugimendu_3;
+		belar_mugimendu[3] = belar_mugimendu_4;
+		belar_mugimendu[4] = belar_mugimendu_5;
+		belar_mugimendu[5] = belar_mugimendu_6;
+		belar_mugimendu[6] = belar_mugimendu_7;
+		belar_mugimendu[7] = belar_mugimendu_8;
+		belar_mugimendu[8] = belar_mugimendu_9;
+	}
+	
+	public void zenbakiakKargatu(){
+		//TODO: CARGAR LOS ZENBAKIZ!
+		zenbaki[0] = zenbaki_1;
+		zenbaki[1] = zenbaki_2;
+		zenbaki[2] = zenbaki_3;
+		zenbaki[3] = zenbaki_4;
+		zenbaki[4] = zenbaki_5;
+		zenbaki[5] = zenbaki_6;
+		zenbaki[6] = zenbaki_7;
+		zenbaki[7] = zenbaki_8;
 	}
 }

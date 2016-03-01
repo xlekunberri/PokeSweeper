@@ -1,11 +1,10 @@
 package org.pokesweeper.model;
 
-import javax.swing.ImageIcon;
-
 import org.pokesweeper.view.LaukiaUI;
 
 public class LaukiFactory {
 	
+	//Atributoak
 	private static LaukiFactory nireFactory;
 	private int errenkadaKop;
 	private int zutabeKop;
@@ -15,7 +14,7 @@ public class LaukiFactory {
 	private int errenkada;
 	private int zutabe;
 	
-	
+	//Eraikitzailea
 	private LaukiFactory(){
 		
 	}
@@ -27,9 +26,37 @@ public class LaukiFactory {
 		return nireFactory;
 	}
 	
+	//Beste metodoak
+	public LaukiaUI createLaukiUI(int pErrenkada, int pZutabe){
+		this.errenkada = pErrenkada;
+		this.zutabe = pZutabe;
+		LaukiaUI laukia = new LaukiaUI(pErrenkada, pZutabe);
+		return laukia;
+	}
+	
+	public BarruLaukia createLaukiLogikoa(int pErrenkada, int pZutabe){
+		this.errenkada = pErrenkada;
+		this.zutabe = pZutabe;
+		BarruLaukia laukia;
+		int ikonoZenb = barrukoZenbLortu();
+		int mota = motaLortu();
+			// 0 = LurLaukia
+			// 1 = ZenbLaukia
+			// 2 = MinaLaukia
+		if(mota == 1){
+			laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
+		} else if (mota == 2){
+			int ingurukoMinak = this.ingurukoMinakLortu();
+			laukia = new ZenbLaukia(this.errenkada, this.zutabe, ikonoZenb, ingurukoMinak);
+		} else {
+			laukia = new MinaLaukia(this.errenkada, this.zutabe, ikonoZenb);
+		}
+		return laukia;		
+	}
+	
 	public void setTamaina(int pErrenkadaKop, int pZutabeKop, int pMinaKop){
-		this.errenkadaKop = pErrenkadaKop - 2;
-		this.zutabeKop = pZutabeKop - 2;
+		this.errenkadaKop = pErrenkadaKop;
+		this.zutabeKop = pZutabeKop;
 		this.minaKop = pMinaKop;
 		this.minak = new boolean[this.errenkadaKop][this.zutabeKop];
 		this.minakJarri();
@@ -37,7 +64,7 @@ public class LaukiFactory {
 	
 	private void minakJarri(){
 		int i = 0;
-		while(i != minaKop){
+		while(i != this.minaKop){
 			Integer errenkada = (int)(Math.random()*(this.errenkadaKop));
 			Integer zutabea = (int)(Math.random()*(this.zutabeKop));
 			if(!this.minak[errenkada][zutabea]){
@@ -47,33 +74,17 @@ public class LaukiFactory {
 		}
 	}
 	
-	public LaukiaUI createLaukia(int pErrenkada, int pZutabe){
-		this.errenkada = pErrenkada;
-		this.zutabe = pZutabe;
-		LaukiaUI laukia = null;
-		boolean belarraDa = this.motaLortu();
-		if (belarraDa){
-			int ikonoZenb = ikonoZenbLortu();
-			laukia = new LaukiaUI(0, this.errenkada, this.zutabe, ikonoZenb);
-			laukia.setIcon(/*BELARRA*/);
-		} else {
-			int ikonoZenb = ikonoZenbLortu();
-			laukia = new LaukiaUI(3, this.errenkada, this.zutabe, ikonoZenb);
-			laukia.setIcon(/*LURRA*/);
-		}
-		return laukia;		
+	private int ingurukoMinakLortu() {
+		//TODO
+		return 0;
+	}
+
+	private int motaLortu(){
+		//TODO
+		return 0;	
 	}
 	
-	private boolean motaLortu(){
-		boolean belarraDa = true;
-		if (this.errenkada == 0 || this.errenkada == this.errenkadaKop || this.zutabe == 0 || this.zutabe == this.zutabeKop){
-			belarraDa = false;
-		}
-		return belarraDa;	
-	}
-	
-	//EN ESTE NO SE HAN TENIDO EN CUENTA LOS LAUKIAK DE FUERA.
-	private int ikonoZenbLortu(){
+	private int barrukoZenbLortu(){
 		int zenbakia;
 		if(this.errenkada == 1){
 			if(this.zutabe == 1){
@@ -100,6 +111,7 @@ public class LaukiFactory {
 				zenbakia = 9;
 			}
 		}
+		return zenbakia;
 	}
 
 }

@@ -10,10 +10,12 @@ import javax.swing.Box;
 
 public class MenuaUI extends JMenuBar{
 	
+	//Atributoak
 	private static final long serialVersionUID = 1L;
 	private JMenuItem berria, maila1, maila2, maila3;
 	private JMenuItem irten, nolaJokatu;
 	
+	//Eraikitzailea
 	public MenuaUI() {
 		this.setBorder(null);
 		this.setBackground(new Color(89, 153, 124));
@@ -21,6 +23,7 @@ public class MenuaUI extends JMenuBar{
 		menuaEraiki();
 	}
 	
+	//Beste Metodoak
 	private void menuaEraiki() {
 		JMenu jokatu = new JMenu("Jokatu");
 		this.add(jokatu);

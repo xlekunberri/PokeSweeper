@@ -1,15 +1,18 @@
 package org.pokesweeper.model;
 
 public class Tableroa {
-	private static Tableroa nireTableroa;
-
-	public BarruLaukia laukia[][];
 	
-	private int errenkada, zutabe;
+	//Atributoak
+	private static Tableroa nireTableroa;
+	public BarruLaukia laukia[][];
+	private int errenkada;
+	private int zutabe;
 	private int minaKop;
 	
-	
-	private Tableroa(){}
+	//Eraikitzailea
+	private Tableroa(){
+		
+	}
 	
 	public static Tableroa getNireTableroa(){
 		if (nireTableroa == null){
@@ -18,48 +21,32 @@ public class Tableroa {
 		return nireTableroa;
 	}
 	
-	public void setMinaKop(int pMinaKop) {
+	//Beste Metodoak	
+	public void setTamaina(int pErrenkada, int pZutabe, int pMinaKop) {
+		this.errenkada = pErrenkada;
+		this.zutabe = pZutabe;
 		this.minaKop = pMinaKop;
 	}
 	
-	public void setTamaina(int pErrenkada, int pZutabe) {
-		this.errenkada = pErrenkada;
-		this.zutabe = pZutabe;
-	}
-	
 	public void tableroaEraiki(){
-		this.laukia = new BarruLaukia[this.errenkada][this.zutabe];
+		LaukiFactory factory = LaukiFactory.getNireFactory();
+		factory.setTamaina(this.errenkada, this.zutabe, this.minaKop);
 		for(int erren = 0; erren < this.errenkada; erren++) {
 			for(int zut = 0; zut < this.zutabe; zut++) {
-				this.laukia[erren][zut] = new BarruLaukia();
-			}
-		}
-		minakJarri();
-		zenbakiakJarri();
-	}
-	
-	private void minakJarri() {
-		int kont = 0;
-		while(this.minaKop != kont) {
-			int erren = (int)(Math.random()*this.errenkada-1);
-			int zut = (int)(Math.random()*this.zutabe-1);
-			if(!this.laukia[erren][zut].isMina()) {
-				this.laukia[erren][zut].setMina(true);
-				kont++;
+				this.laukia[erren][zut] = factory.createLaukiLogikoa(erren, zut);
 			}
 		}
 	}
 	
-	private void zenbakiakJarri() {
-		for(int erren = 0; erren < this.errenkada; erren++) {
-			for(int zut = 0; zut < this.zutabe; zut++) {
-				if(!this.laukia[erren][zut].isMina()){
-					this.laukia[erren][zut].setZenbakia(zenbakiaKalkulatu(erren, zut));
-				}
-			}
-		}
+	public int getErrenkadaKop(){
+		return this.errenkada;
 	}
 	
+	public int getZutabeKop(){
+		return this.zutabe;
+	}
+	/*				DAFUQ IS THAT? ENEKO PLS
+
 	private boolean posizioEgokia(int pErre, int pZut) {
 		if(pErre < 0 || pErre >= this.errenkada || pZut < 0 || pZut >= this.zutabe)
 			return false;
@@ -114,8 +101,8 @@ public class Tableroa {
 		return zenbakia;
 	}
 	
-	/*private boolean aztertutaDago(int pErren, int pZut) {
+	private boolean aztertutaDago(int pErren, int pZut) {
 		return this.laukia[pErren][pZut].isAztertuta();
-	}*/
-	
+	}
+	*/	
 }
