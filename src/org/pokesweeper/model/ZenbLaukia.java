@@ -1,13 +1,8 @@
 package org.pokesweeper.model;
 
-<<<<<<< HEAD
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
-=======
-public class ZenbLaukia {
-	
-	
->>>>>>> af1f46f06af8a7e8477f89c33923749570ed1aaa
+
 
 public class ZenbLaukia extends BarruLaukia{
 	

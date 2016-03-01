@@ -1,19 +1,11 @@
 package org.pokesweeper.view;
 
 import java.awt.Color;
-import java.awt.Image;
-
-import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
-
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -24,14 +16,7 @@ import org.pokesweeper.model.Helbideak;
 
 public class MenuaUI extends JMenuBar implements ActionListener{
 	
-<<<<<<< HEAD
 	//Atributoak
-=======
-
-	/**
-	 * 
-	 */
->>>>>>> af1f46f06af8a7e8477f89c33923749570ed1aaa
 	private static final long serialVersionUID = 1L;
 	private JMenuItem maila1, maila2, maila3;
 	private JMenuItem irten, nolaJokatu, honiBuruz;
@@ -97,17 +82,12 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		 		//Tableroa.getNireTableroa().eguneratu(12,25,36); 
 	        }       
 		 	else if (e.getSource()==irten) {
-		 		Icon ikonoa=null;
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");
 		 		UIManager.put("OptionPane.noButtonText", "Ez");
 		 		UIManager.put("OptionPane.cancelButtonText", "Ezeztatu");
-		 		try {
-		 			Image img = ImageIO.read(getClass().getResource(Helbideak.pikaGaldu));
-		 			ikonoa = new ImageIcon(img);
-		 		} catch (IOException e1) {}
 		 		JFrame frame = new JFrame();
 		 	    int response = JOptionPane.showConfirmDialog(frame, "Jokoa itxi nahi duzu?","Jokoa itxi",
-		 	    		JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,ikonoa);
+		 	    		JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,Helbideak.pikaGaldu);
 		 	    if (response == JOptionPane.YES_OPTION) {
 		 	      System.exit(0);
 		 	    }
