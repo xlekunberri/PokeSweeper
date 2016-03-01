@@ -1,7 +1,5 @@
 package org.pokesweeper.model;
 
-import org.pokesweeper.view.BarruLaukia;
-
 public class Tableroa {
 	private static Tableroa nireTableroa;
 
