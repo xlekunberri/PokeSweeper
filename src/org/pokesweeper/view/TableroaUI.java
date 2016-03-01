@@ -1,5 +1,8 @@
 package org.pokesweeper.view;
 
+import org.pokesweeper.model.Tableroa;
+import org.pokesweeper.model.LaukiFactory;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -7,6 +10,7 @@ import java.awt.GridLayout;
 import javax.swing.JPanel;
 
 import org.pokesweeper.controller.Kontrolatzailea;
+import org.pokesweeper.model.LaukiFactory;
 
 public class TableroaUI extends JPanel{
 	
@@ -43,7 +47,16 @@ public class TableroaUI extends JPanel{
 	}
 	
 	private void tableroaEraiki() {
-	  
+		Tableroa tableroa = Tableroa.getNireTableroa();
+		for(int y = 0; y < this.errenkada; y++){
+			for(int x = 0; x < this.zutabe; x++){
+				//if (tableroa.laukia[x][y].getEgoera() == 1){
+				//	this.laukiak[x][y] = new LaukiFactory.getNireLaukiFactory().createLaukia(x,y);
+				//TODO: BarruLaukia eta LaukiFactory-ko metodoak
+				//}
+			}
+		}
+			  
 	}
 
 }
