@@ -92,22 +92,26 @@ public class Helbideak {
 	}
 		
 	private static void pikaKargatu(){
-		pikaNormal = new ImageIcon("/skin/pika/normal.png");
-		pikaIrabazi = new ImageIcon("/skin/pika/irabazi.png");
-		pikaGaldu = new ImageIcon("/skin/pika/galdu.png");
-		pikaKlik = new ImageIcon("/skin/pika/klik.png");
+		try {
+		pikaNormal = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/pika/normal.png")));
+		pikaIrabazi = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/pika/irabazi.png")));
+		pikaGaldu = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/pika/galdu.png")));
+		pikaKlik = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/pika/klik.png")));
+		} catch (IOException e) {}
 	}
 		
 	private static void lurraKargatu(){
-		lurra_1 = new ImageIcon("/skin/lurra/1.png");
-		lurra_2 = new ImageIcon("/skin/lurra/2.png");
-		lurra_3 = new ImageIcon("/skin/lurra/3.png");
-		lurra_4 = new ImageIcon("/skin/lurra/4.png");
-		lurra_5 = new ImageIcon("/skin/lurra/5.png");
-		lurra_6 = new ImageIcon("/skin/lurra/6.png");
-		lurra_7 = new ImageIcon("/skin/lurra/7.png");
-		lurra_8 = new ImageIcon("/skin/lurra/8.png");
-		lurra_9 = new ImageIcon("/skin/lurra/9.png");
+		try{
+			lurra_1 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/1.png")));
+			lurra_2 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/2.png")));
+			lurra_3 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/3.png")));
+			lurra_4 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/4.png")));
+			lurra_5 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/5.png")));
+			lurra_6 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/6.png")));
+			lurra_7 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/7.png")));
+			lurra_8 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/8.png")));
+			lurra_9 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/9.png")));
+		} catch (IOException e) {}
 		lurra[0] = lurra_1;
 		lurra[1] = lurra_2;
 		lurra[2] = lurra_3;
@@ -121,15 +125,17 @@ public class Helbideak {
 	}
 	
 	private static void belarraKargatu(){
-		belar_normal_1 = new ImageIcon("/skin/belarra/normala/1.png");
-		belar_normal_2 = new ImageIcon("/skin/belarra/normala/2.png");
-		belar_normal_3 = new ImageIcon("/skin/belarra/normala/3.png");
-		belar_normal_4 = new ImageIcon("/skin/belarra/normala/4.png");
-		belar_normal_5 = new ImageIcon("/skin/belarra/normala/5.png");
-		belar_normal_6 = new ImageIcon("/skin/belarra/normala/6.png");
-		belar_normal_7 = new ImageIcon("/skin/belarra/normala/7.png");
-		belar_normal_8 = new ImageIcon("/skin/belarra/normala/8.png");
-		belar_normal_9 = new ImageIcon("/skin/belarra/normala/9.png");
+		try{
+			belar_normal_1 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/1.png")));
+			belar_normal_2 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/2.png")));
+			belar_normal_3 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/3.png")));
+			belar_normal_4 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/4.png")));
+			belar_normal_5 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/5.png")));
+			belar_normal_6 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/6.png")));
+			belar_normal_7 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/7.png")));
+			belar_normal_8 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/8.png")));
+			belar_normal_9 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/9.png")));
+		} catch (IOException e) {}
 		belar_normal[0] = belar_normal_1;
 		belar_normal[1] = belar_normal_2;
 		belar_normal[2] = belar_normal_3;
@@ -142,15 +148,17 @@ public class Helbideak {
 	}
 	
 	private static void mugimenduaKargatu(){
-		belar_mugimendu_1 = new ImageIcon("/skin/belarra/mugimendua/1/1.gif");
-		belar_mugimendu_2 = new ImageIcon("/skin/belarra/mugimendua/2/2.gif");
-		belar_mugimendu_3 = new ImageIcon("/skin/belarra/mugimendua/3/3.gif");
-		belar_mugimendu_4 = new ImageIcon("/skin/belarra/mugimendua/4/4.gif");
-		belar_mugimendu_5 = new ImageIcon("/skin/belarra/mugimendua/5/5.gif");
-		belar_mugimendu_6 = new ImageIcon("/skin/belarra/mugimendua/6/6.gif");
-		belar_mugimendu_7 = new ImageIcon("/skin/belarra/mugimendua/7/7.gif");
-		belar_mugimendu_8 = new ImageIcon("/skin/belarra/mugimendua/8/8.gif");
-		belar_mugimendu_9 = new ImageIcon("/skin/belarra/mugimendua/9/9.gif");
+		try{
+			//belar_mugimendu_1 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/1/1.gif")));
+			//belar_mugimendu_2 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/2/2.gif")));
+			//belar_mugimendu_3 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/3/3.gif")));
+			//belar_mugimendu_4 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/4/4.gif")));
+			belar_mugimendu_5 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/5/5.gif")));
+			//belar_mugimendu_6 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/6/6.gif")));
+			//belar_mugimendu_7 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/7/7.gif")));
+			//belar_mugimendu_8 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/8/8.gif")));
+			//belar_mugimendu_9 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/9/9.gif")));
+		} catch (IOException e) {}
 		belar_mugimendu[0] = belar_mugimendu_1;
 		belar_mugimendu[1] = belar_mugimendu_2;
 		belar_mugimendu[2] = belar_mugimendu_3;
