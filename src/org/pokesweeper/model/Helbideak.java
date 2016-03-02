@@ -89,7 +89,7 @@ public class Helbideak {
 	private static void zenbakiakKargatu(){
 		try{
 			for(int i = 0; i < zenbaki.length; i++)
-				zenbaki[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/"+(i+1)+".png")));
+				zenbaki[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakiak/"+(i+1)+".png")));
 		} catch (IOException e) {}
 	}
 }
