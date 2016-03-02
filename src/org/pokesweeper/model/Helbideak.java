@@ -173,7 +173,7 @@ public class Helbideak {
 	}
 	
 	private static void zenbakiakKargatu(){
-		/*try{
+		try{
 			zenbaki_1 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/1.png")));
 			zenbaki_2 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/2.png")));
 			zenbaki_3 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/3.png")));
@@ -182,7 +182,7 @@ public class Helbideak {
 			zenbaki_6 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/6.png")));
 			zenbaki_7 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/7.png")));
 			zenbaki_8 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/8.png")));
-		} catch (IOException e) {}*/
+		} catch (IOException e) {}
 		zenbaki[0] = zenbaki_1;
 		zenbaki[1] = zenbaki_2;
 		zenbaki[2] = zenbaki_3;
