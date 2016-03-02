@@ -3,11 +3,8 @@ package org.pokesweeper.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.FontFormatException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,7 +18,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private JPanel goikoPanela, behekoPanela;
 
 	//Eraikitzailea
-	public JokoaUI() throws FileNotFoundException, FontFormatException, IOException {
+	public JokoaUI(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setTitle("PokéSweeper");

@@ -99,12 +99,7 @@ public class LaukiFactory {
 	}
 	
 	private boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
-		if (pErrenkada < 0 || pErrenkada >= this.errenkadaKop || pZutabe < 0 || pZutabe >= this.zutabeKop){
-			return false;
-		}
-		else{
-			return true;
-		}
+		return !(pErrenkada < 0 || pErrenkada >= this.errenkadaKop || pZutabe < 0 || pZutabe >= this.zutabeKop);
 	}
 	
 	private int barrukoZenbLortu(){
