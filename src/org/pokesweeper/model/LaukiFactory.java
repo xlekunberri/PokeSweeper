@@ -9,7 +9,10 @@ public class LaukiFactory {
 	private int errenkadaKop;
 	private int zutabeKop;
 	private int minaKop;
-	private boolean[][] minak;
+	private int[][] minak;
+		// 0 = LurLauki
+		// 1-8 = ZenbLauki
+		// 9 = MinaLauki
 	
 	private int errenkada;
 	private int zutabe;
@@ -39,17 +42,13 @@ public class LaukiFactory {
 		this.zutabe = pZutabe;
 		BarruLaukia laukia;
 		int ikonoZenb = barrukoZenbLortu();
-		int mota = motaLortu();
-			// 0 = LurLaukia
-			// 1 = ZenbLaukia
-			// 2 = MinaLaukia
-		if(mota == 1){
+		int egungoa = this.minak[pErrenkada][pZutabe];
+		if(egungoa == 0){
 			laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
-		} else if (mota == 2){
-			int ingurukoMinak = this.ingurukoMinakLortu();
-			laukia = new ZenbLaukia(this.errenkada, this.zutabe, ikonoZenb, ingurukoMinak);
-		} else {
+		} else if (egungoa == 9){
 			laukia = new MinaLaukia(this.errenkada, this.zutabe, ikonoZenb);
+		} else {
+			laukia = new ZenbLaukia(this.errenkada, this.zutabe, ikonoZenb, egungoa);
 		}
 		return laukia;		
 	}
@@ -58,7 +57,7 @@ public class LaukiFactory {
 		this.errenkadaKop = pErrenkadaKop;
 		this.zutabeKop = pZutabeKop;
 		this.minaKop = pMinaKop;
-		this.minak = new boolean[this.errenkadaKop][this.zutabeKop];
+		this.minak = new int[this.errenkadaKop][this.zutabeKop];
 		this.minakJarri();
 	}
 	
@@ -67,21 +66,32 @@ public class LaukiFactory {
 		while(i != this.minaKop){
 			Integer errenkada = (int)(Math.random()*(this.errenkadaKop));
 			Integer zutabea = (int)(Math.random()*(this.zutabeKop));
-			if(!this.minak[errenkada][zutabea]){
-				this.minak[errenkada][zutabea] = true;
+			if(this.minak[errenkada][zutabea] != 9){
+				this.minak[errenkada][zutabea] = 9;
+				albokoakAbisatu(errenkada, zutabea);
 				i++;
+				
 			}
 		}
 	}
 	
-	private int ingurukoMinakLortu() {
-		//TODO
-		return 0;
+	private void albokoakAbisatu(int pErrenkada, int pZutabe){
+		for (int y = pZutabe-1; y <= pZutabe + 1; y++){
+			for(int x = pErrenkada - 1; x <= pErrenkada + 1; x++ ){
+				if (koordenadaEgokiak(x,y) && !(this.errenkada == x && this.zutabe == y) ){
+					this.minak[x][y] += 1;
+				}
+			}
+		}
 	}
-
-	private int motaLortu(){
-		//TODO
-		return 0;	
+	
+	private boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
+		if (pErrenkada < 0 || pErrenkada >= this.errenkadaKop || pZutabe < 0 || pZutabe >= this.zutabeKop){
+			return false;
+		}
+		else{
+			return true;
+		}
 	}
 	
 	private int barrukoZenbLortu(){
