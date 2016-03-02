@@ -1,5 +1,10 @@
 package org.pokesweeper.model;
 
+import java.awt.Dimension;
+import java.awt.Insets;
+
+import javax.swing.BorderFactory;
+
 import org.pokesweeper.view.LaukiaUI;
 
 public class LaukiFactory {
@@ -34,6 +39,14 @@ public class LaukiFactory {
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
 		LaukiaUI laukia = new LaukiaUI(pErrenkada, pZutabe);
+        laukia.setBorder(BorderFactory.createEmptyBorder());
+        laukia.setContentAreaFilled(false);
+        laukia.setBorderPainted(false);
+        laukia.setMargin(new Insets(0, 0, 0, 0));
+        laukia.setPreferredSize(new Dimension(32, 32));
+        laukia.addMouseListener(laukia);
+        //TODO: FALTA PONERLE EL ICONO!
+        laukia.repaint();
 		return laukia;
 	}
 	
