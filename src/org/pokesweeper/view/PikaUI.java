@@ -43,6 +43,7 @@ public class PikaUI extends JButton implements ActionListener{
 			this.setIcon(Helbideak.pikaKlik);
 			break;
 		}
+		this.repaint();
 	}
 
 	@Override

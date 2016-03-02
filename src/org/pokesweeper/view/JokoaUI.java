@@ -16,6 +16,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	//Atributoak
 	private static final long serialVersionUID = 1L;
 	private JPanel goikoPanela, behekoPanela;
+	public static boolean galdu = false;
 
 	//Eraikitzailea
 	public JokoaUI(){
@@ -72,6 +73,11 @@ public class JokoaUI extends JFrame implements ActionListener{
 		JPanel panelHegoal = new JPanel();
 		panelHegoal.setBackground(new Color(112, 200, 160));
 		behekoPanela.add(panelHegoal, BorderLayout.SOUTH);
+	}
+	
+	public static void galdu(){
+		JokoaUI.galdu = true;
+		
 	}
 	
 	@Override

@@ -1,5 +1,6 @@
 package org.pokesweeper.model;
 
+import org.pokesweeper.view.JokoaUI;
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
 
@@ -20,7 +21,7 @@ public class ZenbLaukia extends BarruLaukia{
 	
 	//Beste metodoak
 	public void mouseClicked(){
-		if (this.egoera != 3){
+		if (this.egoera != 3 && !JokoaUI.galdu){
 			this.egoera = 3;
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(Helbideak.zenbaki[this.ingurukoMinaKop]);
