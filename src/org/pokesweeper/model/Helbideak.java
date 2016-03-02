@@ -26,6 +26,7 @@ public class Helbideak {
 	public static Icon pikaKlik;
 	
 	public static Icon voltorb;
+	public static Icon voltorb_s;
 	
 	public static Icon[] lurra = new Icon[9];
 	private static Icon lurra_1;
@@ -85,7 +86,8 @@ public class Helbideak {
 			unownIturria = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/unown.ttf"))).deriveFont(12F);
 			ikonoa = ImageIO.read(new File("src/skin/ikonoa.png"));
 			kursorea = Toolkit.getDefaultToolkit().createCustomCursor(Toolkit.getDefaultToolkit().getImage("src/skin/kursorea.png") , new Point(3, 30), "img");
-			//TODO: CARGAR EL VOLTORB!
+			voltorb = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/voltorb/voltorb.png")));
+			voltorb_s = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/voltorb/voltorb_s.png")));
 		}catch (IOException | FontFormatException e){
 			 e.printStackTrace();
 		}
@@ -171,7 +173,16 @@ public class Helbideak {
 	}
 	
 	private static void zenbakiakKargatu(){
-		//TODO: CARGAR LOS ZENBAKIZ!
+		/*try{
+			zenbaki_1 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/1.png")));
+			zenbaki_2 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/2.png")));
+			zenbaki_3 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/3.png")));
+			zenbaki_4 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/4.png")));
+			zenbaki_5 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/5.png")));
+			zenbaki_6 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/6.png")));
+			zenbaki_7 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/7.png")));
+			zenbaki_8 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakia/8.png")));
+		} catch (IOException e) {}*/
 		zenbaki[0] = zenbaki_1;
 		zenbaki[1] = zenbaki_2;
 		zenbaki[2] = zenbaki_3;
