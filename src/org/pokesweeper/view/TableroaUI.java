@@ -41,11 +41,24 @@ public class TableroaUI extends JPanel{
 	//Beste metodoak
 	private void tableroaEraiki() {
 		LaukiFactory factory = LaukiFactory.getNireFactory();
-		for(int erren = 0; erren < this.errenkada; erren++) {
-			for(int zut = 0; zut < this.zutabe; zut++) {
+		this.add(new KanpoLaukiaUI(0));
+		for(int zut = 2; zut < this.zutabe; zut++) {
+			this.add(new KanpoLaukiaUI(1));
+		}
+		this.add(new KanpoLaukiaUI(2));
+		for(int erren = 1; erren < this.errenkada - 1; erren++) {
+			this.add(new KanpoLaukiaUI(3));
+			for(int zut = 1; zut < this.zutabe - 1; zut++) {
 				this.laukia[erren][zut] = factory.createLaukiUI(erren, zut);
+				this.add(this.laukia[erren][zut]);
 			}
-		}			  
+			this.add(new KanpoLaukiaUI(5));
+		}	
+		this.add(new KanpoLaukiaUI(6));
+		for(int zut = 2; zut < this.zutabe; zut++) {
+			this.add(new KanpoLaukiaUI(7));
+		}
+		this.add(new KanpoLaukiaUI(8));
 	}
 
 }

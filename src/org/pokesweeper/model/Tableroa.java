@@ -26,6 +26,7 @@ public class Tableroa {
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
 		this.minaKop = pMinaKop;
+		this.laukia = new BarruLaukia[this.errenkada][this.zutabe];
 	}
 	
 	public void tableroaEraiki(){
@@ -45,62 +46,7 @@ public class Tableroa {
 	public int getZutabeKop(){
 		return this.zutabe;
 	}
-	/*				DAFUQ IS THAT? ENEKO PLS
-
-	private boolean posizioEgokia(int pErre, int pZut) {
-		if(pErre < 0 || pErre >= this.errenkada || pZut < 0 || pZut >= this.zutabe)
-			return false;
-		else
-			return true;
-	}
-	
-	private int zenbakiaKalkulatu(int pErren, int pZut) {
-		int zenbakia = 0;
-		
-		if(posizioEgokia(pErren-1, pZut-1)) {
-			if(this.laukia[pErren-1][pZut-1].isMina()){
-				zenbakia++;
-			}
-		}
-		if(posizioEgokia(pErren, pZut-1)) {
-			if(this.laukia[pErren][pZut-1].isMina()){
-				zenbakia++;
-			}
-		}
-		if(posizioEgokia(pErren+1, pZut-1)) {
-			if(this.laukia[pErren+1][pZut-1].isMina()){
-				zenbakia++;
-			}
-		}
-		if(posizioEgokia(pErren-1, pZut)) {
-			if(this.laukia[pErren-1][pZut].isMina()){
-				zenbakia++;
-			}
-		}
-		if(posizioEgokia(pErren+1, pZut)) {
-			if(this.laukia[pErren+1][pZut].isMina()){
-				zenbakia++;
-			}
-		}
-		if(posizioEgokia(pErren-1, pZut+1)) {
-			if(this.laukia[pErren-1][pZut+1].isMina()){
-				zenbakia++;
-			}
-		}
-		if(posizioEgokia(pErren, pZut+1)) {
-			if(this.laukia[pErren][pZut+1].isMina()){
-				zenbakia++;
-			}
-		}
-		if(posizioEgokia(pErren+1, pZut+1)) {
-			if(this.laukia[pErren+1][pZut+1].isMina()){
-				zenbakia++;
-			}
-		}
-		
-		return zenbakia;
-	}
-	
+	/*
 	private boolean aztertutaDago(int pErren, int pZut) {
 		return this.laukia[pErren][pZut].isAztertuta();
 	}

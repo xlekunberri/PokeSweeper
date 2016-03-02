@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.Tableroa;
 
 public class JokoaUI extends JFrame implements ActionListener{
 	
@@ -51,6 +52,10 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		panelakEraiki();
 		
+		Tableroa.getNireTableroa().setTamaina(5, 10, 5);
+		Tableroa.getNireTableroa().tableroaEraiki();
+		behekoPanela.add(TableroaUI.getNireTableroaUI());
+		
 		this.setVisible(true);
 		this.pack();
 	}
@@ -73,6 +78,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		JPanel panelHegoal = new JPanel();
 		panelHegoal.setBackground(new Color(112, 200, 160));
 		behekoPanela.add(panelHegoal, BorderLayout.SOUTH);
+		
 	}
 	
 	public static void galdu(){

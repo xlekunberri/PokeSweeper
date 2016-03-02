@@ -28,10 +28,10 @@ public class Helbideak {
 	public static Icon voltorb;
 	public static Icon voltorb_s;
 	
-	public static Icon[] lurra = new Icon[8];
-	public static Icon[] belar_normal = new Icon[8];
-	public static Icon[] belar_mugimendu = new Icon[8];
-	public static Icon[] zenbaki = new Icon[7];
+	public static Icon[] lurra = new Icon[9];
+	public static Icon[] belar_normal = new Icon[9];
+	public static Icon[] belar_mugimendu = new Icon[9];
+	public static Icon[] zenbaki = new Icon[8];
 	
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();

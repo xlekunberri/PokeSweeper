@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Insets;
 
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
 
 import org.pokesweeper.view.LaukiaUI;
 
@@ -23,9 +24,7 @@ public class LaukiFactory {
 	private int zutabe;
 	
 	//Eraikitzailea
-	private LaukiFactory(){
-		
-	}
+	private LaukiFactory(){}
 		
 	public static LaukiFactory getNireFactory(){
 		if(nireFactory == null){
@@ -45,7 +44,7 @@ public class LaukiFactory {
         laukia.setMargin(new Insets(0, 0, 0, 0));
         laukia.setPreferredSize(new Dimension(32, 32));
         laukia.addMouseListener(laukia);
-        //TODO: FALTA PONERLE EL ICONO!
+        laukia.setIcon(kalkulatuIrudia(pErrenkada, pZutabe));
         laukia.repaint();
 		return laukia;
 	}
@@ -132,4 +131,41 @@ public class LaukiFactory {
 		return zenbakia;
 	}
 
+	private Icon kalkulatuIrudia(int pErrenkada, int pZutabea) {
+		Icon ikonoa;
+		if(pErrenkada == 1) {
+			if(pZutabea == 1) {
+				ikonoa = Helbideak.belar_normal[0];
+			}
+			else if(pZutabea == this.zutabeKop){
+				ikonoa = Helbideak.belar_normal[2];
+			}
+			else {
+				ikonoa = Helbideak.belar_normal[1];
+			}
+		}
+		else if (pErrenkada == this.errenkadaKop) {
+			if(pZutabea == 1) {
+				ikonoa = Helbideak.belar_normal[6];
+			}
+			else if(pZutabea == this.zutabeKop){
+				ikonoa = Helbideak.belar_normal[8];
+			}
+			else {
+				ikonoa = Helbideak.belar_normal[7];
+			}
+		}
+		else {
+			if(pZutabea == 1) {
+				ikonoa = Helbideak.belar_normal[3];
+			}
+			else if(pZutabea == this.zutabeKop){
+				ikonoa = Helbideak.belar_normal[5];
+			}
+			else {
+				ikonoa = Helbideak.belar_normal[4];
+			}
+		}
+		return ikonoa;
+	}
 }
