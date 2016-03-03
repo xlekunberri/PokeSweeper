@@ -39,7 +39,7 @@ public class LurLaukia extends BarruLaukia{
 	}
 	
 	private boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
-		return !(this.errenkada < 0 || this.errenkada >= tableroLogicoa.getErrenkadaKop() || this.zutabea < 0 || this.zutabea >= tableroLogicoa.getZutabeKop());
+		return !(pErrenkada< 0 || pErrenkada >= tableroLogicoa.getErrenkadaKop() || pZutabe < 0 || pZutabe >= tableroLogicoa.getZutabeKop());
 	}
 	
 }
