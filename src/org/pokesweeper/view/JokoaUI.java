@@ -52,7 +52,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		panelakEraiki();
 		
-		Tableroa.getNireTableroa().setTamaina(5, 10, 5);
+		Tableroa.getNireTableroa().setTamaina(10, 10, 30);
 		Tableroa.getNireTableroa().tableroaEraiki();
 		behekoPanela.add(TableroaUI.getNireTableroaUI());
 		
