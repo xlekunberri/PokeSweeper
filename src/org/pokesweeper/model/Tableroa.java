@@ -10,9 +10,7 @@ public class Tableroa {
 	private int minaKop;
 	
 	//Eraikitzailea
-	private Tableroa(){
-		
-	}
+	private Tableroa(){}
 	
 	public static Tableroa getNireTableroa(){
 		if (nireTableroa == null){
@@ -46,9 +44,4 @@ public class Tableroa {
 	public int getZutabeKop(){
 		return this.zutabe;
 	}
-	/*
-	private boolean aztertutaDago(int pErren, int pZut) {
-		return this.laukia[pErren][pZut].isAztertuta();
-	}
-	*/	
 }

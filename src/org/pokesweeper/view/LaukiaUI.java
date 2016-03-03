@@ -9,8 +9,8 @@ public class LaukiaUI extends JButton implements MouseListener {
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
-	private int errenkada;
-	private int zutabe;
+	public int errenkada;
+	public int zutabe;
 	
 	//Eraikitzailea
 	public LaukiaUI(int pErrenkada, int pZutabe) {

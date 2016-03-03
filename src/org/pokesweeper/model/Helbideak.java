@@ -35,9 +35,8 @@ public class Helbideak {
 	
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();
-		Helbideak.belarraKargatu();
-		Helbideak.lurraKargatu();
-		//Helbideak.mugimenduaKargatu();
+		Helbideak.lurraBelarraKargatu();
+		Helbideak.mugimenduaKargatu();
 		Helbideak.pikaKargatu();
 		Helbideak.zenbakiakKargatu();
 	}
@@ -64,27 +63,21 @@ public class Helbideak {
 		} catch (IOException e) {}
 	}
 		
-	private static void lurraKargatu(){
+	private static void lurraBelarraKargatu(){
 		try{
-			for(int i = 0; i < lurra.length; i++)
+			for(int i = 0; i < lurra.length; i++) {
 				lurra[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/"+(i+1)+".png")));
+				belar_normal[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/"+(i+1)+".png")));
+			}
 		} catch (IOException e) {}
 		
 	}
 	
-	private static void belarraKargatu(){
+	private static void mugimenduaKargatu(){
 		try{
-			for(int i = 0; i < belar_normal.length; i++)
-				belar_normal[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/"+(i+1)+".png")));
+			belar_mugimendu[4] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/5/5.gif")));
 		} catch (IOException e) {}
 	}
-	
-	/*private static void mugimenduaKargatu(){
-		try{
-			//belar_mugimendu_1 = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/1/1.gif")));
-			//GIF BAKARRA EGONGO DA? (SETROLLOVERICON?)
-		} catch (IOException e) {}
-	}*/
 	
 	private static void zenbakiakKargatu(){
 		try{

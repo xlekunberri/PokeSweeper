@@ -5,14 +5,13 @@ import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.PikaUI;
 import org.pokesweeper.view.TableroaUI;
 
-public class BarruLaukia extends Laukia{
+public class BarruLaukia{
 	
 	//Atributoak
 	protected int errenkada;
 	protected int zutabea;
 	protected int egoera;
 	protected int ikonoZenb;
-	private LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 	
 	//Beste metodoak
 	public void mouseClicked() {
@@ -20,13 +19,15 @@ public class BarruLaukia extends Laukia{
 	}
 	
 	public void mouseEntered() {
+			LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
         	if(this.egoera != 3 && !JokoaUI.galdu) {
-        		laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
+        		laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[4]);
         		laukiHonenUI.repaint();
         	}
 	}
 	
 	public void mouseExited() {
+		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 		if(this.egoera != 3 && !JokoaUI.galdu) {
 			laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
 			laukiHonenUI.repaint();
@@ -35,7 +36,7 @@ public class BarruLaukia extends Laukia{
 	
 	public void mousePressed() {
     	if(this.egoera != 3 && !JokoaUI.galdu) {
-    		PikaUI.getNirePika().setPikaEgoera("click");
+    		PikaUI.getNirePika().setPikaEgoera("klik");
     	}
 	}
 	

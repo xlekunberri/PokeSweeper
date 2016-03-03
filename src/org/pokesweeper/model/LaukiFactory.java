@@ -6,6 +6,7 @@ import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 
+import org.pokesweeper.view.KanpoLaukiaUI;
 import org.pokesweeper.view.LaukiaUI;
 
 public class LaukiFactory {
@@ -16,9 +17,9 @@ public class LaukiFactory {
 	private int zutabeKop;
 	private int minaKop;
 	private int[][] minak;
+		// -1 = MinaLauki
 		// 0 = LurLauki
 		// 1-8 = ZenbLauki
-		// 9 = MinaLauki
 	
 	private int errenkada;
 	private int zutabe;
@@ -57,12 +58,17 @@ public class LaukiFactory {
 		int egungoa = this.minak[pErrenkada][pZutabe];
 		if(egungoa == 0){
 			laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
-		} else if (egungoa == 9){
+		} else if (egungoa == -1){
 			laukia = new MinaLaukia(this.errenkada, this.zutabe, ikonoZenb);
 		} else {
 			laukia = new ZenbLaukia(this.errenkada, this.zutabe, ikonoZenb, egungoa);
 		}
 		return laukia;		
+	}
+	
+	
+	public KanpoLaukiaUI createKanpoLaukia(int pZenbakia) {
+		return new KanpoLaukiaUI(pZenbakia);
 	}
 	
 	public void setTamaina(int pErrenkadaKop, int pZutabeKop, int pMinaKop){
@@ -78,8 +84,8 @@ public class LaukiFactory {
 		while(i != this.minaKop){
 			Integer errenkada = (int)(Math.random()*(this.errenkadaKop));
 			Integer zutabea = (int)(Math.random()*(this.zutabeKop));
-			if(this.minak[errenkada][zutabea] != 9){
-				this.minak[errenkada][zutabea] = 9;
+			if(this.minak[errenkada][zutabea] != -1){
+				this.minak[errenkada][zutabea] = -1;
 				albokoakAbisatu(errenkada, zutabea);
 				i++;
 				
@@ -88,10 +94,10 @@ public class LaukiFactory {
 	}
 	
 	private void albokoakAbisatu(int pErrenkada, int pZutabe){
-		for (int y = pZutabe-1; y <= pZutabe + 1; y++){
-			for(int x = pErrenkada - 1; x <= pErrenkada + 1; x++ ){
-				if (koordenadaEgokiak(x,y) && !(this.errenkada == x && this.zutabe == y) ){
-					this.minak[x][y] += 1;
+		for (int x = pErrenkada-1; x <= pErrenkada + 1; x++){
+			for(int y = pZutabe - 1; y <= pZutabe + 1; y++ ){
+				if (koordenadaEgokiak(x,y) && !(pErrenkada == x && pZutabe == y) && !(this.minak[x][y] == -1)){
+					this.minak[x][y]++;
 				}
 			}
 		}
@@ -103,29 +109,29 @@ public class LaukiFactory {
 	
 	private int barrukoZenbLortu(){
 		int zenbakia;
-		if(this.errenkada == 1){
-			if(this.zutabe == 1){
-				zenbakia = 1;
+		if(this.errenkada == 0){
+			if(this.zutabe == 0){
+				zenbakia = 0;
 			} else if (this.zutabe != this.zutabeKop - 1){
-				zenbakia = 2;
+				zenbakia = 1;
 			} else {
-				zenbakia = 3;
+				zenbakia = 2;
 			}
 		} else if(this.errenkada != this.errenkadaKop - 1){
-			if(this.zutabe == 1){
-				zenbakia = 4;
+			if(this.zutabe == 0){
+				zenbakia = 3;
 			} else if (this.zutabe != this.zutabeKop - 1){
-				zenbakia = 5;
+				zenbakia = 4;
 			} else {
-				zenbakia = 6;
+				zenbakia = 5;
 			}
 		} else {
-			if(this.zutabe == 1){
-				zenbakia = 7;
+			if(this.zutabe == 0){
+				zenbakia = 6;
 			} else if (this.zutabe != this.zutabeKop - 1){
-				zenbakia = 8;
+				zenbakia = 7;
 			} else {
-				zenbakia = 9;
+				zenbakia = 8;
 			}
 		}
 		return zenbakia;
@@ -133,22 +139,22 @@ public class LaukiFactory {
 
 	private Icon kalkulatuIrudia(int pErrenkada, int pZutabea) {
 		Icon ikonoa;
-		if(pErrenkada == 1) {
-			if(pZutabea == 1) {
+		if(pErrenkada == 0) {
+			if(pZutabea == 0) {
 				ikonoa = Helbideak.belar_normal[0];
 			}
-			else if(pZutabea == this.zutabeKop){
+			else if(pZutabea == this.zutabeKop-1){
 				ikonoa = Helbideak.belar_normal[2];
 			}
 			else {
 				ikonoa = Helbideak.belar_normal[1];
 			}
 		}
-		else if (pErrenkada == this.errenkadaKop) {
-			if(pZutabea == 1) {
+		else if (pErrenkada == this.errenkadaKop-1) {
+			if(pZutabea == 0) {
 				ikonoa = Helbideak.belar_normal[6];
 			}
-			else if(pZutabea == this.zutabeKop){
+			else if(pZutabea == this.zutabeKop-1){
 				ikonoa = Helbideak.belar_normal[8];
 			}
 			else {
@@ -156,10 +162,10 @@ public class LaukiFactory {
 			}
 		}
 		else {
-			if(pZutabea == 1) {
+			if(pZutabea == 0) {
 				ikonoa = Helbideak.belar_normal[3];
 			}
-			else if(pZutabea == this.zutabeKop){
+			else if(pZutabea == this.zutabeKop-1){
 				ikonoa = Helbideak.belar_normal[5];
 			}
 			else {
