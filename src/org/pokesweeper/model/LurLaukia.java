@@ -5,6 +5,8 @@ import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
 
 public class LurLaukia extends BarruLaukia{
+	
+	Tableroa tableroLogicoa = Tableroa.getNireTableroa();
 
 	//Eraikitzailea
 	public LurLaukia(int pErrenkada, int pZutabea, int pIkonoZenb){
@@ -22,8 +24,22 @@ public class LurLaukia extends BarruLaukia{
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(Helbideak.lurra[4]);
 			laukiHonenUI.repaint();
-			//TODO: EXPANDIRSE A LAS DEMAS BELARRAK!
+			this.albokoakZabaldu();
 		}
+	}
+
+	private void albokoakZabaldu() {
+		for (int x = this.errenkada - 1; x <= this.errenkada + 1; x++){
+			for(int y = this.zutabea - 1; y <= this.zutabea + 1; y++ ){
+				if (koordenadaEgokiak(x,y)){
+					tableroLogicoa.laukia[x][y].mouseClicked();
+				}
+			}
+		}		
+	}
+	
+	private boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
+		return !(this.errenkada < 0 || this.errenkada >= tableroLogicoa.getErrenkadaKop() || this.zutabea < 0 || this.zutabea >= tableroLogicoa.getZutabeKop());
 	}
 	
 }
