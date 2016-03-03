@@ -20,14 +20,18 @@ public class Tableroa {
 	}
 	
 	//Beste Metodoak	
-	public void setTamaina(int pErrenkada, int pZutabe, int pMinaKop) {
+	/*public void setTamaina(int pErrenkada, int pZutabe, int pMinaKop) {
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
 		this.minaKop = pMinaKop;
 		this.laukia = new BarruLaukia[this.errenkada][this.zutabe];
-	}
+	}*/
 	
-	public void tableroaEraiki(){
+	public void tableroaEraiki(int pErrenkada, int pZutabe, int pMinaKop){
+		this.errenkada = pErrenkada;
+		this.zutabe = pZutabe;
+		this.minaKop = pMinaKop;
+		this.laukia = new BarruLaukia[this.errenkada][this.zutabe];
 		LaukiFactory factory = LaukiFactory.getNireFactory();
 		factory.setTamaina(this.errenkada, this.zutabe, this.minaKop);
 		for(int erren = 0; erren < this.errenkada; erren++) {

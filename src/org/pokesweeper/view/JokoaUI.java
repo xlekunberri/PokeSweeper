@@ -15,12 +15,13 @@ import org.pokesweeper.model.Tableroa;
 public class JokoaUI extends JFrame implements ActionListener{
 	
 	//Atributoak
+	public static JokoaUI nirejokoa;
 	private static final long serialVersionUID = 1L;
 	private JPanel goikoPanela, behekoPanela;
 	public static boolean galdu = false;
 
 	//Eraikitzailea
-	public JokoaUI(){
+	private JokoaUI(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setTitle("PokéSweeper");
@@ -52,11 +53,30 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		panelakEraiki();
 		
-		Tableroa.getNireTableroa().setTamaina(10, 10, 10);
-		Tableroa.getNireTableroa().tableroaEraiki();
+		Tableroa.getNireTableroa().tableroaEraiki(4, 4, 0);
+		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		behekoPanela.add(TableroaUI.getNireTableroaUI());
 		
 		this.setVisible(true);
+		this.pack();
+	}
+	
+	public static JokoaUI getNireJokoa(){
+		if (nirejokoa == null){
+			nirejokoa = new JokoaUI();
+		}
+		return nirejokoa;
+	}
+	
+	public void erreseteatu(int pZerrenda, int pZutabe, int pMinaKop) {
+		this.behekoPanela.remove(TableroaUI.getNireTableroaUI());
+
+		Tableroa.getNireTableroa().tableroaEraiki(pZerrenda, pZutabe, pMinaKop);
+		TableroaUI.getNireTableroaUI().tableroaEraiki();
+		
+		JokoaUI.galdu = false;
+		
+		this.behekoPanela.add(TableroaUI.getNireTableroaUI());
 		this.pack();
 	}
 	
@@ -100,7 +120,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					JokoaUI frame = new JokoaUI();
+					JokoaUI frame = JokoaUI.getNireJokoa();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

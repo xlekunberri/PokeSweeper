@@ -1,18 +1,20 @@
 package org.pokesweeper.view;
 
 import java.awt.Color;
-import javax.swing.JOptionPane;
-import javax.swing.JFrame;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.Box;
+import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.Box;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.Tableroa;
 
 public class MenuaUI extends JMenuBar implements ActionListener{
 	
@@ -73,13 +75,13 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 	            
 	        if (e.getSource()==maila1) {
-	        	//Tableroa.getNireTableroa().eguneratu(7,10,7);
+	        	JokoaUI.getNireJokoa().erreseteatu(7, 10, 7);
 	        }
 		 	else if (e.getSource()==maila2) {
-		 		//Tableroa.getNireTableroa().eguneratu(10,15,20);
+		 		JokoaUI.getNireJokoa().erreseteatu(10,15,20);
 	        }       
 		 	else if (e.getSource()==maila3) {
-		 		//Tableroa.getNireTableroa().eguneratu(12,25,36); 
+		 		JokoaUI.getNireJokoa().erreseteatu(12,25,36); 
 	        }       
 		 	else if (e.getSource()==irten) {
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");

@@ -26,17 +26,19 @@ public class TableroaUI extends JPanel{
 
 	private TableroaUI() {
 		this.setBackground(new Color(160, 224, 192));	
-		this.errenkada = tableroLogikoa.getErrenkadaKop();
-		this.zutabe = tableroLogikoa.getZutabeKop();
-									  //(errenkadaKopurua, zutabeKopurua) -- GridLayout 
-		GridLayout grid = new GridLayout(this.errenkada+2, this.zutabe+2, 0, 0);
-		this.setLayout(grid);
-		this.laukia = new LaukiaUI[this.errenkada][this.zutabe];
-		tableroaEraiki();
 	}
 	
 	//Beste metodoak
-	private void tableroaEraiki() {
+	public void tableroaEraiki() {
+		this.errenkada = tableroLogikoa.getErrenkadaKop();
+		this.zutabe = tableroLogikoa.getZutabeKop();
+		this.laukia = new LaukiaUI[this.errenkada][this.zutabe];
+		this.removeAll();
+									  
+									  //(errenkadaKopurua, zutabeKopurua) -- GridLayout 
+		GridLayout grid = new GridLayout(this.errenkada+2, this.zutabe+2, 0, 0);
+		this.setLayout(grid);
+		
 		LaukiFactory factory = LaukiFactory.getNireFactory();
 		this.add(factory.createKanpoLaukia(0));
 		for(int zut = 0; zut < this.zutabe; zut++) {
