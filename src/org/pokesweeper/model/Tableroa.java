@@ -3,6 +3,7 @@ package org.pokesweeper.model;
 public class Tableroa {
 	
 	//Atributoak
+	private static int tableroZenb = 0;
 	private static Tableroa nireTableroa;
 	public BarruLaukia laukia[][];
 	private int errenkada;
@@ -37,6 +38,9 @@ public class Tableroa {
 				this.laukia[erren][zut] = factory.createLaukiLogikoa(erren, zut);
 			}
 		}
+		if (tableroZenb == 0){
+			tableroZenb = 1;
+		}
 	}
 	
 	public int getErrenkadaKop(){
@@ -45,5 +49,12 @@ public class Tableroa {
 	
 	public int getZutabeKop(){
 		return this.zutabe;
+	}
+
+	public boolean lehenengoTxanda() {
+		if (tableroZenb == 0){
+			return true;
+		}
+		else{return false;}
 	}
 }

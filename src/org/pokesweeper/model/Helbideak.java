@@ -33,14 +33,31 @@ public class Helbideak {
 	public static Icon[] belar_mugimendu = new Icon[9];
 	public static Icon[] zenbaki = new Icon[8];
 	
+	public static Icon[] bichilloak = new Icon[19];
+	
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();
 		Helbideak.lurraBelarraKargatu();
 		Helbideak.mugimenduaKargatu();
 		Helbideak.pikaKargatu();
 		Helbideak.zenbakiakKargatu();
+		Helbideak.bichilloakKargatu();
 	}
 	
+
+
+	private static void bichilloakKargatu() {
+		try{
+			int i = 0;
+			while (i < 19){
+				bichilloak[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/pokemon/image"+(i+1)+".png")));
+				i++;
+			}
+		} catch (IOException e) {}
+	}
+
+
+
 	private static void besteakKargatu(){
 		try{
 			iturria = (Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/normala.ttf"))).deriveFont(12F);

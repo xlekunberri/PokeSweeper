@@ -55,15 +55,20 @@ public class LaukiFactory {
 		this.zutabe = pZutabe;
 		BarruLaukia laukia;
 		int ikonoZenb = barrukoZenbLortu();
-		int egungoa = this.minak[pErrenkada][pZutabe];
-		if(egungoa == 0){
-			laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
-		} else if (egungoa == -1){
-			laukia = new MinaLaukia(this.errenkada, this.zutabe, ikonoZenb);
-		} else {
-			laukia = new ZenbLaukia(this.errenkada, this.zutabe, ikonoZenb, egungoa);
+		if (Tableroa.getNireTableroa().lehenengoTxanda()){
+			laukia = new BichilloLaukia(this.errenkada, this.zutabe, ikonoZenb);
 		}
-		return laukia;		
+		else{
+			int egungoa = this.minak[pErrenkada][pZutabe];
+			if(egungoa == 0){
+				laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
+			} else if (egungoa == -1){
+				laukia = new MinaLaukia(this.errenkada, this.zutabe, ikonoZenb);
+			} else {
+				laukia = new ZenbLaukia(this.errenkada, this.zutabe, ikonoZenb, egungoa);
+			}		
+		}
+		return laukia;
 	}
 	
 	
