@@ -6,7 +6,7 @@ import org.pokesweeper.view.TableroaUI;
 
 public class LurLaukia extends BarruLaukia{
 	
-	Tableroa tableroLogicoa = Tableroa.getNireTableroa();
+	private final Tableroa tableroLogicoa = Tableroa.getNireTableroa();
 
 	//Eraikitzailea
 	public LurLaukia(int pErrenkada, int pZutabea, int pIkonoZenb){

@@ -10,11 +10,9 @@ public class TableroaUI extends JPanel{
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
-	private int errenkada;
-	private int zutabe;
 	public LaukiaUI laukia[][];
 	private static TableroaUI helbidea;
-	private Tableroa tableroLogikoa = Tableroa.getNireTableroa();
+	private final Tableroa tableroLogikoa = Tableroa.getNireTableroa();
 
 	//Eraikitzailea
 	public static TableroaUI getNireTableroaUI(){
@@ -30,31 +28,31 @@ public class TableroaUI extends JPanel{
 	
 	//Beste metodoak
 	public void tableroaEraiki() {
-		this.errenkada = tableroLogikoa.getErrenkadaKop();
-		this.zutabe = tableroLogikoa.getZutabeKop();
-		this.laukia = new LaukiaUI[this.errenkada][this.zutabe];
+		int errenkada = tableroLogikoa.getErrenkadaKop();
+		int zutabe = tableroLogikoa.getZutabeKop();
+		this.laukia = new LaukiaUI[errenkada][zutabe];
 		this.removeAll();
 									  
 									  //(errenkadaKopurua, zutabeKopurua) -- GridLayout 
-		GridLayout grid = new GridLayout(this.errenkada+2, this.zutabe+2, 0, 0);
+		GridLayout grid = new GridLayout(errenkada+2, zutabe+2, 0, 0);
 		this.setLayout(grid);
 		
 		LaukiFactory factory = LaukiFactory.getNireFactory();
 		this.add(factory.createKanpoLaukia(0));
-		for(int zut = 0; zut < this.zutabe; zut++) {
+		for(int zut = 0; zut < zutabe; zut++) {
 			this.add(factory.createKanpoLaukia(1));
 		}
 		this.add(factory.createKanpoLaukia(2));
-		for(int erren = 0; erren < this.errenkada; erren++) {
+		for(int erren = 0; erren < errenkada; erren++) {
 			this.add(factory.createKanpoLaukia(3));
-			for(int zut = 0; zut < this.zutabe; zut++) {
+			for(int zut = 0; zut < zutabe; zut++) {
 				this.laukia[erren][zut] = factory.createLaukiUI(erren, zut);
 				this.add(this.laukia[erren][zut]);
 			}
 			this.add(factory.createKanpoLaukia(5));
 		}	
 		this.add(factory.createKanpoLaukia(6));
-		for(int zut = 0; zut < this.zutabe; zut++) {
+		for(int zut = 0; zut < zutabe; zut++) {
 			this.add(factory.createKanpoLaukia(7));
 		}
 		this.add(factory.createKanpoLaukia(8));

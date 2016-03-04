@@ -8,7 +8,7 @@ import org.pokesweeper.view.TableroaUI;
 public class ZenbLaukia extends BarruLaukia{
 	
 	//Atributoak
-	private int ingurukoMinaKop;
+	private final int ingurukoMinaKop;
 	
 	//Eraikitzailea
 	public ZenbLaukia(int pErrenkada, int pZutabea, int pIkonoZenb, int pIngurukoMinaKop){

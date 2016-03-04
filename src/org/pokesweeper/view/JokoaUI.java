@@ -15,9 +15,9 @@ import org.pokesweeper.model.Tableroa;
 public class JokoaUI extends JFrame implements ActionListener{
 	
 	//Atributoak
-	public static JokoaUI nirejokoa;
+	private static JokoaUI nirejokoa;
 	private static final long serialVersionUID = 1L;
-	private JPanel goikoPanela, behekoPanela;
+	private JPanel behekoPanela;
 	public static boolean galdu = false;
 
 	//Eraikitzailea
@@ -34,7 +34,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		this.setJMenuBar(new MenuaUI());
 		
-		goikoPanela = new JPanel();
+		JPanel goikoPanela = new JPanel();
 		goikoPanela.setBackground(new Color(112, 200, 160));
 		goikoPanela.setLayout(new BorderLayout(0, 0));
 		getContentPane().add(goikoPanela, BorderLayout.NORTH);

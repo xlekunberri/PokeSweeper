@@ -8,10 +8,10 @@ import org.pokesweeper.view.TableroaUI;
 public class BarruLaukia{
 	
 	//Atributoak
-	protected int errenkada;
-	protected int zutabea;
-	protected int egoera;
-	protected int ikonoZenb;
+	int errenkada;
+	int zutabea;
+	int egoera;
+	int ikonoZenb;
 	
 	//Beste metodoak
 	public void mouseClicked() {

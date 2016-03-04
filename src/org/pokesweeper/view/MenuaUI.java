@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import org.pokesweeper.model.Helbideak;
-import org.pokesweeper.model.Tableroa;
 
 public class MenuaUI extends JMenuBar implements ActionListener{
 	

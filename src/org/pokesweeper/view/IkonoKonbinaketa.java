@@ -7,8 +7,8 @@ import javax.swing.Icon;
 
 public class IkonoKonbinaketa implements Icon{
 	
-	private Icon atzekoa;
-	private Icon aurrekoa;
+	private final Icon atzekoa;
+	private final Icon aurrekoa;
 	
 	public IkonoKonbinaketa(Icon pAtzekoa, Icon pAurrekoa) {
 		this.atzekoa = pAtzekoa;
