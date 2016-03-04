@@ -33,7 +33,7 @@ public class Helbideak {
 	public static Icon[] belar_mugimendu = new Icon[9];
 	public static Icon[] zenbaki = new Icon[8];
 	
-	public static Icon[] bichilloak = new Icon[19];
+	public static Icon[] bichilloak = new Icon[41];
 	
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();
@@ -49,7 +49,7 @@ public class Helbideak {
 	private static void bichilloakKargatu() {
 		try{
 			int i = 0;
-			while (i < 19){
+			while (i < 41){
 				bichilloak[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/pokemon/image"+(i+1)+".png")));
 				i++;
 			}
