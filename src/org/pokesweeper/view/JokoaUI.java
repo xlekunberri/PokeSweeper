@@ -120,7 +120,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	 */
 	public static void main(String[] args) {
 		Helbideak.denakKargatu();
-		new Splash(4000);
+		new Splash(2500);
 		JDialog.setDefaultLookAndFeelDecorated(true);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

@@ -13,6 +13,7 @@ public class Splash extends JWindow {
 	public Splash(int pIraupena){
 		this.iraupena = pIraupena;
 		JPanel panel = (JPanel) getContentPane();
+		this.setBackground(new Color(0, 0, 0, 0));
 		
 		ImageIcon img = Helbideak.splash;
 		
