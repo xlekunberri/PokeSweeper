@@ -1,27 +1,20 @@
 package org.pokesweeper.view;
 
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-
+import org.pokesweeper.model.Helbideak;
 import java.awt.*;
-import java.io.IOException;
 
 public class Splash extends JWindow {
 	
-	
-	private int iraupena = 0;
+	private static final long serialVersionUID = 1L;
+	private int iraupena;
 	
 	public Splash(int pIraupena){
 		this.iraupena = pIraupena;
-		
 		JPanel panel = (JPanel) getContentPane();
-		ImageIcon img=null;
-		try{
-		img = new ImageIcon(ImageIO.read(this.getClass().getResource("intro.png")));
-		}catch (IOException e){
-			 e.printStackTrace();
-		}
+		
+		ImageIcon img = Helbideak.splash;
 		
 		panel.add(new JLabel(img),BorderLayout.CENTER);
 		setSize(img.getIconWidth(),img.getIconHeight());

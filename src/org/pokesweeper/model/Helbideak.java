@@ -35,6 +35,8 @@ public class Helbideak {
 	
 	public static Icon[] bichilloak = new Icon[41];
 	
+	public static ImageIcon splash;
+	
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();
 		Helbideak.lurraBelarraKargatu();
@@ -44,20 +46,6 @@ public class Helbideak {
 		Helbideak.bichilloakKargatu();
 	}
 	
-
-
-	private static void bichilloakKargatu() {
-		try{
-			int i = 0;
-			while (i < 41){
-				bichilloak[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/pokemon/image"+(i+1)+".png")));
-				i++;
-			}
-		} catch (IOException e) {}
-	}
-
-
-
 	private static void besteakKargatu(){
 		try{
 			iturria = (Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/normala.ttf"))).deriveFont(12F);
@@ -66,6 +54,7 @@ public class Helbideak {
 			kursorea = Toolkit.getDefaultToolkit().createCustomCursor(Toolkit.getDefaultToolkit().getImage("src/skin/kursorea.png") , new Point(3, 30), "img");
 			voltorb = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/voltorb/voltorb.png")));
 			voltorb_s = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/voltorb/voltorb_s.png")));
+			splash = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/splash.png")));
 		}catch (IOException | FontFormatException e){
 			 e.printStackTrace();
 		}
@@ -100,6 +89,16 @@ public class Helbideak {
 		try{
 			for(int i = 0; i < zenbaki.length; i++)
 				zenbaki[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakiak/"+(i+1)+".png")));
+		} catch (IOException e) {}
+	}
+	
+	private static void bichilloakKargatu() {
+		try{
+			int i = 0;
+			while (i < 41){
+				bichilloak[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/bichilloak/image"+(i+1)+".png")));
+				i++;
+			}
 		} catch (IOException e) {}
 	}
 }

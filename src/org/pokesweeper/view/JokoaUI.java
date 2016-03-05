@@ -29,7 +29,6 @@ public class JokoaUI extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setTitle("PokéSweeper");
-		Helbideak.denakKargatu();
 		this.setIconImage(Helbideak.ikonoa);
 		this.setCursor(Helbideak.kursorea);
 		UIManager.put("Menu.font", Helbideak.iturria);
@@ -120,6 +119,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Helbideak.denakKargatu();
 		new Splash(4000);
 		JDialog.setDefaultLookAndFeelDecorated(true);
 		EventQueue.invokeLater(new Runnable() {
