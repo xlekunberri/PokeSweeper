@@ -1,14 +1,18 @@
 package org.pokesweeper.view;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Tableroa;
 
@@ -116,11 +120,13 @@ public class JokoaUI extends JFrame implements ActionListener{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		new Splash(4000);
 		JDialog.setDefaultLookAndFeelDecorated(true);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					JokoaUI frame = JokoaUI.getNireJokoa();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
