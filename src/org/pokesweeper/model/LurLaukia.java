@@ -10,7 +10,7 @@ public class LurLaukia extends BarruLaukia{
 	public LurLaukia(int pErrenkada, int pZutabea, int pIkonoZenb){
 		this.errenkada = pErrenkada;
 		this.zutabea = pZutabea;
-		this.egoera = 0;
+		this.egoera = 0; // 0 = Zabaldu gabe; 1 = Bandera; 2 = Galdera ikurra; 3 = Zabalik; 4 = MinaBistaratu pasatuta
 		this.ikonoZenb = pIkonoZenb;
 	}
 	
@@ -37,10 +37,10 @@ public class LurLaukia extends BarruLaukia{
 	}
 	
 	public void minakBistaratu(){
-		this.egoera = 3;
+		this.egoera = 4;
 		for (int x = this.errenkada - 1; x <= this.errenkada + 1; x++){
 			for(int y = this.zutabea - 1; y <= this.zutabea + 1; y++ ){
-				if (koordenadaEgokiak(x,y) && tableroLogicoa.laukia[x][y].egoera != 3){
+				if (koordenadaEgokiak(x,y) && tableroLogicoa.laukia[x][y].egoera != 4){
 					tableroLogicoa.laukia[x][y].minakBistaratu();
 				}
 			}
