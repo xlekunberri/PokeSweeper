@@ -1,13 +1,14 @@
 package org.pokesweeper.view;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-
 import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.Tableroa;
 
-public class PikaUI extends JButton implements ActionListener{
+public class PikaUI extends JButton{
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
@@ -18,6 +19,13 @@ public class PikaUI extends JButton implements ActionListener{
 		this.setIcon(Helbideak.pikaNormal);
 		this.setBorder(BorderFactory.createEmptyBorder());
 		this.setContentAreaFilled(false);
+		this.addMouseListener(new MouseAdapter(){
+		    public void mouseClicked(MouseEvent e) {
+		    	Tableroa tableroa = Tableroa.getNireTableroa();
+		    	JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop());
+		    	PikaUI.getNirePika().setPikaEgoera("normal");
+		    }
+		});
 	}
 	
 	public static PikaUI getNirePika() {
@@ -46,8 +54,4 @@ public class PikaUI extends JButton implements ActionListener{
 		this.repaint();
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		
-	}
 }

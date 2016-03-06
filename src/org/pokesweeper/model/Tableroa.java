@@ -6,8 +6,9 @@ public class Tableroa {
 	private static int tableroZenb = 0;
 	private static Tableroa nireTableroa;
 	public BarruLaukia laukia[][];
-	private int errenkada;
-	private int zutabe;
+	private int errenkadaKop;
+	private int zutabeKop;
+	private int minaKop;
 	
 	//Eraikitzailea
 	private Tableroa(){}
@@ -20,21 +21,15 @@ public class Tableroa {
 	}
 	
 	//Beste Metodoak	
-	/*public void setTamaina(int pErrenkada, int pZutabe, int pMinaKop) {
-		this.errenkada = pErrenkada;
-		this.zutabe = pZutabe;
-		this.minaKop = pMinaKop;
-		this.laukia = new BarruLaukia[this.errenkada][this.zutabe];
-	}*/
-	
 	public void tableroaEraiki(int pErrenkada, int pZutabe, int pMinaKop){
-		this.errenkada = pErrenkada;
-		this.zutabe = pZutabe;
-		this.laukia = new BarruLaukia[this.errenkada][this.zutabe];
+		this.errenkadaKop = pErrenkada;
+		this.zutabeKop = pZutabe;
+		this.minaKop = pMinaKop;
+		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];
 		LaukiFactory factory = LaukiFactory.getNireFactory();
-		factory.setTamaina(this.errenkada, this.zutabe, pMinaKop);
-		for(int erren = 0; erren < this.errenkada; erren++) {
-			for(int zut = 0; zut < this.zutabe; zut++) {
+		factory.setTamaina(this.errenkadaKop, this.zutabeKop, this.minaKop);
+		for(int erren = 0; erren < this.errenkadaKop; erren++) {
+			for(int zut = 0; zut < this.zutabeKop; zut++) {
 				this.laukia[erren][zut] = factory.createLaukiLogikoa(erren, zut);
 			}
 		}
@@ -44,11 +39,15 @@ public class Tableroa {
 	}
 	
 	public int getErrenkadaKop(){
-		return this.errenkada;
+		return this.errenkadaKop;
 	}
 	
 	public int getZutabeKop(){
-		return this.zutabe;
+		return this.zutabeKop;
+	}
+	
+	public int getMinaKop(){
+		return this.minaKop;
 	}
 
 	public boolean lehenengoTxanda() {
