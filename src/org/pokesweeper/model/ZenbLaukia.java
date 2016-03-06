@@ -30,4 +30,16 @@ public class ZenbLaukia extends BarruLaukia{
 			//TODO: RECALCULAR LAS BELARRAK!
 		}
 	}
+	
+	public void minakBistaratu(){
+		this.egoera = 3;
+		for (int x = this.errenkada - 1; x <= this.errenkada + 1; x++){
+			for(int y = this.zutabea - 1; y <= this.zutabea + 1; y++ ){
+				if (koordenadaEgokiak(x,y) && tableroLogicoa.laukia[x][y].egoera != 3){
+					tableroLogicoa.laukia[x][y].minakBistaratu();
+				}
+			}
+		}		
+	}	
+
 }

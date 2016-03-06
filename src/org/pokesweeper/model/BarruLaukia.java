@@ -12,6 +12,8 @@ public class BarruLaukia{
 	int zutabea;
 	int egoera;
 	int ikonoZenb;
+	final Tableroa tableroLogicoa = Tableroa.getNireTableroa();
+
 	
 	//Beste metodoak
 	public void mouseClicked() {
@@ -46,5 +48,12 @@ public class BarruLaukia{
     		PikaUI.getNirePika().setPikaEgoera("normal");
     	}
 	}
-
+	
+	protected boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
+		return !(pErrenkada< 0 || pErrenkada >= tableroLogicoa.getErrenkadaKop() || pZutabe < 0 || pZutabe >= tableroLogicoa.getZutabeKop());
+	}
+	
+	public void minakBistaratu(){
+		
+	}
 }
