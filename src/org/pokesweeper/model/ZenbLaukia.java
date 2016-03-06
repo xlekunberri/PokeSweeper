@@ -27,7 +27,7 @@ public class ZenbLaukia extends BarruLaukia{
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.lurra[4],Helbideak.zenbaki[this.ingurukoMinaKop-1]));
 			laukiHonenUI.repaint();
-			//TODO: RECALCULAR LAS BELARRAK!
+			Tableroa.getNireTableroa().laukiakBerrekalkulatu(this.errenkada, this.zutabea);
 		}
 	}
 	

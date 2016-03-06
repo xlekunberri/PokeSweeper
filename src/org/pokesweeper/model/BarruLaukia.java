@@ -13,12 +13,14 @@ public class BarruLaukia{
 	int egoera;
 	int ikonoZenb;
 	final Tableroa tableroLogicoa = Tableroa.getNireTableroa();
+	
+	public int getEgoera() {
+		return this.egoera;
+	}
 
 	
 	//Beste metodoak
-	public void mouseClicked() {
-
-	}
+	public void mouseClicked() {}
 	
 	public void mouseEntered() {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];

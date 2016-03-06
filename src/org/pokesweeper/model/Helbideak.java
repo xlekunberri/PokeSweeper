@@ -29,7 +29,7 @@ public class Helbideak {
 	public static Icon voltorb_s;
 	
 	public static Icon[] lurra = new Icon[9];
-	public static Icon[] belar_normal = new Icon[9];
+	public static Icon[] belar_normal = new Icon[16];
 	public static Icon[] belar_mugimendu = new Icon[9];
 	public static Icon[] zenbaki = new Icon[8];
 	
@@ -39,7 +39,8 @@ public class Helbideak {
 	
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();
-		Helbideak.lurraBelarraKargatu();
+		Helbideak.lurraKargatu();
+		Helbideak.belarraKargatu();
 		Helbideak.mugimenduaKargatu();
 		Helbideak.pikaKargatu();
 		Helbideak.zenbakiakKargatu();
@@ -69,14 +70,21 @@ public class Helbideak {
 		} catch (IOException e) {}
 	}
 		
-	private static void lurraBelarraKargatu(){
+	private static void lurraKargatu(){
 		try{
 			for(int i = 0; i < lurra.length; i++) {
 				lurra[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/"+(i+1)+".png")));
-				belar_normal[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/"+(i+1)+".png")));
 			}
 		} catch (IOException e) {}
 		
+	}
+	
+	private static void belarraKargatu() {
+		try{
+			for(int i = 0; i < belar_normal.length; i++) {
+				belar_normal[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/"+(i+1)+".png")));
+			}
+		} catch (IOException e) {}
 	}
 	
 	private static void mugimenduaKargatu(){

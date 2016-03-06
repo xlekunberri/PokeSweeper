@@ -1,29 +1,33 @@
 package org.pokesweeper.view;
 
-import org.pokesweeper.model.LaukiFactory;
-import org.pokesweeper.model.Tableroa;
 import java.awt.Color;
 import java.awt.GridLayout;
+
 import javax.swing.JPanel;
+
+import org.pokesweeper.model.BarruLaukia;
+import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.LaukiFactory;
+import org.pokesweeper.model.Tableroa;
 
 public class TableroaUI extends JPanel{
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
 	public LaukiaUI laukia[][];
-	private static TableroaUI helbidea;
+	private static TableroaUI nireTableroUI;
 	private final Tableroa tableroLogikoa = Tableroa.getNireTableroa();
 
 	//Eraikitzailea
-	public static TableroaUI getNireTableroaUI(){
-		if (helbidea == null){
-			helbidea = new TableroaUI();
-		}
-		return helbidea;
-	}
-
 	private TableroaUI() {
 		this.setBackground(new Color(160, 224, 192));	
+	}
+	
+	public static TableroaUI getNireTableroaUI(){
+		if (nireTableroUI == null){
+			nireTableroUI = new TableroaUI();
+		}
+		return nireTableroUI;
 	}
 	
 	//Beste metodoak
@@ -56,6 +60,14 @@ public class TableroaUI extends JPanel{
 			this.add(factory.createKanpoLaukia(7));
 		}
 		this.add(factory.createKanpoLaukia(8));
+	}
+	
+	public void belarraAldatu(int pErren, int pZut, int pZenbaki) {
+		System.out.println("Errenakada: "+pErren);
+		System.out.println("Zutabea: "+pZut);
+		System.out.println("Zenbakia: "+pZenbaki);
+		this.laukia[pErren][pZut].setIcon(Helbideak.belar_normal[pZenbaki]);
+		this.laukia[pErren][pZut].repaint();
 	}
 
 }
