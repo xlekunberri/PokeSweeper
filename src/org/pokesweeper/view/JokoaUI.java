@@ -6,8 +6,6 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -46,7 +44,6 @@ public class JokoaUI extends JFrame implements ActionListener{
 		goikoPanelaGoian.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(goikoPanelaGoian, BorderLayout.NORTH);
 		
-		PikaUI.getNirePika().addActionListener(this);
 		goikoPanela.add(PikaUI.getNirePika(), BorderLayout.CENTER);
 		
 		behekoPanela = new JPanel();
@@ -71,10 +68,10 @@ public class JokoaUI extends JFrame implements ActionListener{
 		return nirejokoa;
 	}
 	
-	public void erreseteatu(int pZerrenda, int pZutabe, int pMinaKop) {
+	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop) {
 		this.behekoPanela.remove(TableroaUI.getNireTableroaUI());
 
-		Tableroa.getNireTableroa().tableroaEraiki(pZerrenda, pZutabe, pMinaKop);
+		Tableroa.getNireTableroa().tableroaEraiki(pErrenkada, pZutabe, pMinaKop);
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		
 		JokoaUI.galdu = false;
