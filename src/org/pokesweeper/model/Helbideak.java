@@ -32,6 +32,7 @@ public class Helbideak {
 	public static Icon[] belar_normal = new Icon[16];
 	public static Icon[] belar_mugimendu = new Icon[9];
 	public static Icon[] zenbaki = new Icon[8];
+	public static Icon[] kontadorea = new Icon[12];
 	
 	public static Icon[] bichilloak = new Icon[41];
 	
@@ -48,6 +49,7 @@ public class Helbideak {
 		Helbideak.pikaKargatu();
 		Helbideak.zenbakiakKargatu();
 		Helbideak.bichilloakKargatu();
+		Helbideak.kontadoreaKargatu();
 	}
 	
 	private static void besteakKargatu(){
@@ -112,6 +114,13 @@ public class Helbideak {
 				bichilloak[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/bichilloak/image"+(i+1)+".png")));
 				i++;
 			}
+		} catch (IOException e) {}
+	}
+	
+	private static void kontadoreaKargatu() {
+		try{
+			for(int i = 0; i < kontadorea.length; i++)
+				kontadorea[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/kontadorea/"+i+".png")));
 		} catch (IOException e) {}
 	}
 }

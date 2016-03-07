@@ -2,13 +2,22 @@ package org.pokesweeper.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+<<<<<<< HEAD
+
+=======
+>>>>>>> a5c20107934dbcdc4ca1e7c147d81a671e8bfa48
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Tableroa;
 
@@ -18,6 +27,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private static JokoaUI nirejokoa;
 	private static final long serialVersionUID = 1L;
 	private static JPanel behekoPanela;
+	private static JLabel denbora, minaKop;
 	public static boolean bukatuta = false;
 
 	//Eraikitzailea
@@ -33,16 +43,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		this.setJMenuBar(new MenuaUI());
 		
-		JPanel goikoPanela = new JPanel();
-		goikoPanela.setBackground(new Color(112, 200, 160));
-		goikoPanela.setLayout(new BorderLayout(0, 0));
-		getContentPane().add(goikoPanela, BorderLayout.NORTH);
-		
-		JPanel goikoPanelaGoian = new JPanel();
-		goikoPanelaGoian.setBackground(new Color(112, 200, 160));
-		goikoPanela.add(goikoPanelaGoian, BorderLayout.NORTH);
-		
-		goikoPanela.add(PikaUI.getNirePika(), BorderLayout.CENTER);
+		goikoPanelaEraiki();
 		
 		behekoPanela = new JPanel();
 		behekoPanela.setBackground(new Color(112, 200, 160));
@@ -103,6 +104,27 @@ public class JokoaUI extends JFrame implements ActionListener{
 		panelHegoal.setBackground(new Color(112, 200, 160));
 		behekoPanela.add(panelHegoal, BorderLayout.SOUTH);
 		
+	}
+	
+	private void goikoPanelaEraiki() {
+		JPanel goikoPanela = new JPanel();
+		goikoPanela.setBackground(new Color(112, 200, 160));
+		goikoPanela.setLayout(new FlowLayout());
+		getContentPane().add(goikoPanela, BorderLayout.NORTH);
+		
+		JPanel goikoPanelaGoian = new JPanel();
+		goikoPanelaGoian.setBackground(new Color(112, 200, 160));
+		goikoPanela.add(goikoPanelaGoian, BorderLayout.NORTH);
+		
+		goikoPanela.add(new Kontadorea());
+		JPanel goian = new JPanel();
+		goian.setBackground(new Color(112, 200, 160));
+		goikoPanela.add(goian);
+		goikoPanela.add(PikaUI.getNirePika());
+		JPanel behean = new JPanel();
+		behean.setBackground(new Color(112, 200, 160));
+		goikoPanela.add(behean);
+		goikoPanela.add(new Kontadorea());
 	}
 	
 	public static void galdu(){
