@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Box;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -74,13 +73,17 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 	            
 	        if (e.getSource()==maila1) {
+<<<<<<< HEAD
 	        	JokoaUI.getNireJokoa().erreseteatu(7, 10, 7);
+=======
+	        	JokoaUI.getNireJokoa().erreseteatu(7, 10, 1, false);
+>>>>>>> a5c20107934dbcdc4ca1e7c147d81a671e8bfa48
 	        }
 		 	else if (e.getSource()==maila2) {
-		 		JokoaUI.getNireJokoa().erreseteatu(10,15,20);
+		 		JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
 	        }       
 		 	else if (e.getSource()==maila3) {
-		 		JokoaUI.getNireJokoa().erreseteatu(12,25,36); 
+		 		JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false); 
 	        }       
 		 	else if (e.getSource()==irten) {
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");

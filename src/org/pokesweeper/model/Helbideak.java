@@ -90,9 +90,9 @@ public class Helbideak {
 	}
 	
 	private static void mugimenduaKargatu(){
-		try{
-			belar_mugimendu[4] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/mugimendua/5/5.gif")));
-		} catch (IOException e) {}
+		for(int i = 0; i < belar_mugimendu.length; i++) {
+			belar_mugimendu[i] = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/belarra/mugimendua/5.gif")));
+		}
 	}
 	
 	private static void zenbakiakKargatu(){

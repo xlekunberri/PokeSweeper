@@ -50,14 +50,19 @@ public class LaukiFactory {
 		return laukia;
 	}
 	
-	public BarruLaukia createLaukiLogikoa(int pErrenkada, int pZutabe){
+	public BarruLaukia createLaukiLogikoa(int pErrenkada, int pZutabe, boolean pBichilloak){
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
 		BarruLaukia laukia;
 		int ikonoZenb = barrukoZenbLortu();
 		int egungoa = this.minak[pErrenkada][pZutabe];
 		if(egungoa == 0){
-			laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
+			if(pBichilloak){
+				laukia = new BichilloLaukia(pErrenkada, pZutabe, barrukoZenbLortu());
+			} 
+			else{
+				laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
+			}
 		} else if (egungoa == -1){
 			laukia = new MinaLaukia(this.errenkada, this.zutabe, ikonoZenb);
 		} else {
@@ -77,13 +82,6 @@ public class LaukiFactory {
 		this.minaKop = pMinaKop;
 		this.minak = new int[this.errenkadaKop][this.zutabeKop];
 		this.minakJarri();
-	}
-	
-	public BarruLaukia createBichilloLaukia(int pErrenkada, int pZutabe){
-		this.errenkada = pErrenkada;
-		this.zutabe = pZutabe;
-		BarruLaukia lauki = new BichilloLaukia(pErrenkada, pZutabe, barrukoZenbLortu());
-		return lauki;
 	}
 	
 	private void minakJarri(){

@@ -21,7 +21,7 @@ public class Tableroa {
 	}
 	
 	//Beste Metodoak	
-	public void tableroaEraiki(int pErrenkada, int pZutabe, int pMinaKop){
+	public void tableroaEraiki(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak){
 		this.errenkadaKop = pErrenkada;
 		this.zutabeKop = pZutabe;
 		this.minaKop = pMinaKop;
@@ -31,21 +31,7 @@ public class Tableroa {
 		factory.setTamaina(this.errenkadaKop, this.zutabeKop, this.minaKop);
 		for(int erren = 0; erren < this.errenkadaKop; erren++) {
 			for(int zut = 0; zut < this.zutabeKop; zut++) {
-				this.laukia[erren][zut] = factory.createLaukiLogikoa(erren, zut);
-			}
-		}
-	}
-	
-	public void bichilloTableroEraiki(int pErrenkada, int pZutabe){
-		this.errenkadaKop = pErrenkada;
-		this.zutabeKop = pZutabe;
-		this.laukiFalta = this.errenkadaKop * this.zutabeKop;
-		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];
-		LaukiFactory factory = LaukiFactory.getNireFactory();
-		factory.setTamaina(this.errenkadaKop, this.zutabeKop, this.minaKop);
-		for(int erren = 0; erren < this.errenkadaKop; erren++) {
-			for(int zut = 0; zut < this.zutabeKop; zut++) {
-				this.laukia[erren][zut] = factory.createBichilloLaukia(erren, zut);
+				this.laukia[erren][zut] = factory.createLaukiLogikoa(erren, zut, pBichilloak);
 			}
 		}
 	}
