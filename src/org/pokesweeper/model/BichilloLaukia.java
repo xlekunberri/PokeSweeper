@@ -1,4 +1,6 @@
 package org.pokesweeper.model;
+import java.awt.event.MouseEvent;
+
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
 
@@ -13,8 +15,9 @@ public class BichilloLaukia extends BarruLaukia {
 	}
 	
 	//Beste metodoak
-	public void mouseClicked(){
-		if(this.egoera != 3){
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if(this.egoera != 3 && e.getButton() == MouseEvent.BUTTON1){
 			this.egoera = 3;
 			LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 			laukiHonenUI.setRolloverIcon(null);
@@ -22,6 +25,16 @@ public class BichilloLaukia extends BarruLaukia {
 			laukiHonenUI.setIcon(Helbideak.bichilloak[p]);
 			laukiHonenUI.repaint();
 		}
+	}
+	
+	@Override
+	public void mousePressed(){
+		
+	}
+	
+	@Override
+	public void mouseReleased(){
+		
 	}
 
 }

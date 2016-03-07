@@ -1,5 +1,7 @@
 package org.pokesweeper.model;
 
+import java.awt.event.MouseEvent;
+
 import org.pokesweeper.view.JokoaUI;
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.PikaUI;
@@ -20,11 +22,39 @@ public class BarruLaukia{
 
 	
 	//Beste metodoak
-	public void mouseClicked() {}
+	public void mouseClicked(MouseEvent e) {
+		if(e.getButton() == MouseEvent.BUTTON1){
+	    	this.ezkerrekoBotoia();
+    	} 
+    	else if(e.getButton() == MouseEvent.BUTTON3){
+    		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
+    		if(this.egoera != 3 && !JokoaUI.bukatuta) {
+    			if(this.egoera == 0){
+    				this.egoera = 1;
+    				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.bandera));
+    				laukiHonenUI.setRolloverIcon(null);
+    			}
+    			else if(this.egoera == 1){
+    				this.egoera = 2;
+    				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
+    				laukiHonenUI.setRolloverIcon(null);
+    			}
+    			else{
+    				this.egoera = 0;
+    				laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
+    				laukiHonenUI.setRolloverIcon(null);
+    			}
+    		}
+	    }
+	}
+	
+	protected void ezkerrekoBotoia(){
+		
+	}
 	
 	public void mouseEntered() {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-       	if(this.egoera != 3 && !JokoaUI.bukatuta) {
+       	if(this.egoera == 0 && !JokoaUI.bukatuta) {
        		laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
        		laukiHonenUI.repaint();
        	}
@@ -32,7 +62,7 @@ public class BarruLaukia{
 	
 	public void mouseExited() {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-		if(this.egoera != 3 && !JokoaUI.bukatuta) {
+		if(this.egoera == 0 && !JokoaUI.bukatuta) {
 			laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
     		laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.repaint();
@@ -40,13 +70,13 @@ public class BarruLaukia{
 	}
 	
 	public void mousePressed() {
-    	if(this.egoera != 3 && !JokoaUI.bukatuta) {
+    	if(this.egoera == 0 && !JokoaUI.bukatuta) {
     		PikaUI.getNirePika().setPikaEgoera("klik");
     	}
 	}
 	
 	public void mouseReleased() {
-    	if(this.egoera != 3 && !JokoaUI.bukatuta) {
+    	if(this.egoera == 0 && !JokoaUI.bukatuta) {
     		PikaUI.getNirePika().setPikaEgoera("normal");
     	}
 	}
