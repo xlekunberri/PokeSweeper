@@ -1,4 +1,4 @@
-package org.pokesweeper.view;
+package org.pokesweeper.model;
 
 import java.awt.Component;
 import java.awt.Graphics;

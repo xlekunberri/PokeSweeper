@@ -26,7 +26,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private JokoaUI(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.setTitle("PokÈSweeper");
+		this.setTitle("Pok√©Sweeper");
 		this.setIconImage(Helbideak.ikonoa);
 		this.setCursor(Helbideak.kursorea);
 		UIManager.put("Menu.font", Helbideak.iturria);

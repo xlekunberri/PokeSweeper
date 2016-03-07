@@ -1,6 +1,5 @@
 package org.pokesweeper.model;
 
-import org.pokesweeper.view.IkonoKonbinaketa;
 import org.pokesweeper.view.JokoaUI;
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
