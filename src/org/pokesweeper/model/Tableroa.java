@@ -40,6 +40,25 @@ public class Tableroa {
 		}
 	}
 	
+	public void bichilloTableroEraiki(int pErrenkada, int pZutabe){
+		this.errenkadaKop = pErrenkada;
+		this.zutabeKop = pZutabe;
+		this.laukiFalta = this.errenkadaKop * this.zutabeKop;
+		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];
+		LaukiFactory factory = LaukiFactory.getNireFactory();
+		factory.setTamaina(this.errenkadaKop, this.zutabeKop, this.minaKop);
+		for(int erren = 0; erren < this.errenkadaKop; erren++) {
+			for(int zut = 0; zut < this.zutabeKop; zut++) {
+				this.laukia[erren][zut] = factory.sortuBichilloLaukia(erren, zut);
+			}
+		}
+		/*
+		if (tableroZenb == 0){
+			tableroZenb = 1;
+		}
+		*/
+	}
+	
 	public int getErrenkadaKop(){
 		return this.errenkadaKop;
 	}

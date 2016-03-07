@@ -15,13 +15,11 @@ public class BichilloLaukia extends BarruLaukia {
 	//Beste metodoak
 	public void mouseClicked(){
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-		if (this.egoera != 3){
-			this.egoera = 3;
-			laukiHonenUI.setRolloverIcon(null);
-			int p = (int)(Math.random() * Helbideak.bichilloak.length);
-			laukiHonenUI.setIcon(Helbideak.bichilloak[p]);
-			laukiHonenUI.repaint();
-		}
+		laukiHonenUI.setRolloverIcon(null);
+		int p = (int)(Math.random() * Helbideak.bichilloak.length);
+		laukiHonenUI.setIcon(Helbideak.bichilloak[p]);
+		laukiHonenUI.repaint();
+	
 	}
 
 }

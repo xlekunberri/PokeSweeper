@@ -23,7 +23,7 @@ public class MinaLaukia extends BarruLaukia{
 			laukiHonenUI.setIcon(Helbideak.voltorb);
 			laukiHonenUI.repaint();
 			this.minakBistaratu();
-			JokoaUI.bukatuta();
+			JokoaUI.galdu();
 		}
 	}
 

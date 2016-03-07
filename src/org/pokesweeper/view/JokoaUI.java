@@ -11,7 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import org.pokesweeper.model.BichilloLaukia;
 import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.LaukiFactory;
 import org.pokesweeper.model.Tableroa;
 
 public class JokoaUI extends JFrame implements ActionListener{
@@ -19,7 +21,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	//Atributoak
 	private static JokoaUI nirejokoa;
 	private static final long serialVersionUID = 1L;
-	private JPanel behekoPanela;
+	private static JPanel behekoPanela;
 	public static boolean bukatuta = false;
 
 	//Eraikitzailea
@@ -69,14 +71,25 @@ public class JokoaUI extends JFrame implements ActionListener{
 	}
 	
 	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop) {
-		this.behekoPanela.remove(TableroaUI.getNireTableroaUI());
+		JokoaUI.behekoPanela.remove(TableroaUI.getNireTableroaUI());
 
 		Tableroa.getNireTableroa().tableroaEraiki(pErrenkada, pZutabe, pMinaKop);
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		
 		JokoaUI.bukatuta = false;
 		
-		this.behekoPanela.add(TableroaUI.getNireTableroaUI());
+		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
+		this.pack();
+	}
+	
+	public void bichilloakJarri(int pErrenkada, int pZutabe){
+		JokoaUI.behekoPanela.remove(TableroaUI.getNireTableroaUI());
+
+		Tableroa.getNireTableroa().bichilloTableroEraiki(pErrenkada, pZutabe);
+		TableroaUI.getNireTableroaUI().tableroaEraiki();
+		
+		
+		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
 		this.pack();
 	}
 	
@@ -101,7 +114,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 	}
 	
-	public static void bukatuta(){
+	public static void galdu(){
 		JokoaUI.bukatuta = true;
 		PikaUI.getNirePika().setPikaEgoera("galdu");
 	}
@@ -109,6 +122,12 @@ public class JokoaUI extends JFrame implements ActionListener{
 	public static void irabazi(){
 		JokoaUI.bukatuta = true;
 		PikaUI.getNirePika().setPikaEgoera("irabazi");
+		
+		int errenkada = Tableroa.getNireTableroa().getErrenkadaKop();
+		int zutabe = Tableroa.getNireTableroa().getZutabeKop();
+		
+		JokoaUI.getNireJokoa().bichilloakJarri(errenkada, zutabe);
+		
 	}
 	
 	@Override
