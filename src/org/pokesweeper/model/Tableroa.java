@@ -60,7 +60,7 @@ public class Tableroa {
 	}
 	
 	private boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
-		return !(pErrenkada < 0 || pErrenkada >= this.errenkada || pZutabe < 0 || pZutabe >= this.zutabe);
+		return !(pErrenkada < 0 || pErrenkada >= this.errenkadaKop || pZutabe < 0 || pZutabe >= this.zutabeKop);
 	}
 	
 	public void laukiakBerrekalkulatu(int pErren, int pZut) {
