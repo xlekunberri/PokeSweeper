@@ -20,6 +20,7 @@ public class Splash extends JWindow {
 		panel.add(new JLabel(img),BorderLayout.CENTER);
 		setSize(img.getIconWidth(),img.getIconHeight());
 		setLocationRelativeTo(null);
+		setAlwaysOnTop(true);
 		setVisible(true);
 		
 		try{
