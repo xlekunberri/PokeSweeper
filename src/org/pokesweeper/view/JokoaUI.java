@@ -55,7 +55,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		panelakEraiki();
 		
-		Tableroa.getNireTableroa().tableroaEraiki(8, 8, 0);
+		Tableroa.getNireTableroa().tableroaEraiki(7, 10, 7);
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		behekoPanela.add(TableroaUI.getNireTableroaUI());
 		
@@ -72,7 +72,6 @@ public class JokoaUI extends JFrame implements ActionListener{
 	
 	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop) {
 		JokoaUI.behekoPanela.remove(TableroaUI.getNireTableroaUI());
-
 		Tableroa.getNireTableroa().tableroaEraiki(pErrenkada, pZutabe, pMinaKop);
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		
@@ -88,6 +87,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		Tableroa.getNireTableroa().bichilloTableroEraiki(pErrenkada, pZutabe);
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		
+		JokoaUI.bukatuta = false;
 		
 		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
 		this.pack();
@@ -121,13 +121,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	
 	public static void irabazi(){
 		JokoaUI.bukatuta = true;
-		PikaUI.getNirePika().setPikaEgoera("irabazi");
-		
-		int errenkada = Tableroa.getNireTableroa().getErrenkadaKop();
-		int zutabe = Tableroa.getNireTableroa().getZutabeKop();
-		
-		JokoaUI.getNireJokoa().bichilloakJarri(errenkada, zutabe);
-		
+		PikaUI.getNirePika().setPikaEgoera("irabazi");		
 	}
 	
 	@Override

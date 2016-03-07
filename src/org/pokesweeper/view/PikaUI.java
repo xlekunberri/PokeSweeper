@@ -22,7 +22,12 @@ public class PikaUI extends JButton{
 		this.addMouseListener(new MouseAdapter(){
 		    public void mouseClicked(MouseEvent e) {
 		    	Tableroa tableroa = Tableroa.getNireTableroa();
-		    	JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop());
+		    	if(e.getButton() == MouseEvent.BUTTON1){
+			    	JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop());
+		    	} 
+		    	else if(e.getButton() == MouseEvent.BUTTON3){
+					JokoaUI.getNireJokoa().bichilloakJarri(tableroa.getErrenkadaKop(), tableroa.getZutabeKop());
+			    }
 		    	PikaUI.getNirePika().setPikaEgoera("normal");
 		    }
 		});

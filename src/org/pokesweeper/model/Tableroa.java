@@ -3,7 +3,6 @@ package org.pokesweeper.model;
 public class Tableroa {
 	
 	//Atributoak
-	private static int tableroZenb = 0;
 	private static Tableroa nireTableroa;
 	public BarruLaukia laukia[][];
 	private int errenkadaKop;
@@ -35,9 +34,6 @@ public class Tableroa {
 				this.laukia[erren][zut] = factory.createLaukiLogikoa(erren, zut);
 			}
 		}
-		if (tableroZenb == 0){
-			tableroZenb = 1;
-		}
 	}
 	
 	public void bichilloTableroEraiki(int pErrenkada, int pZutabe){
@@ -49,14 +45,9 @@ public class Tableroa {
 		factory.setTamaina(this.errenkadaKop, this.zutabeKop, this.minaKop);
 		for(int erren = 0; erren < this.errenkadaKop; erren++) {
 			for(int zut = 0; zut < this.zutabeKop; zut++) {
-				this.laukia[erren][zut] = factory.sortuBichilloLaukia(erren, zut);
+				this.laukia[erren][zut] = factory.createBichilloLaukia(erren, zut);
 			}
 		}
-		/*
-		if (tableroZenb == 0){
-			tableroZenb = 1;
-		}
-		*/
 	}
 	
 	public int getErrenkadaKop(){
@@ -69,13 +60,6 @@ public class Tableroa {
 	
 	public int getMinaKop(){
 		return this.minaKop;
-	}
-
-	public boolean lehenengoTxanda() {
-		if (tableroZenb == 0){
-			return true;
-		}
-		else{return false;}
 	}
 	
 }

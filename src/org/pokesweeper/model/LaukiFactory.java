@@ -79,8 +79,10 @@ public class LaukiFactory {
 		this.minakJarri();
 	}
 	
-	public BarruLaukia sortuBichilloLaukia(int pErrenkada, int pZutabe){
-		BichilloLaukia lauki = new BichilloLaukia(pErrenkada, pZutabe, barrukoZenbLortu());
+	public BarruLaukia createBichilloLaukia(int pErrenkada, int pZutabe){
+		this.errenkada = pErrenkada;
+		this.zutabe = pZutabe;
+		BarruLaukia lauki = new BichilloLaukia(pErrenkada, pZutabe, barrukoZenbLortu());
 		return lauki;
 	}
 	
