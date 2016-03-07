@@ -15,9 +15,9 @@ public class MinaLaukia extends BarruLaukia{
 	}
 	
 	//Beste metodoak
-	public void mouseClicked(){
+	public void ezkerrekoBotoia(){
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-		if (this.egoera != 3 && !JokoaUI.bukatuta){
+		if (this.egoera == 0 && !JokoaUI.bukatuta){
 			this.egoera = 3;
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(Helbideak.voltorb);

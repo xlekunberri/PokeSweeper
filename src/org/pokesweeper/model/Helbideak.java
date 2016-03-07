@@ -37,6 +37,9 @@ public class Helbideak {
 	
 	public static ImageIcon splash;
 	
+	public static Icon bandera;
+	public static Icon galdera;
+	
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();
 		Helbideak.lurraKargatu();
@@ -53,9 +56,11 @@ public class Helbideak {
 			unownIturria = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/unown.ttf"))).deriveFont(12F);
 			ikonoa = ImageIO.read(new File("src/skin/ikonoa.png"));
 			kursorea = Toolkit.getDefaultToolkit().createCustomCursor(Toolkit.getDefaultToolkit().getImage("src/skin/kursorea.png") , new Point(3, 30), "img");
-			voltorb = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/voltorb/voltorb.png")));
-			voltorb_s = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/voltorb/voltorb_s.png")));
+			voltorb = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/voltorb/voltorb.png")));
+			voltorb_s = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/voltorb/voltorb_s.png")));
 			splash = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/splash.png")));
+			bandera = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/bandera.png")));
+			galdera = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/galdera.png")));
 		}catch (IOException | FontFormatException e){
 			 e.printStackTrace();
 		}
@@ -73,7 +78,7 @@ public class Helbideak {
 	private static void lurraKargatu(){
 		try{
 			for(int i = 0; i < lurra.length; i++) {
-				lurra[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/lurra/"+(i+1)+".png")));
+				lurra[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/lurra/"+(i+1)+".png")));
 			}
 		} catch (IOException e) {}
 		
@@ -82,21 +87,21 @@ public class Helbideak {
 	private static void belarraKargatu() {
 		try{
 			for(int i = 0; i < belar_normal.length; i++) {
-				belar_normal[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/belarra/normala/"+(i+1)+".png")));
+				belar_normal[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/belarra/normala/"+(i+1)+".png")));
 			}
 		} catch (IOException e) {}
 	}
 	
 	private static void mugimenduaKargatu(){
 		for(int i = 0; i < belar_mugimendu.length; i++) {
-			belar_mugimendu[i] = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/belarra/mugimendua/5.gif")));
+			belar_mugimendu[i] = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/laukiak/belarra/mugimendua/5.gif")));
 		}
 	}
 	
 	private static void zenbakiakKargatu(){
 		try{
 			for(int i = 0; i < zenbaki.length; i++)
-				zenbaki[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/zenbakiak/"+(i+1)+".png")));
+				zenbaki[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/zenbakiak/"+(i+1)+".png")));
 		} catch (IOException e) {}
 	}
 	
@@ -104,7 +109,7 @@ public class Helbideak {
 		try{
 			int i = 0;
 			while (i < 41){
-				bichilloak[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/bichilloak/image"+(i+1)+".png")));
+				bichilloak[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/bichilloak/image"+(i+1)+".png")));
 				i++;
 			}
 		} catch (IOException e) {}
