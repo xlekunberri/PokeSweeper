@@ -9,6 +9,7 @@ public class Tableroa {
 	private int errenkadaKop;
 	private int zutabeKop;
 	private int minaKop;
+	public int laukiFalta;
 	
 	//Eraikitzailea
 	private Tableroa(){}
@@ -25,6 +26,7 @@ public class Tableroa {
 		this.errenkadaKop = pErrenkada;
 		this.zutabeKop = pZutabe;
 		this.minaKop = pMinaKop;
+		this.laukiFalta = this.errenkadaKop * this.zutabeKop;
 		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];
 		LaukiFactory factory = LaukiFactory.getNireFactory();
 		factory.setTamaina(this.errenkadaKop, this.zutabeKop, this.minaKop);

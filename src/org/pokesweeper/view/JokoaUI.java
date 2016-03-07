@@ -20,7 +20,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private static JokoaUI nirejokoa;
 	private static final long serialVersionUID = 1L;
 	private JPanel behekoPanela;
-	public static boolean galdu = false;
+	public static boolean bukatuta = false;
 
 	//Eraikitzailea
 	private JokoaUI(){
@@ -74,7 +74,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		Tableroa.getNireTableroa().tableroaEraiki(pErrenkada, pZutabe, pMinaKop);
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		
-		JokoaUI.galdu = false;
+		JokoaUI.bukatuta = false;
 		
 		this.behekoPanela.add(TableroaUI.getNireTableroaUI());
 		this.pack();
@@ -101,9 +101,14 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 	}
 	
-	public static void galdu(){
-		JokoaUI.galdu = true;
-		
+	public static void bukatuta(){
+		JokoaUI.bukatuta = true;
+		PikaUI.getNirePika().setPikaEgoera("galdu");
+	}
+	
+	public static void irabazi(){
+		JokoaUI.bukatuta = true;
+		PikaUI.getNirePika().setPikaEgoera("irabazi");
 	}
 	
 	@Override

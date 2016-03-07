@@ -1,6 +1,5 @@
 package org.pokesweeper.view;
 
-
 import javax.swing.*;
 import org.pokesweeper.model.Helbideak;
 import java.awt.*;

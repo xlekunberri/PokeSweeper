@@ -2,7 +2,6 @@ package org.pokesweeper.model;
 
 import org.pokesweeper.view.JokoaUI;
 import org.pokesweeper.view.LaukiaUI;
-import org.pokesweeper.view.PikaUI;
 import org.pokesweeper.view.TableroaUI;
 
 public class MinaLaukia extends BarruLaukia{
@@ -18,14 +17,13 @@ public class MinaLaukia extends BarruLaukia{
 	//Beste metodoak
 	public void mouseClicked(){
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-		if (this.egoera != 3 && !JokoaUI.galdu){
+		if (this.egoera != 3 && !JokoaUI.bukatuta){
 			this.egoera = 3;
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(Helbideak.voltorb);
 			laukiHonenUI.repaint();
-			PikaUI.getNirePika().setPikaEgoera("galdu");
 			this.minakBistaratu();
-			JokoaUI.galdu();
+			JokoaUI.bukatuta();
 		}
 	}
 

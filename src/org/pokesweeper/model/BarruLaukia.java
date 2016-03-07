@@ -24,7 +24,7 @@ public class BarruLaukia{
 	
 	public void mouseEntered() {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-       	if(this.egoera != 3 && !JokoaUI.galdu) {
+       	if(this.egoera != 3 && !JokoaUI.bukatuta) {
         	laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[4]);
        		laukiHonenUI.repaint();
        	}
@@ -32,7 +32,7 @@ public class BarruLaukia{
 	
 	public void mouseExited() {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-		if(this.egoera != 3 && !JokoaUI.galdu) {
+		if(this.egoera != 3 && !JokoaUI.bukatuta) {
 			laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
     		laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.repaint();
@@ -40,13 +40,13 @@ public class BarruLaukia{
 	}
 	
 	public void mousePressed() {
-    	if(this.egoera != 3 && !JokoaUI.galdu) {
+    	if(this.egoera != 3 && !JokoaUI.bukatuta) {
     		PikaUI.getNirePika().setPikaEgoera("klik");
     	}
 	}
 	
 	public void mouseReleased() {
-    	if(this.egoera != 3 && !JokoaUI.galdu) {
+    	if(this.egoera != 3 && !JokoaUI.bukatuta) {
     		PikaUI.getNirePika().setPikaEgoera("normal");
     	}
 	}
@@ -55,7 +55,16 @@ public class BarruLaukia{
 		return !(pErrenkada< 0 || pErrenkada >= tableroLogicoa.getErrenkadaKop() || pZutabe < 0 || pZutabe >= tableroLogicoa.getZutabeKop());
 	}
 	
+	protected void irabaziDu(){
+		Tableroa tableroa = Tableroa.getNireTableroa();
+		tableroa.laukiFalta--;
+		if(tableroa.laukiFalta == tableroa.getMinaKop()){
+			JokoaUI.irabazi();
+		}
+	}
+	
 	public void minakBistaratu(){
 		
 	}
+	
 }

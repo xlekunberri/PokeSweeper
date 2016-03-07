@@ -17,11 +17,12 @@ public class LurLaukia extends BarruLaukia{
 	//Beste metodoak
 	public void mouseClicked(){
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-		if (this.egoera != 3 && !JokoaUI.galdu){
+		if (this.egoera != 3 && !JokoaUI.bukatuta){
 			this.egoera = 3;
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(Helbideak.lurra[4]);
 			laukiHonenUI.repaint();
+			this.irabaziDu();
 			this.albokoakZabaldu();
 		}
 	}
