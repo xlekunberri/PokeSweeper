@@ -25,7 +25,7 @@ public class BarruLaukia{
 	public void mouseEntered() {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
        	if(this.egoera != 3 && !JokoaUI.bukatuta) {
-        	laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[4]);
+       		laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
        		laukiHonenUI.repaint();
        	}
 	}

@@ -3,7 +3,6 @@ package org.pokesweeper.view;
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
-import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.LaukiFactory;
 import org.pokesweeper.model.Tableroa;
 
@@ -34,7 +33,6 @@ public class TableroaUI extends JPanel{
 		this.laukia = new LaukiaUI[errenkada][zutabe];
 		this.removeAll();
 									  
-									  //(errenkadaKopurua, zutabeKopurua) -- GridLayout 
 		GridLayout grid = new GridLayout(errenkada+2, zutabe+2, 0, 0);
 		this.setLayout(grid);
 		
@@ -57,14 +55,6 @@ public class TableroaUI extends JPanel{
 			this.add(factory.createKanpoLaukia(7));
 		}
 		this.add(factory.createKanpoLaukia(8));
-	}
-	
-	public void belarraAldatu(int pErren, int pZut, int pZenbaki) {
-		System.out.println("Errenakada: "+pErren);
-		System.out.println("Zutabea: "+pZut);
-		System.out.println("Zenbakia: "+pZenbaki);
-		this.laukia[pErren][pZut].setIcon(Helbideak.belar_normal[pZenbaki]);
-		this.laukia[pErren][pZut].repaint();
 	}
 
 }

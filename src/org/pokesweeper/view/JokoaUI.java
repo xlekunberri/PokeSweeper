@@ -1,6 +1,5 @@
 package org.pokesweeper.view;
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -10,10 +9,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-
-import org.pokesweeper.model.BichilloLaukia;
 import org.pokesweeper.model.Helbideak;
-import org.pokesweeper.model.LaukiFactory;
 import org.pokesweeper.model.Tableroa;
 
 public class JokoaUI extends JFrame implements ActionListener{
@@ -28,7 +24,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private JokoaUI(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.setTitle("Pok√©Sweeper");
+		this.setTitle("PokÈSweeper");
 		this.setIconImage(Helbideak.ikonoa);
 		this.setCursor(Helbideak.kursorea);
 		UIManager.put("Menu.font", Helbideak.iturria);
@@ -55,7 +51,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		panelakEraiki();
 		
-		Tableroa.getNireTableroa().tableroaEraiki(7, 10, 7);
+		Tableroa.getNireTableroa().tableroaEraiki(7, 10, 7, false);
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		behekoPanela.add(TableroaUI.getNireTableroaUI());
 		
@@ -70,27 +66,22 @@ public class JokoaUI extends JFrame implements ActionListener{
 		return nirejokoa;
 	}
 	
-	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop) {
-		JokoaUI.behekoPanela.remove(TableroaUI.getNireTableroaUI());
-		Tableroa.getNireTableroa().tableroaEraiki(pErrenkada, pZutabe, pMinaKop);
-		TableroaUI.getNireTableroaUI().tableroaEraiki();
-		
-		JokoaUI.bukatuta = false;
-		
-		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
-		this.pack();
-	}
-	
-	public void bichilloakJarri(int pErrenkada, int pZutabe){
-		JokoaUI.behekoPanela.remove(TableroaUI.getNireTableroaUI());
-
-		Tableroa.getNireTableroa().bichilloTableroEraiki(pErrenkada, pZutabe);
-		TableroaUI.getNireTableroaUI().tableroaEraiki();
-		
-		JokoaUI.bukatuta = false;
-		
-		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
-		this.pack();
+	// Main metodoa
+	public static void main(String[] args) {
+		Helbideak.denakKargatu();
+		new Splash(2500);
+		JDialog.setDefaultLookAndFeelDecorated(true);
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					JokoaUI frame = JokoaUI.getNireJokoa();
+					frame.setLocationRelativeTo(null);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 	
 	//Beste metodoak
@@ -124,29 +115,19 @@ public class JokoaUI extends JFrame implements ActionListener{
 		PikaUI.getNirePika().setPikaEgoera("irabazi");		
 	}
 	
+	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak) {
+		JokoaUI.behekoPanela.remove(TableroaUI.getNireTableroaUI());
+		Tableroa.getNireTableroa().tableroaEraiki(pErrenkada, pZutabe, pMinaKop, pBichilloak);
+		TableroaUI.getNireTableroaUI().tableroaEraiki();
+		JokoaUI.bukatuta = false;
+		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
+		this.pack();
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		Helbideak.denakKargatu();
-		new Splash(2500);
-		JDialog.setDefaultLookAndFeelDecorated(true);
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					JokoaUI frame = JokoaUI.getNireJokoa();
-					frame.setLocationRelativeTo(null);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 }

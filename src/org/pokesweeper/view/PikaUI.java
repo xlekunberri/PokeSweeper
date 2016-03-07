@@ -1,6 +1,5 @@
 package org.pokesweeper.view;
 
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
@@ -23,10 +22,10 @@ public class PikaUI extends JButton{
 		    public void mouseClicked(MouseEvent e) {
 		    	Tableroa tableroa = Tableroa.getNireTableroa();
 		    	if(e.getButton() == MouseEvent.BUTTON1){
-			    	JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop());
+			    	JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop(), false);
 		    	} 
 		    	else if(e.getButton() == MouseEvent.BUTTON3){
-					JokoaUI.getNireJokoa().bichilloakJarri(tableroa.getErrenkadaKop(), tableroa.getZutabeKop());
+					JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), 0, true);
 			    }
 		    	PikaUI.getNirePika().setPikaEgoera("normal");
 		    }

@@ -20,7 +20,7 @@ public class LaukiaUI extends JButton implements MouseListener {
 	
 	//Beste metodoak
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
+	public void mouseClicked(MouseEvent e) {
 		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseClicked();		
 	}
 
