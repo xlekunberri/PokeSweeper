@@ -2,10 +2,7 @@ package org.pokesweeper.view;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-
 import javax.swing.JPanel;
-
-import org.pokesweeper.model.BarruLaukia;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.LaukiFactory;
 import org.pokesweeper.model.Tableroa;

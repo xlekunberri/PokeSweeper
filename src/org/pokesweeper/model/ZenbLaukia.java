@@ -27,7 +27,7 @@ public class ZenbLaukia extends BarruLaukia{
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.lurra[4],Helbideak.zenbaki[this.ingurukoMinaKop-1]));
 			laukiHonenUI.repaint();
-			Tableroa.getNireTableroa().laukiakBerrekalkulatu(this.errenkada, this.zutabea);
+		//	this.belarrakBerrekalkulatu();
 		}
 	}
 	
@@ -41,5 +41,74 @@ public class ZenbLaukia extends BarruLaukia{
 			}
 		}		
 	}	
+	
+	public void belarrakBerrekalkulatu() {
+		if(koordenadaEgokiak(this.errenkada-1, this.zutabea)){
+			goikoaBerrekalkulatu();
+		}
+		if(koordenadaEgokiak(this.errenkada+1, this.zutabea)){
+			behekoaErrekalkulatu();
+		}
+		if(koordenadaEgokiak(this.errenkada, this.zutabea-1)){
+			ezkerrekoaBerrekalkulatu();
+		}
+		if(koordenadaEgokiak(this.errenkada, this.zutabea+1)){
+			eskuinekoaBerrekalkulatu();
+		}
+	}
+	
+	private void goikoaBerrekalkulatu() {
+		Tableroa tableroa = Tableroa.getNireTableroa();
+		LaukiaUI goikoLaukiaUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada-1][this.zutabea];
+		if(koordenadaEgokiak(this.errenkada-1, this.zutabea) && tableroa.laukia[this.errenkada-1][this.zutabea].getEgoera() == 3) { //GOIAN
+			if(koordenadaEgokiak(this.errenkada, this.zutabea+1) && tableroa.laukia[this.errenkada][this.zutabea+1].getEgoera() == 3) { // ESKUINA
+				if(koordenadaEgokiak(this.errenkada, this.zutabea-1) && tableroa.laukia[this.errenkada][this.zutabea-1].getEgoera() == 3) { // EZKERRA
+					goikoLaukiaUI.setIcon(Helbideak.belar_normal[9]); //HIERBA CERRADA POR TODOS LOS LADOS
+				}
+				else {
+					goikoLaukiaUI.setIcon(Helbideak.belar_normal[2]); //HIERBA ABIERTA POR LA IZQUIERDA
+				}
+			}
+			else {
+				if(koordenadaEgokiak(this.errenkada, this.zutabea-1) && tableroa.laukia[this.errenkada][this.zutabea-1].getEgoera() == 3) {
+					goikoLaukiaUI.setIcon(Helbideak.belar_normal[13]);
+				}
+				else {
+					goikoLaukiaUI.setIcon(Helbideak.belar_normal[10]);
+				}
+			}
+		}
+		else {
+			if(koordenadaEgokiak(this.errenkada, this.zutabea+1) && tableroa.laukia[this.errenkada][this.zutabea+1].getEgoera() == 3) {
+				if(koordenadaEgokiak(this.errenkada, this.zutabea-1) && tableroa.laukia[this.errenkada][this.zutabea-1].getEgoera() == 3) {
+					goikoLaukiaUI.setIcon(Helbideak.belar_normal[1]);
+				}
+				else {
+					goikoLaukiaUI.setIcon(Helbideak.belar_normal[8]);
+				}
+			}
+			else {
+				if(koordenadaEgokiak(this.errenkada, this.zutabea-1) && tableroa.laukia[this.errenkada][this.zutabea-1].getEgoera() == 3) {
+					goikoLaukiaUI.setIcon(Helbideak.belar_normal[6]);
+				}
+				else 
+					if(koordenadaEgokiak(this.errenkada, this.zutabea)){
+						goikoLaukiaUI.setIcon(Helbideak.belar_normal[7]);
+				}
+			}
+		}
+	}
+	
+	private void behekoaErrekalkulatu() {
+			
+	}
+	
+	private void ezkerrekoaBerrekalkulatu() {
+		
+	}
+	
+	private void eskuinekoaBerrekalkulatu() {
+		
+	}
 
 }
