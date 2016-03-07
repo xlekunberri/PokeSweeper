@@ -2,22 +2,16 @@ package org.pokesweeper.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-<<<<<<< HEAD
 
-=======
->>>>>>> a5c20107934dbcdc4ca1e7c147d81a671e8bfa48
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Tableroa;
 
@@ -27,7 +21,6 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private static JokoaUI nirejokoa;
 	private static final long serialVersionUID = 1L;
 	private static JPanel behekoPanela;
-	private static JLabel denbora, minaKop;
 	public static boolean bukatuta = false;
 
 	//Eraikitzailea
