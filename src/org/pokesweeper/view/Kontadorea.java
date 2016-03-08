@@ -14,13 +14,12 @@ public class Kontadorea extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int kont = -1;
+	private int kont;
 	private JButton[] kontadorea = new JButton[3];
 
 	public Kontadorea() {
 		this.setBackground(new Color(112, 200, 160));
 		this.setPreferredSize(new Dimension(39, 23));
-		
 		GridLayout grid = new GridLayout(1, 3, 0, 0);
 		this.setLayout(grid);
 		
@@ -40,11 +39,15 @@ public class Kontadorea extends JPanel {
 		}
 	}
 	
+	public int getKont(){
+		return this.kont;
+	}
+	
 	public void kontadoreaGehitu() {
 		this.kont++;
 	}
 	
 	public void kontadoreaErreseteatu() {
-		this.kont = -1;
+		this.kont = 0;
 	}
 }
