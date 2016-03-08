@@ -44,7 +44,7 @@ public class BarruLaukia{
     			else{
     				this.egoera = 0;
     				laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
-    				laukiHonenUI.setRolloverIcon(null);
+    				laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
     			}
     		}
 	    }
