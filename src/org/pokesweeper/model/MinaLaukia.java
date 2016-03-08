@@ -20,7 +20,7 @@ public class MinaLaukia extends BarruLaukia{
 		if ((this.egoera == 0 || this.egoera == 2) && !JokoaUI.bukatuta){
 			this.egoera = 3;
 			laukiHonenUI.setRolloverIcon(null);
-			laukiHonenUI.setIcon(Helbideak.voltorb);
+			laukiHonenUI.setIcon(Helbideak.voltorb); //AQUI EL QUE SE HACE CLICK
 			laukiHonenUI.repaint();
 			this.minakBistaratu();
 			JokoaUI.galdu();
@@ -29,6 +29,14 @@ public class MinaLaukia extends BarruLaukia{
 
 	public void minakBistaratu(){
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
+		laukiHonenUI.setRolloverIcon(null);
+		if(this.egoera == 1){
+			laukiHonenUI.setIcon(Helbideak.voltorb_s);
+		}
+		else {
+			laukiHonenUI.setIcon(Helbideak.voltorb);
+		}
+		laukiHonenUI.repaint();
 		this.egoera = 4;
 		for (int x = this.errenkada - 1; x <= this.errenkada + 1; x++){
 			for(int y = this.zutabea - 1; y <= this.zutabea + 1; y++ ){
@@ -37,9 +45,6 @@ public class MinaLaukia extends BarruLaukia{
 				}
 			}
 		}
-		laukiHonenUI.setRolloverIcon(null);
-		laukiHonenUI.setIcon(Helbideak.voltorb);
-		laukiHonenUI.repaint();
 	}
 	
 }
