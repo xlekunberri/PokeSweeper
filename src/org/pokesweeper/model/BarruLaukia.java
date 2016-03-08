@@ -29,15 +29,17 @@ public class BarruLaukia{
     	else if(e.getButton() == MouseEvent.BUTTON3){
     		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
     		if(this.egoera != 3 && !JokoaUI.bukatuta) {
-    			if(this.egoera == 0){
+    			if(this.egoera == 0 && JokoaUI.kontadorea.getKont() != 0){
     				this.egoera = 1;
     				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.bandera));
     				laukiHonenUI.setRolloverIcon(null);
+    				JokoaUI.kontadorea.kontadoreaKendu();
     			}
     			else if(this.egoera == 1){
     				this.egoera = 2;
     				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
     				laukiHonenUI.setRolloverIcon(null);
+    				JokoaUI.kontadorea.kontadoreaGehitu();
     			}
     			else{
     				this.egoera = 0;
@@ -52,7 +54,7 @@ public class BarruLaukia{
 		
 	}
 	
-	public void mouseEntered() {
+	public void mouseEntered(MouseEvent e) {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
        	if(this.egoera == 0 && !JokoaUI.bukatuta) {
        		laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
@@ -60,7 +62,7 @@ public class BarruLaukia{
        	}
 	}
 	
-	public void mouseExited() {
+	public void mouseExited(MouseEvent e) {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 		if(this.egoera == 0 && !JokoaUI.bukatuta) {
 			laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
@@ -69,13 +71,13 @@ public class BarruLaukia{
     	}
 	}
 	
-	public void mousePressed() {
-    	if(this.egoera == 0 && !JokoaUI.bukatuta) {
+	public void mousePressed(MouseEvent e) {
+    	if(this.egoera == 0 && !JokoaUI.bukatuta && e.getButton() == MouseEvent.BUTTON1) {
     		PikaUI.getNirePika().setPikaEgoera("klik");
     	}
 	}
 	
-	public void mouseReleased() {
+	public void mouseReleased(MouseEvent e) {
     	if(this.egoera == 0 && !JokoaUI.bukatuta) {
     		PikaUI.getNirePika().setPikaEgoera("normal");
     	}

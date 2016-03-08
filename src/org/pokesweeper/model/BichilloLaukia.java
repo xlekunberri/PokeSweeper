@@ -28,12 +28,12 @@ public class BichilloLaukia extends BarruLaukia {
 	}
 	
 	@Override
-	public void mousePressed(){
+	public void mousePressed(MouseEvent e){
 		
 	}
 	
 	@Override
-	public void mouseReleased(){
+	public void mouseReleased(MouseEvent e){
 		
 	}
 

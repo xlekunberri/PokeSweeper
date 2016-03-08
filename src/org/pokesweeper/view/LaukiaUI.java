@@ -26,22 +26,22 @@ public class LaukiaUI extends JButton implements MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseEntered();		
+		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseEntered(e);		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseExited();		
+		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseExited(e);		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mousePressed();	
+		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mousePressed(e);	
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseReleased();	
+		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseReleased(e);	
 	}
 
 }

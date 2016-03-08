@@ -14,7 +14,7 @@ public class Kontadorea extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int kont;
+	private int kont = -1;
 	private JButton[] kontadorea = new JButton[3];
 
 	public Kontadorea() {
@@ -39,15 +39,36 @@ public class Kontadorea extends JPanel {
 		}
 	}
 	
-	public int getKont(){
-		return this.kont;
+	public void kontadoreaErreseteatu() {
+		this.kont = 0;
+		this.kontadoreaEguneratu();
 	}
 	
 	public void kontadoreaGehitu() {
 		this.kont++;
+		this.kontadoreaEguneratu();
 	}
 	
-	public void kontadoreaErreseteatu() {
-		this.kont = 0;
+	public void kontadoreaKendu(){
+		this.kont--;
+		this.kontadoreaEguneratu();
+	}
+	
+	public void zenbakiaJarri(int pZenbakia){
+		this.kont = pZenbakia;
+		this.kontadoreaEguneratu();
+	}
+	
+	private void kontadoreaEguneratu(){
+		int ehunekoa = this.kont/100;
+		int hamarrekoa = this.kont/10;
+		int batekoa = this.kont % 10;
+		kontadorea[0].setIcon(Helbideak.kontadorea[ehunekoa]);
+		kontadorea[1].setIcon(Helbideak.kontadorea[hamarrekoa]);
+		kontadorea[2].setIcon(Helbideak.kontadorea[batekoa]);
+	}
+
+	public int getKont() {
+		return this.kont;
 	}
 }

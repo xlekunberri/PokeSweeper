@@ -22,12 +22,13 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private static JPanel behekoPanela;
 	public static boolean bukatuta = false;
+	public static Kontadorea kontadorea = new Kontadorea();
 
 	//Eraikitzailea
 	private JokoaUI(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.setTitle("PokÈSweeper");
+		this.setTitle("Pok√©Sweeper");
 		this.setIconImage(Helbideak.ikonoa);
 		this.setCursor(Helbideak.kursorea);
 		UIManager.put("Menu.font", Helbideak.iturria);
@@ -109,7 +110,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		goikoPanelaGoian.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(goikoPanelaGoian, BorderLayout.NORTH);
 		
-		goikoPanela.add(new Kontadorea());
+		goikoPanela.add(JokoaUI.kontadorea); //MINAKOP
 		JPanel goian = new JPanel();
 		goian.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(goian);
@@ -117,7 +118,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		JPanel behean = new JPanel();
 		behean.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(behean);
-		goikoPanela.add(new Kontadorea());
+		goikoPanela.add(new Kontadorea()); //TIEMPO
 	}
 	
 	public static void galdu(){

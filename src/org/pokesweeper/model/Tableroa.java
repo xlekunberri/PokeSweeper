@@ -1,5 +1,7 @@
 package org.pokesweeper.model;
 
+import org.pokesweeper.view.JokoaUI;
+
 public class Tableroa {
 	
 	//Atributoak
@@ -25,6 +27,7 @@ public class Tableroa {
 		this.errenkadaKop = pErrenkada;
 		this.zutabeKop = pZutabe;
 		this.minaKop = pMinaKop;
+		JokoaUI.kontadorea.zenbakiaJarri(this.minaKop);
 		this.laukiFalta = this.errenkadaKop * this.zutabeKop;
 		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];
 		LaukiFactory factory = LaukiFactory.getNireFactory();
