@@ -14,7 +14,7 @@ public class Splash extends JWindow {
 		JPanel panel = (JPanel) getContentPane();
 		this.setBackground(new Color(0, 0, 0, 0));
 		
-		ImageIcon img = Helbideak.splash;
+		ImageIcon img = Helbideak.splashGif;
 		
 		panel.add(new JLabel(img),BorderLayout.CENTER);
 		setSize(img.getIconWidth(),img.getIconHeight());

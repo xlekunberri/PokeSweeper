@@ -37,6 +37,7 @@ public class Helbideak {
 	public static Icon[] bichilloak = new Icon[41];
 	
 	public static ImageIcon splash;
+	public static ImageIcon splashGif;
 	
 	public static Icon bandera;
 	public static Icon galdera;
@@ -61,6 +62,7 @@ public class Helbideak {
 			voltorb = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/voltorb/voltorb.png")));
 			voltorb_s = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/voltorb/voltorb_s.png")));
 			splash = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/splash.png")));
+			splashGif = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/splash.gif")));
 			bandera = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/bandera.png")));
 			galdera = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/galdera.png")));
 		}catch (IOException | FontFormatException e){
