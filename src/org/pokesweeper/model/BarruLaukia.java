@@ -41,6 +41,11 @@ public class BarruLaukia{
     				laukiHonenUI.setRolloverIcon(null);
     				JokoaUI.kontadorea.kontadoreaGehitu();
     			}
+    			else if((this.egoera == 0 && JokoaUI.kontadorea.getKont() == 0)){
+    				this.egoera = 2;
+    				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
+    				laukiHonenUI.setRolloverIcon(null);
+    			} 
     			else{
     				this.egoera = 0;
     				laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
