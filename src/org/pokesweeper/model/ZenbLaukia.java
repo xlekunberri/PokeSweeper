@@ -21,7 +21,7 @@ public class ZenbLaukia extends BarruLaukia{
 	//Beste metodoak
 	public void ezkerrekoBotoia(){
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-		if (this.egoera == 0 && !JokoaUI.bukatuta){
+		if ((this.egoera == 0 || this.egoera == 2) && !JokoaUI.bukatuta){
 			this.egoera = 3;
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.lurra[4],Helbideak.zenbaki[this.ingurukoMinaKop-1]));
