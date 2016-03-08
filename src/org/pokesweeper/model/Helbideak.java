@@ -40,6 +40,7 @@ public class Helbideak {
 	public static ImageIcon splashGif;
 	
 	public static Icon bandera;
+	public static Icon banderaGif;
 	public static Icon galdera;
 	
 	public static void denakKargatu(){
@@ -64,6 +65,7 @@ public class Helbideak {
 			splash = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/splash.png")));
 			splashGif = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/splash.gif")));
 			bandera = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/bandera.png")));
+			banderaGif = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/laukiak/bandera.gif")));
 			galdera = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/galdera.png")));
 		}catch (IOException | FontFormatException e){
 			 e.printStackTrace();
@@ -82,7 +84,10 @@ public class Helbideak {
 	private static void lurraKargatu(){
 		try{
 			for(int i = 0; i < lurra.length; i++) {
-				lurra[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/lurra/"+(i+1)+".png")));
+				if(i == 0 || i == 2 || i == 6 || i == 8)
+					lurra[i] = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/laukiak/lurra/"+(i+1)+".gif")));
+				else
+					lurra[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/lurra/"+(i+1)+".png")));
 			}
 		} catch (IOException e) {}
 		
