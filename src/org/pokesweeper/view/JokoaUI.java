@@ -2,11 +2,15 @@ package org.pokesweeper.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -110,7 +114,9 @@ public class JokoaUI extends JFrame implements ActionListener{
 		goikoPanelaGoian.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(goikoPanelaGoian, BorderLayout.NORTH);
 		
+		goikoPanela.add(this.getLorea());
 		goikoPanela.add(JokoaUI.kontadorea); //MINAKOP
+		goikoPanela.add(this.getLorea());
 		JPanel goian = new JPanel();
 		goian.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(goian);
@@ -118,7 +124,21 @@ public class JokoaUI extends JFrame implements ActionListener{
 		JPanel behean = new JPanel();
 		behean.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(behean);
+		goikoPanela.add(this.getLorea());
 		goikoPanela.add(new Kontadorea()); //TIEMPO
+		goikoPanela.add(this.getLorea());
+	}
+	
+	private JButton getLorea(){
+		JButton lorea = new JButton();
+		lorea.setBorder(BorderFactory.createEmptyBorder());
+		lorea.setContentAreaFilled(false);
+		lorea.setBorderPainted(false);
+		lorea.setMargin(new Insets(0, 0, 0, 0));
+		lorea.setPreferredSize(new Dimension(32, 32));
+		lorea.setIcon(Helbideak.lorea);
+		lorea.repaint();
+		return lorea;
 	}
 	
 	public static void galdu(){

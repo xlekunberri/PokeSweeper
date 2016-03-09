@@ -14,7 +14,7 @@ public class Kontadorea extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int kont = -1;
+	private int kont = 0;
 	private JButton[] kontadorea = new JButton[3];
 
 	public Kontadorea() {
