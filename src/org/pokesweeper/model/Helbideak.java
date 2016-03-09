@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javafx.scene.media.Media;
 
 public class Helbideak {
 
@@ -44,6 +45,10 @@ public class Helbideak {
 	public static ImageIcon[] bandera = new ImageIcon[9];
 	public static Icon galdera;
 	
+	public static Media splashSound;
+	public static Media introSound;
+	public static Media bucleSound;
+	
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();
 		Helbideak.lurraKargatu();
@@ -54,6 +59,7 @@ public class Helbideak {
 		Helbideak.bichilloakKargatu();
 		Helbideak.kontadoreaKargatu();
 		Helbideak.banderaKargatu();
+		Helbideak.audioaKargatu();
 	}
 	
 	private static void besteakKargatu(){
@@ -132,5 +138,11 @@ public class Helbideak {
 			for(int i = 0; i < kontadorea.length; i++)
 				kontadorea[i] = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/kontadorea/"+i+".png")));
 		} catch (IOException e) {}
+	}
+	
+	private static void audioaKargatu() {
+		splashSound = new Media(Helbideak.class.getResource("/skin/audioa/splash.mp3").toString());
+		introSound = new Media(Helbideak.class.getResource("/skin/audioa/maintheme/intro.mp3").toString());
+		bucleSound = new Media(Helbideak.class.getResource("/skin/audioa/maintheme/bucle.mp3").toString());
 	}
 }
