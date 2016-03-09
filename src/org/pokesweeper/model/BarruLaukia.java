@@ -16,7 +16,7 @@ public class BarruLaukia{
 	int ikonoZenb;
 	final Tableroa tableroLogicoa = Tableroa.getNireTableroa();
 	
-	public int getEgoera() {
+	int getEgoera() {
 		return this.egoera;
 	}
 
@@ -88,7 +88,7 @@ public class BarruLaukia{
     	}
 	}
 	
-	protected boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
+	boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
 		return !(pErrenkada< 0 || pErrenkada >= tableroLogicoa.getErrenkadaKop() || pZutabe < 0 || pZutabe >= tableroLogicoa.getZutabeKop());
 	}
 	

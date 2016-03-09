@@ -7,10 +7,8 @@ import java.awt.*;
 public class Splash extends JWindow {
 	
 	private static final long serialVersionUID = 1L;
-	private int iraupena;
 	
 	public Splash(int pIraupena){
-		this.iraupena = pIraupena;
 		JPanel panel = (JPanel) getContentPane();
 		this.setBackground(new Color(0, 0, 0, 0));
 		
@@ -23,7 +21,7 @@ public class Splash extends JWindow {
 		setVisible(true);
 
 		try{
-			Thread.sleep(iraupena);
+			Thread.sleep(pIraupena);
 		}
 		catch(Exception e){
 			e.printStackTrace();
