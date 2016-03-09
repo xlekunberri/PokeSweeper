@@ -41,8 +41,7 @@ public class Helbideak {
 	public static ImageIcon splash;
 	public static ImageIcon splashGif;
 	
-	public static Icon bandera;
-	public static Icon banderaGif;
+	public static ImageIcon[] bandera = new ImageIcon[9];
 	public static Icon galdera;
 	
 	public static void denakKargatu(){
@@ -54,6 +53,7 @@ public class Helbideak {
 		Helbideak.zenbakiakKargatu();
 		Helbideak.bichilloakKargatu();
 		Helbideak.kontadoreaKargatu();
+		Helbideak.banderaKargatu();
 	}
 	
 	private static void besteakKargatu(){
@@ -66,8 +66,6 @@ public class Helbideak {
 			voltorb_s = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/voltorb/voltorb_s.png")));
 			splash = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/splash.png")));
 			splashGif = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/splash.gif")));
-			bandera = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/bandera.png")));
-			banderaGif = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/laukiak/bandera.gif")));
 			galdera = new ImageIcon(ImageIO.read(Helbideak.class.getResource("/skin/laukiak/galdera.png")));
 			lorea = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/kontadorea/lorea.gif")));
 		}catch (IOException | FontFormatException e){
@@ -103,6 +101,12 @@ public class Helbideak {
 	private static void mugimenduaKargatu(){
 		for(int i = 0; i < belar_mugimendu.length; i++) {
 			belar_mugimendu[i] = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/laukiak/belarra/mugimendua/5.gif")));
+		}
+	}
+	
+	private static void banderaKargatu(){
+		for(int i = 0; i < bandera.length; i++) {
+			bandera[i] = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/laukiak/bandera/5.gif")));
 		}
 	}
 	

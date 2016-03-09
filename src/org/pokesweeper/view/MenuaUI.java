@@ -74,12 +74,15 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	            
 	        if (e.getSource()==maila1) {
 	        	JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
+	        	PikaUI.getNirePika().setPikaEgoera("normal");
 	        }
 		 	else if (e.getSource()==maila2) {
 		 		JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
+	        	PikaUI.getNirePika().setPikaEgoera("normal");
 	        }       
 		 	else if (e.getSource()==maila3) {
-		 		JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false); 
+		 		JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+	        	PikaUI.getNirePika().setPikaEgoera("normal");
 	        }       
 		 	else if (e.getSource()==irten) {
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");
