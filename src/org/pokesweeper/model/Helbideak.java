@@ -142,7 +142,7 @@ public class Helbideak {
 	
 	private static void audioaKargatu() {
 		splashSound = new Media(Helbideak.class.getResource("/skin/audioa/splash.mp3").toString());
-		introSound = new Media(Helbideak.class.getResource("/skin/audioa/maintheme/intro.mp3").toString());
-		bucleSound = new Media(Helbideak.class.getResource("/skin/audioa/maintheme/bucle.mp3").toString());
+		//introSound = new Media(Helbideak.class.getResource("/skin/audioa/mainTheme/intro.mp3").toString());
+		//bucleSound = new Media(Helbideak.class.getResource("/skin/audioa/mainTheme/bucle.mp3").toString());
 	}
 }
