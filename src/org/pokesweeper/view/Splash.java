@@ -1,7 +1,5 @@
 package org.pokesweeper.view;
 
-import org.pokesweeper.model.Audio;
-
 import javax.swing.*;
 import org.pokesweeper.model.Helbideak;
 import java.awt.*;
@@ -23,10 +21,8 @@ public class Splash extends JWindow {
 		setLocationRelativeTo(null);
 		setAlwaysOnTop(true);
 		setVisible(true);
-		Audio audio = Audio.getNireAudio();
-		
+
 		try{
-			audio.playAudio(Helbideak.splashSound);
 			Thread.sleep(iraupena);
 		}
 		catch(Exception e){

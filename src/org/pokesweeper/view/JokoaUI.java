@@ -68,7 +68,6 @@ public class JokoaUI extends JFrame implements ActionListener{
 	// Main metodoa
 	public static void main(String[] args) {
 		Helbideak.denakKargatu();
-		new javafx.embed.swing.JFXPanel();
 		new Splash(2500);
 		JDialog.setDefaultLookAndFeelDecorated(true);
 		EventQueue.invokeLater(new Runnable() {
