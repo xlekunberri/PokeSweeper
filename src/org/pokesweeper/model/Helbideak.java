@@ -112,7 +112,7 @@ public class Helbideak {
 	
 	private static void banderaKargatu(){
 		for(int i = 0; i < bandera.length; i++) {
-			bandera[i] = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/laukiak/bandera/5.gif")));
+			bandera[i] = new ImageIcon(Toolkit.getDefaultToolkit().createImage(Helbideak.class.getResource("/skin/laukiak/bandera/"+(i+1)+".gif")));
 		}
 	}
 	
