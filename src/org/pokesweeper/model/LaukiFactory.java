@@ -64,6 +64,7 @@ public class LaukiFactory {
 				laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
 			} else if (egungoa == -1){
 				laukia = new MinaLaukia(this.errenkada, this.zutabe, ikonoZenb);
+				Tableroa.getNireTableroa().minak.add((MinaLaukia) laukia);
 			} else {
 				laukia = new ZenbLaukia(this.errenkada, this.zutabe, ikonoZenb, egungoa);
 			}	

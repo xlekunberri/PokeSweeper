@@ -1,5 +1,7 @@
 package org.pokesweeper.model;
 
+import java.util.ArrayList;
+
 import org.pokesweeper.view.JokoaUI;
 
 public class Tableroa {
@@ -7,6 +9,7 @@ public class Tableroa {
 	//Atributoak
 	private static Tableroa nireTableroa;
 	public BarruLaukia laukia[][];
+	public ArrayList<MinaLaukia> minak;
 	private int errenkadaKop;
 	private int zutabeKop;
 	private int minaKop;
@@ -30,6 +33,7 @@ public class Tableroa {
 		JokoaUI.kontadorea.zenbakiaJarri(this.minaKop);
 		this.laukiFalta = this.errenkadaKop * this.zutabeKop;
 		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];
+		this.minak = new ArrayList<MinaLaukia>();
 		LaukiFactory factory = LaukiFactory.getNireFactory();
 		factory.setTamaina(this.errenkadaKop, this.zutabeKop, this.minaKop);
 		for(int erren = 0; erren < this.errenkadaKop; erren++) {
@@ -37,6 +41,13 @@ public class Tableroa {
 				this.laukia[erren][zut] = factory.createLaukiLogikoa(erren, zut, pBichilloak);
 			}
 		}
+	}
+	
+	public void minakBistaratu(){
+		for(int i = 0; i < this.minak.size(); i++){
+			this.minak.get(i).Bistaratu();
+		}
+		JokoaUI.galdu();
 	}
 	
 	public int getErrenkadaKop(){

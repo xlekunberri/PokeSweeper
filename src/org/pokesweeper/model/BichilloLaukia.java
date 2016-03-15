@@ -16,8 +16,8 @@ public class BichilloLaukia extends BarruLaukia {
 	
 	//Beste metodoak
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		if(this.egoera != 3 && e.getButton() == MouseEvent.BUTTON1){
+	public void mouseClicked(boolean pEzkerrekoBotoia) {
+		if(this.egoera != 3 && pEzkerrekoBotoia){
 			this.egoera = 3;
 			LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 			laukiHonenUI.setRolloverIcon(null);
@@ -28,12 +28,12 @@ public class BichilloLaukia extends BarruLaukia {
 	}
 	
 	@Override
-	public void mousePressed(MouseEvent e){
+	public void mousePressed(){
 		
 	}
 	
 	@Override
-	public void mouseReleased(MouseEvent e){
+	public void mouseReleased(){
 		
 	}
 

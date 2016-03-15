@@ -20,14 +20,13 @@ public class MinaLaukia extends BarruLaukia{
 		if ((this.egoera == 0 || this.egoera == 2) && !JokoaUI.bukatuta){
 			this.egoera = 3;
 			laukiHonenUI.setRolloverIcon(null);
-			laukiHonenUI.setIcon(Helbideak.voltorb); //AQUI EL QUE SE HACE CLICK
+			laukiHonenUI.setIcon(Helbideak.voltorb);
 			laukiHonenUI.repaint();
-			this.minakBistaratu();
-			JokoaUI.galdu();
+			Tableroa.getNireTableroa().minakBistaratu();
 		}
 	}
 
-	public void minakBistaratu(){
+	public void Bistaratu(){
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 		laukiHonenUI.setRolloverIcon(null);
 		if(this.egoera == 1){
@@ -37,14 +36,6 @@ public class MinaLaukia extends BarruLaukia{
 			laukiHonenUI.setIcon(Helbideak.voltorb);
 		}
 		laukiHonenUI.repaint();
-		this.egoera = 4;
-		for (int x = this.errenkada - 1; x <= this.errenkada + 1; x++){
-			for(int y = this.zutabea - 1; y <= this.zutabea + 1; y++ ){
-				if (koordenadaEgokiak(x,y) && tableroLogicoa.laukia[x][y].egoera != 4){
-					tableroLogicoa.laukia[x][y].minakBistaratu();
-				}
-			}
-		}
 	}
 	
 }
