@@ -68,19 +68,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 	// Main metodoa
 	public static void main(String[] args) {
 		Helbideak.denakKargatu();
-		new Splash(2500);
+		new Splash();
 		JDialog.setDefaultLookAndFeelDecorated(true);
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					JokoaUI frame = JokoaUI.getNireJokoa();
-					frame.setLocationRelativeTo(null);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
 	}
 	
 	//Beste metodoak
