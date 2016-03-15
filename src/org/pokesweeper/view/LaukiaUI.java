@@ -28,7 +28,6 @@ public class LaukiaUI extends JButton implements MouseListener {
 	public void createLaukiUI(){
 		this.setBorder(BorderFactory.createEmptyBorder());
         this.setContentAreaFilled(false);
-        this.setBorderPainted(false);
         this.setMargin(new Insets(0, 0, 0, 0));
         this.setPreferredSize(new Dimension(32, 32));
         this.addMouseListener(this);
@@ -37,23 +36,24 @@ public class LaukiaUI extends JButton implements MouseListener {
 	}
 	
 	private Icon kalkulatuIrudia(int pErrenkada, int pZutabea) {
+		System.out.println(pErrenkada + " " + pZutabea);
 		Icon ikonoa;
 		if(pErrenkada == 0) {
 			if(pZutabea == 0) {
 				ikonoa = Helbideak.belar_normal[0];
 			}
-			else if(pZutabea == this.zutabe-1){
+			else if(pZutabea == Tableroa.getNireTableroa().getZutabeKop()-1){
 				ikonoa = Helbideak.belar_normal[2];
 			}
 			else {
 				ikonoa = Helbideak.belar_normal[1];
 			}
 		}
-		else if (pErrenkada == this.errenkada-1) {
+		else if (pErrenkada == Tableroa.getNireTableroa().getErrenkadaKop()-1) {
 			if(pZutabea == 0) {
 				ikonoa = Helbideak.belar_normal[6];
 			}
-			else if(pZutabea == this.zutabe-1){
+			else if(pZutabea == Tableroa.getNireTableroa().getZutabeKop()-1){
 				ikonoa = Helbideak.belar_normal[8];
 			}
 			else {
@@ -64,7 +64,7 @@ public class LaukiaUI extends JButton implements MouseListener {
 			if(pZutabea == 0) {
 				ikonoa = Helbideak.belar_normal[3];
 			}
-			else if(pZutabea == this.zutabe-1){
+			else if(pZutabea == Tableroa.getNireTableroa().getZutabeKop()-1){
 				ikonoa = Helbideak.belar_normal[5];
 			}
 			else {

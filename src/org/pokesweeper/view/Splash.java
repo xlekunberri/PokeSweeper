@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class Splash extends JWindow {
@@ -26,8 +28,8 @@ public class Splash extends JWindow {
 		setLocationRelativeTo(null);
 		setAlwaysOnTop(true);
 		setVisible(true);
-		this.getContentPane().addKeyListener(new KeyListener(){
-			public void keyPressed(KeyEvent e){
+		this.getContentPane().addMouseListener(new MouseAdapter(){
+			public void mousePressed(MouseEvent e){
 				System.out.println("adlvhsekugheso");
 				setVisible(false);
 				dispose();
@@ -42,18 +44,6 @@ public class Splash extends JWindow {
 						}
 					}
 				});
-			}
-
-			@Override
-			public void keyReleased(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void keyTyped(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 		});
 		
