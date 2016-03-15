@@ -1,7 +1,5 @@
 package org.pokesweeper.model;
 
-import java.awt.event.MouseEvent;
-
 import org.pokesweeper.view.JokoaUI;
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.PikaUI;
@@ -22,11 +20,11 @@ public class BarruLaukia{
 
 	
 	//Beste metodoak
-	public void mouseClicked(MouseEvent e) {
-		if(e.getButton() == MouseEvent.BUTTON1){
+	public void mouseClicked(boolean pEzkerrekoBotoia) {
+		if(pEzkerrekoBotoia){
 	    	this.ezkerrekoBotoia();
     	} 
-    	else if(e.getButton() == MouseEvent.BUTTON3){
+    	else{
     		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
     		if(this.egoera != 3 && !JokoaUI.bukatuta) {
     			if(this.egoera == 0 && JokoaUI.kontadorea.getKont() != 0){
@@ -59,7 +57,7 @@ public class BarruLaukia{
 		
 	}
 	
-	public void mouseEntered(MouseEvent e) {
+	public void mouseEntered() {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
        	if(this.egoera == 0 && !JokoaUI.bukatuta) {
        		laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
@@ -67,7 +65,7 @@ public class BarruLaukia{
        	}
 	}
 	
-	public void mouseExited(MouseEvent e) {
+	public void mouseExited() {
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 		if(this.egoera == 0 && !JokoaUI.bukatuta) {
 			laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
@@ -76,13 +74,13 @@ public class BarruLaukia{
     	}
 	}
 	
-	public void mousePressed(MouseEvent e) {
-    	if(this.egoera == 0 && !JokoaUI.bukatuta && e.getButton() == MouseEvent.BUTTON1) {
+	public void mousePressed() {
+    	if(this.egoera == 0 && !JokoaUI.bukatuta) {
     		PikaUI.getNirePika().setPikaEgoera("klik");
     	}
 	}
 	
-	public void mouseReleased(MouseEvent e) {
+	public void mouseReleased() {
     	if(this.egoera == 0 && !JokoaUI.bukatuta) {
     		PikaUI.getNirePika().setPikaEgoera("normal");
     	}

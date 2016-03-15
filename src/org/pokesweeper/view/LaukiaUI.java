@@ -21,27 +21,37 @@ public class LaukiaUI extends JButton implements MouseListener {
 	//Beste metodoak
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseClicked(e);		
+		//Ezkerra = true
+		//Eskuma = false
+		if(e.getButton() == MouseEvent.BUTTON1){
+			Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseClicked(true);	
+    	} 
+    	else if(e.getButton() == MouseEvent.BUTTON3){
+    		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseClicked(false);	
+    	}
+	
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseEntered(e);		
+		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseEntered();		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseExited(e);		
+		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseExited();		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mousePressed(e);	
+		if(e.getButton() == MouseEvent.BUTTON1){
+			Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mousePressed();	
+		}
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseReleased(e);	
+		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseReleased();	
 	}
 
 }
