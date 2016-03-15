@@ -1,6 +1,4 @@
 package org.pokesweeper.model;
-import java.awt.event.MouseEvent;
-
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
 
