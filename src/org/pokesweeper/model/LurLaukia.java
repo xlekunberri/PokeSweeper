@@ -8,10 +8,7 @@ public class LurLaukia extends BarruLaukia{
 
 	//Eraikitzailea
 	public LurLaukia(int pErrenkada, int pZutabea, int pIkonoZenb){
-		this.errenkada = pErrenkada;
-		this.zutabea = pZutabea;
-		this.egoera = 0; // 0 = Zabaldu gabe; 1 = Bandera; 2 = Galdera ikurra; 3 = Zabalik; 4 = MinaBistaratu pasatuta
-		this.ikonoZenb = pIkonoZenb;
+		super(pErrenkada, pZutabea, pIkonoZenb);
 	}
 	
 	//Beste metodoak

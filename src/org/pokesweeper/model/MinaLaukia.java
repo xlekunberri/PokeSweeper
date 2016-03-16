@@ -8,10 +8,7 @@ public class MinaLaukia extends BarruLaukia{
 
 	//Eraikitzailea
 	public MinaLaukia(int pErrenkada, int pZutabea, int pIkonoZenb){
-		this.errenkada = pErrenkada;
-		this.zutabea = pZutabea;
-		this.egoera = 0;
-		this.ikonoZenb = pIkonoZenb;
+		super(pErrenkada, pZutabea, pIkonoZenb);
 	}
 	
 	//Beste metodoak
@@ -26,7 +23,7 @@ public class MinaLaukia extends BarruLaukia{
 		}
 	}
 
-	public void Bistaratu(){
+	public void bistaratu(){
 		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 		laukiHonenUI.setRolloverIcon(null);
 		if(this.egoera == 1){

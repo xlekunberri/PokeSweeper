@@ -44,8 +44,8 @@ public class Tableroa {
 	}
 	
 	public void minakBistaratu(){
-		for(int i = 0; i < this.minak.size(); i++){
-			this.minak.get(i).Bistaratu();
+		for(MinaLaukia auxMina: this.minak){
+			auxMina.bistaratu();
 		}
 		JokoaUI.galdu();
 	}

@@ -11,10 +11,7 @@ public class ZenbLaukia extends BarruLaukia{
 	
 	//Eraikitzailea
 	public ZenbLaukia(int pErrenkada, int pZutabea, int pIkonoZenb, int pIngurukoMinaKop){
-		this.errenkada = pErrenkada;
-		this.zutabea = pZutabea;
-		this.egoera = 0;
-		this.ikonoZenb = pIkonoZenb;
+		super(pErrenkada, pZutabea, pIkonoZenb);
 		this.ingurukoMinaKop = pIngurukoMinaKop;
 	}
 	
@@ -41,7 +38,7 @@ public class ZenbLaukia extends BarruLaukia{
 			}
 		}		
 	}	
-	
+	/*
 	public void belarrakBerrekalkulatu() {
 		if(koordenadaEgokiak(this.errenkada-1, this.zutabea)){
 			goikoaBerrekalkulatu();
@@ -110,5 +107,5 @@ public class ZenbLaukia extends BarruLaukia{
 	private void eskuinekoaBerrekalkulatu() {
 		
 	}
-
+	*/
 }

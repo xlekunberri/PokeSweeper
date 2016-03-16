@@ -6,10 +6,7 @@ public class BichilloLaukia extends BarruLaukia {
 	
 	
 	public BichilloLaukia(int pErrenkada, int pZutabea, int pIkonoZenb){
-		this.errenkada = pErrenkada;
-		this.zutabea = pZutabea;
-		this.egoera = 0;
-		this.ikonoZenb = pIkonoZenb;
+		super(pErrenkada, pZutabea, pIkonoZenb);
 	}
 	
 	//Beste metodoak

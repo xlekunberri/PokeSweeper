@@ -8,11 +8,18 @@ import org.pokesweeper.view.TableroaUI;
 public class BarruLaukia{
 	
 	//Atributoak
-	int errenkada;
-	int zutabea;
-	int egoera;
-	int ikonoZenb;
+	protected int errenkada;
+	protected int zutabea;
+	protected int egoera;
+	private int ikonoZenb;
 	final Tableroa tableroLogicoa = Tableroa.getNireTableroa();
+	
+	protected BarruLaukia(int pErrenkada, int pZutabea, int pIkonoZenb) {
+		this.errenkada = pErrenkada;
+		this.zutabea = pZutabea;
+		this.ikonoZenb = pIkonoZenb;
+		this.egoera = 0; // 0 = Zabaldu gabe; 1 = Bandera; 2 = Galdera ikurra; 3 = Zabalik; 4 = MinaBistaratu pasatuta
+	}
 	
 	int getEgoera() {
 		return this.egoera;

@@ -23,9 +23,6 @@ public class LaukiaUI extends JButton implements MouseListener {
 	public LaukiaUI(int pErrenkada, int pZutabe) {
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
-	}
-	
-	public void createLaukiUI(){
 		this.setBorder(BorderFactory.createEmptyBorder());
         this.setContentAreaFilled(false);
         this.setMargin(new Insets(0, 0, 0, 0));
