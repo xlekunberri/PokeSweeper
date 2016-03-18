@@ -2,7 +2,6 @@ package org.pokesweeper.view;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Tableroa;
@@ -16,7 +15,7 @@ public class PikaUI extends JButton{
 	//Eraikitzailea
 	private PikaUI() {
 		this.setIcon(Helbideak.pikaNormal);
-		this.setBorder(BorderFactory.createEmptyBorder());
+		this.setBorder(null);
 		this.setContentAreaFilled(false);
 		this.addMouseListener(new MouseAdapter(){
 		    public void mouseClicked(MouseEvent e) {

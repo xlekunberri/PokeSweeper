@@ -2,14 +2,10 @@ package org.pokesweeper.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.FlowLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -37,7 +33,6 @@ public class JokoaUI extends JFrame implements ActionListener{
 		this.setCursor(Helbideak.kursorea);
 		UIManager.put("Menu.font", Helbideak.iturria);
 		UIManager.put("MenuItem.font", Helbideak.iturria);
-		
 		
 		this.setJMenuBar(new MenuaUI());
 		
@@ -94,9 +89,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 	}
 	
 	private void goikoPanelaEraiki() {
-		JPanel goikoPanela = new JPanel();
+		JPanel goikoPanela = new JPanel(new FlowLayout());
 		goikoPanela.setBackground(new Color(112, 200, 160));
-		goikoPanela.setLayout(new FlowLayout());
 		getContentPane().add(goikoPanela, BorderLayout.NORTH);
 		
 		JPanel goikoPanelaGoian = new JPanel();
@@ -119,14 +113,9 @@ public class JokoaUI extends JFrame implements ActionListener{
 	}
 	
 	private JButton getLorea(){
-		JButton lorea = new JButton();
-		lorea.setBorder(BorderFactory.createEmptyBorder());
+		JButton lorea = new JButton(Helbideak.lorea);
+		lorea.setBorder(null);
 		lorea.setContentAreaFilled(false);
-		lorea.setBorderPainted(false);
-		lorea.setMargin(new Insets(0, 0, 0, 0));
-		lorea.setPreferredSize(new Dimension(32, 32));
-		lorea.setIcon(Helbideak.lorea);
-		lorea.repaint();
 		return lorea;
 	}
 	

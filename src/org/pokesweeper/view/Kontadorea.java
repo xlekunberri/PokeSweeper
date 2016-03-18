@@ -1,10 +1,7 @@
 package org.pokesweeper.view;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Insets;
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -19,7 +16,7 @@ public class Kontadorea extends JPanel {
 
 	public Kontadorea() {
 		this.setBackground(new Color(112, 200, 160));
-		this.setPreferredSize(new Dimension(39, 23));
+		//this.setPreferredSize(new Dimension(39, 23));
 		GridLayout grid = new GridLayout(1, 3, 0, 0);
 		this.setLayout(grid);
 		
@@ -28,13 +25,9 @@ public class Kontadorea extends JPanel {
 	
 	private void kontadoreaEraiki() {
 		for(int i = 0; i < kontadorea.length; i++) {
-			kontadorea[i] = new JButton();
-			kontadorea[i].setBorder(BorderFactory.createEmptyBorder());
+			kontadorea[i] = new JButton(Helbideak.kontadorea[0]);
+			kontadorea[i].setBorder(null);
 			kontadorea[i].setContentAreaFilled(false);
-			kontadorea[i].setBorderPainted(false);
-			kontadorea[i].setMargin(new Insets(0, 0, 0, 0));
-			kontadorea[i].setPreferredSize(new Dimension(13, 23));
-			kontadorea[i].setIcon(Helbideak.kontadorea[0]);
 			this.add(kontadorea[i]);
 		}
 	}

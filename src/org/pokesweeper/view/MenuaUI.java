@@ -73,7 +73,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 	            
 	        if (e.getSource()==maila1) {
-	        	JokoaUI.getNireJokoa().erreseteatu(7, 10, 9, false);
+	        	JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
 	        	PikaUI.getNirePika().setPikaEgoera("normal");
 	        }
 		 	else if (e.getSource()==maila2) {
