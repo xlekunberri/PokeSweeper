@@ -1,7 +1,6 @@
 package org.pokesweeper.model;
 
 import org.pokesweeper.view.KanpoLaukiaUI;
-import org.pokesweeper.view.LaukiaUI;
 
 public class LaukiFactory {
 	
@@ -28,13 +27,7 @@ public class LaukiFactory {
 		return nireFactory;
 	}
 	
-	//Beste metodoak
-	public LaukiaUI createLaukiUI(int pErrenkada, int pZutabe){
-		this.errenkada = pErrenkada;
-		this.zutabe = pZutabe;
-		return new LaukiaUI(pErrenkada, pZutabe);
-	}
-	
+	//Beste metodoak	
 	public BarruLaukia createLaukiLogikoa(int pErrenkada, int pZutabe, boolean pBichilloak){
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
@@ -42,7 +35,7 @@ public class LaukiFactory {
 		int ikonoZenb = barrukoZenbLortu();
 		int egungoa = this.minak[pErrenkada][pZutabe];
 		if(pBichilloak){
-			laukia = new BichilloLaukia(pErrenkada, pZutabe, barrukoZenbLortu());
+			laukia = new BichilloLaukia(this.errenkada, this.zutabe, ikonoZenb);
 		} 
 		else{
 			if(egungoa == 0){

@@ -18,13 +18,16 @@ public class BarruLaukia{
 		this.errenkada = pErrenkada;
 		this.zutabea = pZutabea;
 		this.ikonoZenb = pIkonoZenb;
-		this.egoera = 0; // 0 = Zabaldu gabe; 1 = Bandera; 2 = Galdera ikurra; 3 = Zabalik; 4 = MinaBistaratu pasatuta
+		this.egoera = 0; // 0 = Zabaldu gabe; 1 = Bandera; 2 = Galdera ikurra; 3 = Zabalik;
 	}
 	
 	int getEgoera() {
 		return this.egoera;
 	}
-
+	
+	public int getIkonoZenb(){
+		return this.ikonoZenb;
+	}
 	
 	//Beste metodoak
 	public void mouseClicked(boolean pEzkerrekoBotoia) {
@@ -103,10 +106,6 @@ public class BarruLaukia{
 		if(tableroa.laukiFalta == tableroa.getMinaKop()){
 			JokoaUI.irabazi();
 		}
-	}
-	
-	public void minakBistaratu(){
-		
 	}
 	
 }

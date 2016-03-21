@@ -34,15 +34,4 @@ public class LurLaukia extends BarruLaukia{
 		}		
 	}
 	
-	public void minakBistaratu(){
-		this.egoera = 4;
-		for (int x = this.errenkada - 1; x <= this.errenkada + 1; x++){
-			for(int y = this.zutabea - 1; y <= this.zutabea + 1; y++ ){
-				if (koordenadaEgokiak(x,y) && tableroLogicoa.laukia[x][y].egoera != 4){
-					tableroLogicoa.laukia[x][y].minakBistaratu();
-				}
-			}
-		}		
-	}
-	
 }

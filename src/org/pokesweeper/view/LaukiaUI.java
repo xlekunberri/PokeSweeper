@@ -1,14 +1,11 @@
 package org.pokesweeper.view;
 
-import java.awt.Dimension;
-import java.awt.Insets;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import javax.swing.BorderFactory;
-import javax.swing.Icon;
 import javax.swing.JButton;
-
+import org.pokesweeper.model.BarruLaukia;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Tableroa;
 
@@ -20,55 +17,15 @@ public class LaukiaUI extends JButton implements MouseListener {
 	private final int zutabe;
 	
 	//Eraikitzailea
-	public LaukiaUI(int pErrenkada, int pZutabe) {
+	public LaukiaUI(int pErrenkada, int pZutabe){
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
+		BarruLaukia laukiLogikoa = Tableroa.getNireTableroa().laukia[pErrenkada][pZutabe];
 		this.setBorder(BorderFactory.createEmptyBorder());
-        this.setContentAreaFilled(false);
-        this.setMargin(new Insets(0, 0, 0, 0));
-        this.setPreferredSize(new Dimension(32, 32));
+		this.setContentAreaFilled(false);
         this.addMouseListener(this);
-        this.setIcon(kalkulatuIrudia(this.errenkada, this.zutabe));
+        this.setIcon(Helbideak.belar_normal[laukiLogikoa.getIkonoZenb()]);
         this.repaint();
-	}
-	
-	private Icon kalkulatuIrudia(int pErrenkada, int pZutabea) {
-		System.out.println(pErrenkada + " " + pZutabea);
-		Icon ikonoa;
-		if(pErrenkada == 0) {
-			if(pZutabea == 0) {
-				ikonoa = Helbideak.belar_normal[0];
-			}
-			else if(pZutabea == Tableroa.getNireTableroa().getZutabeKop()-1){
-				ikonoa = Helbideak.belar_normal[2];
-			}
-			else {
-				ikonoa = Helbideak.belar_normal[1];
-			}
-		}
-		else if (pErrenkada == Tableroa.getNireTableroa().getErrenkadaKop()-1) {
-			if(pZutabea == 0) {
-				ikonoa = Helbideak.belar_normal[6];
-			}
-			else if(pZutabea == Tableroa.getNireTableroa().getZutabeKop()-1){
-				ikonoa = Helbideak.belar_normal[8];
-			}
-			else {
-				ikonoa = Helbideak.belar_normal[7];
-			}
-		}
-		else {
-			if(pZutabea == 0) {
-				ikonoa = Helbideak.belar_normal[3];
-			}
-			else if(pZutabea == Tableroa.getNireTableroa().getZutabeKop()-1){
-				ikonoa = Helbideak.belar_normal[5];
-			}
-			else {
-				ikonoa = Helbideak.belar_normal[4];
-			}
-		}
-		return ikonoa;
 	}
 
 	//Beste metodoak

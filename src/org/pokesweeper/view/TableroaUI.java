@@ -45,7 +45,7 @@ public class TableroaUI extends JPanel{
 		for(int erren = 0; erren < errenkada; erren++) {
 			this.add(factory.createKanpoLaukia(3));
 			for(int zut = 0; zut < zutabe; zut++) {
-				this.laukia[erren][zut] = factory.createLaukiUI(erren, zut);
+				this.laukia[erren][zut] =  new LaukiaUI(erren, zut);
 				this.add(this.laukia[erren][zut]);
 			}
 			this.add(factory.createKanpoLaukia(5));
