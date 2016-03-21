@@ -23,6 +23,7 @@ public class Splash extends JWindow {
 		this.add(new JLabel(img),BorderLayout.CENTER);
 		setSize(img.getIconWidth(),img.getIconHeight());
 		setLocationRelativeTo(null);
+		setAlwaysOnTop(true);
 		setVisible(true);
 		this.getContentPane().addMouseListener(new MouseAdapter(){
 			public void mousePressed(MouseEvent e){
