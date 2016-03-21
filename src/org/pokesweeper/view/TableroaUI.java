@@ -3,7 +3,6 @@ package org.pokesweeper.view;
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
-import org.pokesweeper.model.LaukiFactory;
 import org.pokesweeper.model.Tableroa;
 
 public class TableroaUI extends JPanel{
@@ -36,25 +35,24 @@ public class TableroaUI extends JPanel{
 		GridLayout grid = new GridLayout(errenkada+2, zutabe+2, 0, 0);
 		this.setLayout(grid);
 		
-		LaukiFactory factory = LaukiFactory.getNireFactory();
-		this.add(factory.createKanpoLaukia(0));
+		this.add(new KanpoLaukiaUI(0));
 		for(int zut = 0; zut < zutabe; zut++) {
-			this.add(factory.createKanpoLaukia(1));
+			this.add(new KanpoLaukiaUI(1));
 		}
-		this.add(factory.createKanpoLaukia(2));
+		this.add(new KanpoLaukiaUI(2));
 		for(int erren = 0; erren < errenkada; erren++) {
-			this.add(factory.createKanpoLaukia(3));
+			this.add(new KanpoLaukiaUI(3));
 			for(int zut = 0; zut < zutabe; zut++) {
 				this.laukia[erren][zut] =  new LaukiaUI(erren, zut);
 				this.add(this.laukia[erren][zut]);
 			}
-			this.add(factory.createKanpoLaukia(5));
+			this.add(new KanpoLaukiaUI(5));
 		}	
-		this.add(factory.createKanpoLaukia(6));
-		for(int zut = 0; zut < zutabe; zut++) {
-			this.add(factory.createKanpoLaukia(7));
+		this.add(new KanpoLaukiaUI(6));
+		for(int zut = 0; zut < zutabe; zut++){
+			this.add(new KanpoLaukiaUI(7));
 		}
-		this.add(factory.createKanpoLaukia(8));
+		this.add(new KanpoLaukiaUI(8));
 	}
 
 }

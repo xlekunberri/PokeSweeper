@@ -38,7 +38,7 @@ public class Tableroa {
 		factory.setTamaina(this.errenkadaKop, this.zutabeKop, this.minaKop);
 		for(int erren = 0; erren < this.errenkadaKop; erren++) {
 			for(int zut = 0; zut < this.zutabeKop; zut++) {
-				this.laukia[erren][zut] = factory.createLaukiLogikoa(erren, zut, pBichilloak);
+				this.laukia[erren][zut] = factory.createLaukia(erren, zut, pBichilloak);
 			}
 		}
 	}

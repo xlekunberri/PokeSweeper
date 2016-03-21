@@ -1,7 +1,5 @@
 package org.pokesweeper.model;
 
-import org.pokesweeper.view.KanpoLaukiaUI;
-
 public class LaukiFactory {
 	
 	//Atributoak
@@ -28,11 +26,11 @@ public class LaukiFactory {
 	}
 	
 	//Beste metodoak	
-	public BarruLaukia createLaukiLogikoa(int pErrenkada, int pZutabe, boolean pBichilloak){
+	public BarruLaukia createLaukia(int pErrenkada, int pZutabe, boolean pBichilloak){
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
 		BarruLaukia laukia;
-		int ikonoZenb = barrukoZenbLortu();
+		int ikonoZenb = this.zenbakiaLortu();
 		int egungoa = this.minak[pErrenkada][pZutabe];
 		if(pBichilloak){
 			laukia = new BichilloLaukia(this.errenkada, this.zutabe, ikonoZenb);
@@ -48,11 +46,6 @@ public class LaukiFactory {
 			}	
 		}
 		return laukia;
-	}
-	
-	
-	public KanpoLaukiaUI createKanpoLaukia(int pZenbakia) {
-		return new KanpoLaukiaUI(pZenbakia);
 	}
 	
 	public void setTamaina(int pErrenkadaKop, int pZutabeKop, int pMinaKop){
@@ -72,7 +65,6 @@ public class LaukiFactory {
 				this.minak[errenkada][zutabea] = -1;
 				albokoakAbisatu(errenkada, zutabea);
 				i++;
-				
 			}
 		}
 	}
@@ -91,7 +83,7 @@ public class LaukiFactory {
 		return !(pErrenkada < 0 || pErrenkada >= this.errenkadaKop || pZutabe < 0 || pZutabe >= this.zutabeKop);
 	}
 	
-	private int barrukoZenbLortu(){
+	private int zenbakiaLortu(){
 		int zenbakia;
 		if(this.errenkada == 0){
 			if(this.zutabe == 0){
