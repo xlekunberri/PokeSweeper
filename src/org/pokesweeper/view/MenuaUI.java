@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Desktop;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -18,8 +19,10 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
 
 import org.pokesweeper.model.Helbideak;
 
@@ -105,39 +108,47 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 				
 			}
 			else if (e.getSource()==honiBuruz) {
-				/*
-				 		JTextPane f = new JTextPane();
-		f.setContentType("text/html");
-		f.setText("<html><center><b><font size = +2>POKÉSWEEPER</font></b><br><br>"
-				+ "<b><font size = +1>Egileak:</font></b><br>"
-                + "Eneko Sampedro<br>"
-                + "Javier Sautua<br>"
-                + "Xabier Lekunberri<br>"
-                + "Gontzal Pujana<br><br>"
-                + "<b><font size = +1>Kodea:</font></b><br>"
-                +"</html>");
-        f.setEditable(false);
-		f.setBackground(null);
-		f.setBorder(null);
-		
-		JTextPane website = new JTextPane();
-		website.setContentType("text/html");
-		website.setText("<html><a href=\"\">"+"https://github.com/Xabiier/PokeSweeper"+"</a></html>");
-        website.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        website.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                    try {
-                            Desktop.getDesktop().browse(new URI("https://github.com/Xabiier/PokeSweeper"));
-                    } catch (URISyntaxException | IOException ex) {
-                            //It looks like there's a problem
-                    }
-            }
-        });
-        website.setEditable(false);
-        website.setBackground(null);
-        website.setBorder(null);
-				 */
+				JPanel panel = new JPanel(new GridLayout(2, 1, 0, 0));
+				panel.setBackground(new Color(160, 224, 192));
+				JTextPane f = new JTextPane();
+				f.setContentType("text/html");
+				f.setText("<html><center><b><font size = +2>PokéSweeper</font></b><br><br>"
+						+ "<b><font size = +1>Egileak:</font></b><br>"
+		                + "Eneko Sampedro<br>"
+		                + "Javier Sautua<br>"
+		                + "Xabier Lekunberri<br>"
+		                + "Gontzal Pujana<br><br>"
+		                + "<b><font size = +1>Kodea:</font></b><br>"
+		                +"</html>");
+		        f.setEditable(false);
+				f.setBackground(null);
+				f.setBorder(null);
+				
+				JTextPane website = new JTextPane();
+				website.setContentType("text/html");
+				website.setText("<html><center><a href=\"\">"+"https://github.com/Xabiier/PokeSweeper"+"</a></html>");
+		        website.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		        website.addMouseListener(new MouseAdapter() {
+		            @Override
+		            public void mouseClicked(MouseEvent e) {
+		                    try {
+		                            Desktop.getDesktop().browse(new URI("https://github.com/Xabiier/PokeSweeper"));
+		                    } catch (URISyntaxException | IOException ex) {
+		                            //It looks like there's a problem
+		                    }
+		            }
+		        });
+		        website.setEditable(false);
+		        website.setBackground(null);
+		        website.setBorder(null);
+		        
+		        panel.add(f);
+		        panel.add(website);
+		        
+		        JFrame frame = new JFrame();
+		        UIManager.put("OptionPane.background",new ColorUIResource(160, 224, 192));
+		        UIManager.put("Panel.background",new ColorUIResource(160, 224, 192));
+		        JOptionPane.showMessageDialog(frame, panel, "Egileak", JOptionPane.PLAIN_MESSAGE);
 			}
 	}
 }
