@@ -22,7 +22,9 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private static JPanel behekoPanela;
 	public static boolean bukatuta = false;
-	public static Kontadorea kontadorea = new Kontadorea();
+	public static MinaKontadorea minaKontadorea = new MinaKontadorea();
+	public static DenboraKontadorea denboraKontadorea;
+	
 
 	//Eraikitzailea
 	private JokoaUI(){
@@ -98,7 +100,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		goikoPanela.add(goikoPanelaGoian, BorderLayout.NORTH);
 		
 		goikoPanela.add(this.getLorea());
-		goikoPanela.add(JokoaUI.kontadorea); //MINAKOP
+		goikoPanela.add(JokoaUI.minaKontadorea); //MINAKOP
 		goikoPanela.add(this.getLorea());
 		JPanel goian = new JPanel();
 		goian.setBackground(new Color(112, 200, 160));
@@ -108,7 +110,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		behean.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(behean);
 		goikoPanela.add(this.getLorea());
-		goikoPanela.add(new Kontadorea()); //TIEMPO
+		goikoPanela.add(JokoaUI.denboraKontadorea=new DenboraKontadorea()); //TIEMPO
 		goikoPanela.add(this.getLorea());
 	}
 	
@@ -121,6 +123,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	
 	public static void galdu(){
 		JokoaUI.bukatuta = true;
+		JokoaUI.denboraKontadorea.denboraGelditu();
 		PikaUI.getNirePika().setPikaEgoera("galdu");
 	}
 	

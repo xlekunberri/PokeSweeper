@@ -26,6 +26,7 @@ public class PikaUI extends JButton{
 		    	else if(e.getButton() == MouseEvent.BUTTON3){
 					JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop(), true);
 			    }
+		    	JokoaUI.denboraKontadorea.denboraErreseteatu();
 		    	PikaUI.getNirePika().setPikaEgoera("normal");
 		    }
 		});

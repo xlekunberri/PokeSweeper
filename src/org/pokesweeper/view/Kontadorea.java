@@ -2,16 +2,17 @@ package org.pokesweeper.view;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import org.pokesweeper.model.Helbideak;
 
-public class Kontadorea extends JPanel {
+public abstract class Kontadorea extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int kont = 0;
+	protected int kont = 0;
 	private JButton[] kontadorea = new JButton[3];
 
 	public Kontadorea() {
@@ -32,36 +33,20 @@ public class Kontadorea extends JPanel {
 		}
 	}
 	
-	public void kontadoreaErreseteatu() {
-		this.kont = 0;
-		this.kontadoreaEguneratu();
-	}
-	
-	public void kontadoreaGehitu() {
-		this.kont++;
-		this.kontadoreaEguneratu();
-	}
-	
-	public void kontadoreaKendu(){
-		this.kont--;
-		this.kontadoreaEguneratu();
-	}
-	
-	public void zenbakiaJarri(int pZenbakia){
-		this.kont = pZenbakia;
-		this.kontadoreaEguneratu();
-	}
-	
-	private void kontadoreaEguneratu(){
+	protected void kontadoreaEguneratu(){
 		int ehunekoa = this.kont/100;
-		int hamarrekoa = this.kont/10;
-		int batekoa = this.kont % 10;
+		int hamarrekoa = (this.kont%100)/10;
+		int batekoa = (this.kont%100) % 10;
 		kontadorea[0].setIcon(Helbideak.kontadorea[ehunekoa]);
 		kontadorea[1].setIcon(Helbideak.kontadorea[hamarrekoa]);
 		kontadorea[2].setIcon(Helbideak.kontadorea[batekoa]);
+		if (kont==999){
+			JokoaUI.galdu();
+		}
 	}
 
 	public int getKont() {
 		return this.kont;
 	}
+
 }

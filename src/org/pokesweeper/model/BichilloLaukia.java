@@ -1,4 +1,5 @@
 package org.pokesweeper.model;
+import org.pokesweeper.view.JokoaUI;
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
 
@@ -12,7 +13,7 @@ public class BichilloLaukia extends BarruLaukia {
 	//Beste metodoak
 	@Override
 	public void mouseClicked(boolean pEzkerrekoBotoia) {
-		if(this.egoera != 3 && pEzkerrekoBotoia){
+		if(this.egoera != 3 && pEzkerrekoBotoia && !JokoaUI.bukatuta){
 			this.egoera = 3;
 			LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 			laukiHonenUI.setRolloverIcon(null);

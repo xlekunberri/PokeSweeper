@@ -33,7 +33,7 @@ public class Helbideak {
 	public static Icon[] belar_mugimendu = new Icon[9];
 	public static Icon[] zenbaki = new Icon[8];
 	
-	public static Icon[] kontadorea = new Icon[12];
+	public static Icon[] kontadorea = new Icon[10];
 	public static ImageIcon lorea;
 	
 	public static Icon[] bichilloak = new Icon[41];

@@ -37,19 +37,19 @@ public class BarruLaukia{
     	else{
     		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
     		if(this.egoera != 3 && !JokoaUI.bukatuta) {
-    			if(this.egoera == 0 && JokoaUI.kontadorea.getKont() != 0){
+    			if(this.egoera == 0 && JokoaUI.minaKontadorea.getKont() != 0){
     				this.egoera = 1;
     				laukiHonenUI.setIcon(Helbideak.bandera[this.ikonoZenb]);
     				laukiHonenUI.setRolloverIcon(null);
-    				JokoaUI.kontadorea.kontadoreaKendu();
+    				JokoaUI.minaKontadorea.kontadoreaKendu();
     			}
     			else if(this.egoera == 1){
     				this.egoera = 2;
     				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
     				laukiHonenUI.setRolloverIcon(null);
-    				JokoaUI.kontadorea.kontadoreaGehitu();
+    				JokoaUI.minaKontadorea.kontadoreaGehitu();
     			}
-    			else if((this.egoera == 0 && JokoaUI.kontadorea.getKont() == 0)){
+    			else if((this.egoera == 0 && JokoaUI.minaKontadorea.getKont() == 0)){
     				this.egoera = 2;
     				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
     				laukiHonenUI.setRolloverIcon(null);
