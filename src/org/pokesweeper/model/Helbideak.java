@@ -58,59 +58,60 @@ public class Helbideak {
 	
 	private static void besteakKargatu(){
 		try{
-			iturria = (Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/normala.ttf"))).deriveFont(12F);
-			unownIturria = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream("src/skin/font/unown.ttf"))).deriveFont(12F);
-			ikonoa = ImageIO.read(new File("src/skin/ikonoa.png"));
+			iturria = (Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("skin/font/normala.ttf"))).deriveFont(12F);
+			unownIturria = (Font.createFont( Font.TRUETYPE_FONT, new FileInputStream("skin/font/unown.ttf"))).deriveFont(12F);
+			ikonoa = ImageIO.read(new File("skin/ikonoa.png"));
 		}catch (IOException | FontFormatException e){}
-		kursorea = Toolkit.getDefaultToolkit().createCustomCursor(Toolkit.getDefaultToolkit().getImage("src/skin/kursorea.png") , new Point(3, 30), "img");
-		voltorb = new ImageIcon("src/skin/laukiak/voltorb/voltorb.png");
-		voltorb_s = new ImageIcon("src/skin/laukiak/voltorb/voltorb_s.png");
-		splash = new ImageIcon("src/skin/splash.png");
-		splashGif = new ImageIcon("src/skin/splash.gif");
-		galdera = new ImageIcon("src/skin/laukiak/galdera.png");
-		lorea = new ImageIcon("src/skin/kontadorea/lorea.gif");
+		kursorea = Toolkit.getDefaultToolkit().createCustomCursor(Toolkit.getDefaultToolkit().getImage("skin/kursorea.png") , new Point(3, 30), "img");
+		voltorb = new ImageIcon("skin/laukiak/voltorb/voltorb.png");
+		voltorb_s = new ImageIcon("skin/laukiak/voltorb/voltorb_s.png");
+		splash = new ImageIcon("skin/splash.png");
+		splashGif = new ImageIcon("skin/splash.gif");
+		galdera = new ImageIcon("skin/laukiak/galdera.png");
+		lorea = new ImageIcon("skin/kontadorea/lorea.gif");
 	}
 		
 	private static void pikaKargatu(){
-		pikaNormal = new ImageIcon("src/skin/pika/normal.png");
-		pikaIrabazi = new ImageIcon("src/skin/pika/irabazi.png");
-		pikaGaldu = new ImageIcon("src/skin/pika/galdu.png");
-		pikaKlik = new ImageIcon("src/skin/pika/klik.png");
+		pikaNormal = new ImageIcon("skin/pika/normal.png");
+		pikaIrabazi = new ImageIcon("skin/pika/irabazi.png");
+		pikaGaldu = new ImageIcon("skin/pika/galdu.png");
+		pikaKlik = new ImageIcon("skin/pika/klik.png");
 	}
 	
 	private static void lurraKargatu() {
 		for(int i = 0; i < lurra.length; i++)
-			lurra[i] = new ImageIcon("src/skin/laukiak/lurra/"+(i+1)+".png");
+			lurra[i] = new ImageIcon("skin/laukiak/lurra/"+(i+1)+".png");
 	}
 	
 	private static void belarraKargatu() {
 		for(int i = 0; i < belar_normal.length; i++)
-			belar_normal[i] = new ImageIcon("src/skin/laukiak/belarra/normala/"+(i+1)+".png");
+			belar_normal[i] = new ImageIcon("skin/laukiak/belarra/normala/"+(i+1)+".png");
 	}
 	
 	private static void mugimenduaKargatu() {
 		for(int i = 0; i < belar_mugimendu.length; i++)
-			belar_mugimendu[i] = new ImageIcon("src/skin/laukiak/belarra/mugimendua/5.gif");
+			belar_mugimendu[i] = new ImageIcon("skin/laukiak/belarra/mugimendua/5.gif");
 	}
 	
 	private static void banderaKargatu() {
 		for(int i = 0; i < bandera.length; i++)
-			bandera[i] = new ImageIcon("src/skin/laukiak/bandera/"+(i+1)+".gif");
+			bandera[i] = new ImageIcon("skin/laukiak/bandera/"+(i+1)+".gif");
 	}
 	
 	private static void zenbakiakKargatu() {
 		for(int i = 0; i < zenbaki.length; i++)
-			zenbaki[i] = new ImageIcon("src/skin/laukiak/zenbakiak/"+(i+1)+".png");
+			zenbaki[i] = new ImageIcon("skin/laukiak/zenbakiak/"+(i+1)+".png");
 	}
 	
 	private static void bichilloakKargatu() {
 		for(int i = 0; i < bichilloak.length; i++)
-				bichilloak[i] = new ImageIcon("src/skin/laukiak/bichilloak/image"+(i+1)+".png");
+				bichilloak[i] = new ImageIcon("skin/laukiak/bichilloak/image"+(i+1)+".png");
 	}
 	
 	private static void kontadoreaKargatu() {
 			for(int i = 0; i < kontadorea.length; i++)
-				kontadorea[i] = new ImageIcon("src/skin/kontadorea/"+i+".png");
+				kontadorea[i] = new ImageIcon("skin/kontadorea/"+i+".png");
+			//	kontadorea[i] = new ImageIcon("skin/kontadorea/besteak/"+i+".png");
 	}
 	
 }
