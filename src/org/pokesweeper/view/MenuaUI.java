@@ -1,10 +1,10 @@
 package org.pokesweeper.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Desktop;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -14,6 +14,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import javax.swing.Box;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -97,6 +98,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");
 		 		UIManager.put("OptionPane.noButtonText", "Ez");
 		 		UIManager.put("OptionPane.cancelButtonText", "Ezeztatu");
+		 		
 		 		JFrame frame = new JFrame();
 		 	    int response = JOptionPane.showConfirmDialog(frame, "Jokoa itxi nahi duzu?","Jokoa itxi",
 		 	    		JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,Helbideak.pikaGaldu);
@@ -108,7 +110,8 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 				
 			}
 			else if (e.getSource()==honiBuruz) {
-				JPanel panel = new JPanel(new GridLayout(2, 1, 0, 0));
+				//JPanel panel = new JPanel(new GridLayout(2, 1, 0, 0));
+				JPanel panel = new JPanel(new BorderLayout());
 				panel.setBackground(new Color(160, 224, 192));
 				JTextPane f = new JTextPane();
 				f.setContentType("text/html");
@@ -142,12 +145,13 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		        website.setBackground(null);
 		        website.setBorder(null);
 		        
-		        panel.add(f);
-		        panel.add(website);
+		        panel.add(f,  BorderLayout.NORTH);
+		        panel.add(website,  BorderLayout.CENTER);
 		        
 		        JFrame frame = new JFrame();
 		        UIManager.put("OptionPane.background",new ColorUIResource(160, 224, 192));
 		        UIManager.put("Panel.background",new ColorUIResource(160, 224, 192));
+		        UIManager.put("OptionPane.okButtonText", "Itzuli");
 		        JOptionPane.showMessageDialog(frame, panel, "Egileak", JOptionPane.PLAIN_MESSAGE);
 			}
 	}
