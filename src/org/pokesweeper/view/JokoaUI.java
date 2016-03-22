@@ -138,6 +138,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		JokoaUI.bukatuta = false;
 		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
+		PikaUI.getNirePika().setPikaEgoera("normal");
+		JokoaUI.denboraKontadorea.denboraErreseteatu();
 		this.pack();
 	}
 	
