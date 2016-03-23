@@ -14,7 +14,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import javax.swing.Box;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
