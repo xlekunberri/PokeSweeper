@@ -31,6 +31,7 @@ public class DenboraKontadorea extends Kontadorea {
 	}
 	public void denboraErreseteatu(){
 		kont=0;
+		timer.start();
 		kontadoreaEguneratu();
 	}
 	

@@ -129,6 +129,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	
 	public static void irabazi(){
 		JokoaUI.bukatuta = true;
+		JokoaUI.denboraKontadorea.denboraGelditu();
 		PikaUI.getNirePika().setPikaEgoera("irabazi");		
 	}
 	
