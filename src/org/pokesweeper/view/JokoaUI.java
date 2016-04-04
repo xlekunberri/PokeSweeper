@@ -22,8 +22,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private static JPanel behekoPanela;
 	public static boolean bukatuta = false;
-	public static MinaKontadorea minaKontadorea = new MinaKontadorea();
-	public static DenboraKontadorea denboraKontadorea;
+	public static KontadoreaUI minaKontadorea;
+	public static KontadoreaUI denboraKontadorea;
 	
 
 	//Eraikitzailea
@@ -100,7 +100,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		goikoPanela.add(goikoPanelaGoian, BorderLayout.NORTH);
 		
 		goikoPanela.add(this.getLorea());
-		goikoPanela.add(JokoaUI.minaKontadorea); //MINAKOP
+		goikoPanela.add(JokoaUI.minaKontadorea = new KontadoreaUI());
 		goikoPanela.add(this.getLorea());
 		JPanel goian = new JPanel();
 		goian.setBackground(new Color(112, 200, 160));
@@ -110,7 +110,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		behean.setBackground(new Color(112, 200, 160));
 		goikoPanela.add(behean);
 		goikoPanela.add(this.getLorea());
-		goikoPanela.add(JokoaUI.denboraKontadorea=new DenboraKontadorea()); //TIEMPO
+		goikoPanela.add(JokoaUI.denboraKontadorea = new KontadoreaUI());
 		goikoPanela.add(this.getLorea());
 	}
 	
@@ -123,13 +123,13 @@ public class JokoaUI extends JFrame implements ActionListener{
 	
 	public static void galdu(){
 		JokoaUI.bukatuta = true;
-		JokoaUI.denboraKontadorea.denboraGelditu();
+		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
 		PikaUI.getNirePika().setPikaEgoera("galdu");
 	}
 	
 	public static void irabazi(){
 		JokoaUI.bukatuta = true;
-		JokoaUI.denboraKontadorea.denboraGelditu();
+		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
 		PikaUI.getNirePika().setPikaEgoera("irabazi");		
 	}
 	
@@ -140,7 +140,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		JokoaUI.bukatuta = false;
 		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
 		PikaUI.getNirePika().setPikaEgoera("normal");
-		JokoaUI.denboraKontadorea.denboraErreseteatu();
+		Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
 		this.pack();
 	}
 	

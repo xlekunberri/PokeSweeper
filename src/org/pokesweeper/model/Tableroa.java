@@ -10,6 +10,8 @@ public class Tableroa {
 	private static Tableroa nireTableroa;
 	public BarruLaukia laukia[][];
 	public ArrayList<MinaLaukia> minak;
+	public MinaKontadorea minaKontadorea;
+	public DenboraKontadorea denboraKontadorea;
 	private int errenkadaKop;
 	private int zutabeKop;
 	private int minaKop;
@@ -30,7 +32,11 @@ public class Tableroa {
 		this.errenkadaKop = pErrenkada;
 		this.zutabeKop = pZutabe;
 		this.minaKop = pMinaKop;
-		JokoaUI.minaKontadorea.zenbakiaJarri(this.minaKop);
+		if(this.denboraKontadorea == null){
+			this.denboraKontadorea = new DenboraKontadorea();
+			this.minaKontadorea = new MinaKontadorea();
+		}
+		Tableroa.getNireTableroa().minaKontadorea.minaKopuruaJarri(this.minaKop);
 		this.laukiFalta = this.errenkadaKop * this.zutabeKop;
 		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];
 		this.minak = new ArrayList<MinaLaukia>();
