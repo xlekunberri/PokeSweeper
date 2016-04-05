@@ -7,7 +7,8 @@ import javax.swing.Timer;
 import org.pokesweeper.view.JokoaUI;
  
 public class DenboraKontadorea extends Kontadorea{
-	//Atributuak
+	
+	//Atributoak
 	private Timer timer;
 	
 	//Eraikitzailea

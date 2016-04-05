@@ -7,11 +7,7 @@ public class LaukiFactory {
 	private int errenkadaKop;
 	private int zutabeKop;
 	private int minaKop;
-	private int[][] minak;
-		// -1 = MinaLauki
-		// 0 = LurLauki
-		// 1-8 = ZenbLauki
-	
+	private int[][] minak; // -1 = MinaLauki, 0 = LurLauki, 1-8 = ZenbLauki
 	private int errenkada;
 	private int zutabe;
 	

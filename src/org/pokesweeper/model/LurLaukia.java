@@ -6,6 +6,8 @@ import org.pokesweeper.view.TableroaUI;
 
 public class LurLaukia extends BarruLaukia{
 
+	//Atributoak	
+
 	//Eraikitzailea
 	public LurLaukia(int pErrenkada, int pZutabea, int pIkonoZenb){
 		super(pErrenkada, pZutabea, pIkonoZenb);

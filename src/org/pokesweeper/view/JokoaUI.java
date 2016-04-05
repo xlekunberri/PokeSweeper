@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.Pika;
 import org.pokesweeper.model.Tableroa;
 
 public class JokoaUI extends JFrame implements ActionListener{
@@ -25,7 +26,13 @@ public class JokoaUI extends JFrame implements ActionListener{
 	public static KontadoreaUI minaKontadorea;
 	public static KontadoreaUI denboraKontadorea;
 	
-
+	// Main metodoa
+	public static void main(String[] args) {
+		Helbideak.denakKargatu();
+		new Splash();
+		JDialog.setDefaultLookAndFeelDecorated(true);
+	}
+	
 	//Eraikitzailea
 	private JokoaUI(){
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,13 +67,6 @@ public class JokoaUI extends JFrame implements ActionListener{
 			nirejokoa = new JokoaUI();
 		}
 		return nirejokoa;
-	}
-	
-	// Main metodoa
-	public static void main(String[] args) {
-		Helbideak.denakKargatu();
-		new Splash();
-		JDialog.setDefaultLookAndFeelDecorated(true);
 	}
 	
 	//Beste metodoak
@@ -124,13 +124,13 @@ public class JokoaUI extends JFrame implements ActionListener{
 	public static void galdu(){
 		JokoaUI.bukatuta = true;
 		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
-		PikaUI.getNirePika().setPikaEgoera("galdu");
+		Pika.getNirePika().setPikaEgoera("galdu");
 	}
 	
 	public static void irabazi(){
 		JokoaUI.bukatuta = true;
 		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
-		PikaUI.getNirePika().setPikaEgoera("irabazi");		
+		Pika.getNirePika().setPikaEgoera("irabazi");		
 	}
 	
 	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak) {
@@ -139,7 +139,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		JokoaUI.bukatuta = false;
 		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
-		PikaUI.getNirePika().setPikaEgoera("normal");
+		Pika.getNirePika().setPikaEgoera("normal");
 		Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
 		this.pack();
 	}

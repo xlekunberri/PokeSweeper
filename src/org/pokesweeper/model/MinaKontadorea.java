@@ -3,8 +3,8 @@ package org.pokesweeper.model;
 import org.pokesweeper.view.JokoaUI;
 
 public class MinaKontadorea extends Kontadorea{
-	//Atributuak
-
+	
+	//Atributoak
 	
 	//Eraikitzailea
 	public MinaKontadorea(){

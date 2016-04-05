@@ -1,7 +1,8 @@
 package org.pokesweeper.model;
 
 public abstract class Kontadorea {
-	//Atributuak
+	
+	//Atributoak
 	protected int kont;
 	
 	//Eraikitzailea

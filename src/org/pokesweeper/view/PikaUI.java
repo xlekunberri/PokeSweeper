@@ -2,9 +2,12 @@ package org.pokesweeper.view;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.Icon;
 import javax.swing.JButton;
+
 import org.pokesweeper.model.Helbideak;
-import org.pokesweeper.model.Tableroa;
+import org.pokesweeper.model.Pika;
 
 public class PikaUI extends JButton{
 	
@@ -13,25 +16,6 @@ public class PikaUI extends JButton{
 	private static PikaUI nirePika;
 
 	//Eraikitzailea
-	private PikaUI() {
-		this.setIcon(Helbideak.pikaNormal);
-		this.setBorder(null);
-		this.setContentAreaFilled(false);
-		this.addMouseListener(new MouseAdapter(){
-		    public void mouseClicked(MouseEvent e) {
-		    	Tableroa tableroa = Tableroa.getNireTableroa();
-		    	if(e.getButton() == MouseEvent.BUTTON1){
-			    	JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop(), false);
-		    	} 
-		    	else if(e.getButton() == MouseEvent.BUTTON3){
-					JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop(), true);
-			    }
-		    	Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
-		    	PikaUI.getNirePika().setPikaEgoera("normal");
-		    }
-		});
-	}
-	
 	public static PikaUI getNirePika() {
 		if (nirePika == null) {
 			nirePika = new PikaUI();
@@ -39,22 +23,25 @@ public class PikaUI extends JButton{
 		return nirePika;
 	}
 	
+	private PikaUI() {
+		this.setIcon(Helbideak.pikaNormal);
+		this.setBorder(null);
+		this.setContentAreaFilled(false);
+		this.addMouseListener(new MouseAdapter(){
+		    public void mouseClicked(MouseEvent e){
+		    	if(e.getButton() == MouseEvent.BUTTON1){
+		    		Pika.getNirePika().ezkerrekoKlik();
+		    	} 
+		    	else if(e.getButton() == MouseEvent.BUTTON3){
+					Pika.getNirePika().eskumakoKlik();
+			    }
+		    }
+		});
+	}
+	
 	//Beste metodoak
-	public void setPikaEgoera(String pEgoera) {
-		switch (pEgoera) {
-		case "normal":
-			this.setIcon(Helbideak.pikaNormal);
-			break;
-		case "irabazi":
-			this.setIcon(Helbideak.pikaIrabazi);
-			break;
-		case "galdu":
-			this.setIcon(Helbideak.pikaGaldu);
-			break;
-		case "klik":
-			this.setIcon(Helbideak.pikaKlik);
-			break;
-		}
+	public void setPikaEgoera(Icon pIkonoa) {
+		this.setIcon(pIkonoa);
 		this.repaint();
 	}
 

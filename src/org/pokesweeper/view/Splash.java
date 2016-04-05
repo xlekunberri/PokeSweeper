@@ -14,8 +14,10 @@ import org.pokesweeper.model.Helbideak;
 
 public class Splash extends JWindow {
 	
+	//Atributoak
 	private static final long serialVersionUID = 1L;
 	
+	//Eraikitzailea
 	public Splash(){
 		this.setBackground(new Color(0, 0, 0, 0));
 		
@@ -44,5 +46,7 @@ public class Splash extends JWindow {
 		});
 		
 	}
+	
+	//Beste metodoak
 
 }

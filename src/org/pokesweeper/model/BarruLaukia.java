@@ -2,7 +2,6 @@ package org.pokesweeper.model;
 
 import org.pokesweeper.view.JokoaUI;
 import org.pokesweeper.view.LaukiaUI;
-import org.pokesweeper.view.PikaUI;
 import org.pokesweeper.view.TableroaUI;
 
 public class BarruLaukia{
@@ -14,19 +13,12 @@ public class BarruLaukia{
 	private int ikonoZenb;
 	final Tableroa tableroLogicoa = Tableroa.getNireTableroa();
 	
+	//Eraikitzailea
 	protected BarruLaukia(int pErrenkada, int pZutabea, int pIkonoZenb) {
 		this.errenkada = pErrenkada;
 		this.zutabea = pZutabea;
 		this.ikonoZenb = pIkonoZenb;
 		this.egoera = 0; // 0 = Zabaldu gabe; 1 = Bandera; 2 = Galdera ikurra; 3 = Zabalik;
-	}
-	
-	int getEgoera() {
-		return this.egoera;
-	}
-	
-	public int getIkonoZenb(){
-		return this.ikonoZenb;
 	}
 	
 	//Beste metodoak
@@ -86,13 +78,13 @@ public class BarruLaukia{
 	
 	public void mousePressed() {
     	if(this.egoera == 0 && !JokoaUI.bukatuta) {
-    		PikaUI.getNirePika().setPikaEgoera("klik");
+    		Pika.getNirePika().setPikaEgoera("klik");
     	}
 	}
 	
 	public void mouseReleased() {
     	if(this.egoera == 0 && !JokoaUI.bukatuta) {
-    		PikaUI.getNirePika().setPikaEgoera("normal");
+    		Pika.getNirePika().setPikaEgoera("normal");
     	}
 	}
 	
@@ -106,6 +98,14 @@ public class BarruLaukia{
 		if(tableroa.laukiFalta == tableroa.getMinaKop()){
 			JokoaUI.irabazi();
 		}
+	}
+	
+	int getEgoera() {
+		return this.egoera;
+	}
+	
+	public int getIkonoZenb(){
+		return this.ikonoZenb;
 	}
 	
 }

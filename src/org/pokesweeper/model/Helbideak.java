@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 
 public class Helbideak {
 
+	//Atributoak
 	public static Font iturria;
 	public static Font unownIturria;
 	public static Image ikonoa;
@@ -44,6 +45,9 @@ public class Helbideak {
 	public static ImageIcon[] bandera = new ImageIcon[9];
 	public static Icon galdera;
 	
+	//Eraikitzailea
+	
+	//Beste metodoak
 	public static void denakKargatu(){
 		Helbideak.besteakKargatu();
 		Helbideak.lurraKargatu();

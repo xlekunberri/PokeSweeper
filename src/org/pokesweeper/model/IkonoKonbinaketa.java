@@ -7,14 +7,17 @@ import javax.swing.Icon;
 
 public class IkonoKonbinaketa implements Icon{
 	
+	//Atributoak
 	private final Icon atzekoa;
 	private final Icon aurrekoa;
 	
+	//Eraikitzailea
 	public IkonoKonbinaketa(Icon pAtzekoa, Icon pAurrekoa) {
 		this.atzekoa = pAtzekoa;
 		this.aurrekoa = pAurrekoa;
 	}
 
+	//Beste metodoak
 	@Override
 	public int getIconHeight() {
 		return Math.max(aurrekoa.getIconHeight(), atzekoa.getIconHeight());

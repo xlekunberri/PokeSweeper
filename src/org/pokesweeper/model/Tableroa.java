@@ -23,6 +23,8 @@ public class Tableroa {
 	public static Tableroa getNireTableroa(){
 		if (nireTableroa == null){
 			nireTableroa = new Tableroa();
+			nireTableroa.denboraKontadorea = new DenboraKontadorea();
+			nireTableroa.minaKontadorea = new MinaKontadorea();
 		}
 		return nireTableroa;
 	}
@@ -32,10 +34,6 @@ public class Tableroa {
 		this.errenkadaKop = pErrenkada;
 		this.zutabeKop = pZutabe;
 		this.minaKop = pMinaKop;
-		if(this.denboraKontadorea == null){
-			this.denboraKontadorea = new DenboraKontadorea();
-			this.minaKontadorea = new MinaKontadorea();
-		}
 		Tableroa.getNireTableroa().minaKontadorea.minaKopuruaJarri(this.minaKop);
 		this.laukiFalta = this.errenkadaKop * this.zutabeKop;
 		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];

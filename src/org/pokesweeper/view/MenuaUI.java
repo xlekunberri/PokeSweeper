@@ -154,4 +154,5 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		        JOptionPane.showMessageDialog(frame, panel, "Egileak", JOptionPane.PLAIN_MESSAGE);
 			}
 	}
+	
 }
