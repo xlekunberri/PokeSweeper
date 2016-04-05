@@ -1,10 +1,11 @@
 package org.pokesweeper.view;
 
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+
 import org.pokesweeper.model.BarruLaukia;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Tableroa;
@@ -17,7 +18,9 @@ public class LaukiaUI extends JButton implements MouseListener {
 	private final int zutabe;
 	
 	//Eraikitzailea
+	
 	public LaukiaUI(int pErrenkada, int pZutabe){
+		//BarruLaukia (belarra daukan laukia)
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
 		BarruLaukia laukiLogikoa = Tableroa.getNireTableroa().laukia[pErrenkada][pZutabe];
@@ -27,17 +30,24 @@ public class LaukiaUI extends JButton implements MouseListener {
         this.setIcon(Helbideak.belar_normal[laukiLogikoa.getIkonoZenb()]);
         this.repaint();
 	}
+	
+	public LaukiaUI(int pPosizioa){
+		//KanpoLaukia (lurra daukan laukia)
+		super(Helbideak.lurra[pPosizioa]);
+		this.errenkada = 0;
+		this.zutabe = 0;
+		this.setBorder(null);
+        this.setContentAreaFilled(false);
+	}
 
 	//Beste metodoak
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		//Ezkerra = true
-		//Eskuma = false
 		if(e.getButton() == MouseEvent.BUTTON1){
-			Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseClicked(true);	
+			Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].ezkerrekoBotoia();
     	} 
     	else if(e.getButton() == MouseEvent.BUTTON3){
-    		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseClicked(false);	
+    		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].eskumakoBotoia();	
     	}
 	
 	}

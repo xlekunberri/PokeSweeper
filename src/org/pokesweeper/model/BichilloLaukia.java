@@ -14,8 +14,8 @@ public class BichilloLaukia extends BarruLaukia {
 	
 	//Beste metodoak
 	@Override
-	public void mouseClicked(boolean pEzkerrekoBotoia) {
-		if(this.egoera != 3 && pEzkerrekoBotoia && !JokoaUI.bukatuta){
+	public void ezkerrekoBotoia() {
+		if(this.egoera != 3 && !JokoaUI.bukatuta){
 			this.egoera = 3;
 			LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 			laukiHonenUI.setRolloverIcon(null);
@@ -23,6 +23,11 @@ public class BichilloLaukia extends BarruLaukia {
 			laukiHonenUI.setIcon(Helbideak.bichilloak[p]);
 			laukiHonenUI.repaint();
 		}
+	}
+	
+	@Override
+	public void eskumakoBotoia(){
+		
 	}
 	
 	@Override

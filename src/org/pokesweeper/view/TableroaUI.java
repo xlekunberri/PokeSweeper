@@ -35,24 +35,24 @@ public class TableroaUI extends JPanel{
 		GridLayout grid = new GridLayout(errenkada+2, zutabe+2, 0, 0);
 		this.setLayout(grid);
 		
-		this.add(new KanpoLaukiaUI(0));
+		this.add(new LaukiaUI(0));
 		for(int zut = 0; zut < zutabe; zut++) {
-			this.add(new KanpoLaukiaUI(1));
+			this.add(new LaukiaUI(1));
 		}
-		this.add(new KanpoLaukiaUI(2));
+		this.add(new LaukiaUI(2));
 		for(int erren = 0; erren < errenkada; erren++) {
-			this.add(new KanpoLaukiaUI(3));
+			this.add(new LaukiaUI(3));
 			for(int zut = 0; zut < zutabe; zut++) {
 				this.laukia[erren][zut] =  new LaukiaUI(erren, zut);
 				this.add(this.laukia[erren][zut]);
 			}
-			this.add(new KanpoLaukiaUI(5));
+			this.add(new LaukiaUI(5));
 		}	
-		this.add(new KanpoLaukiaUI(6));
+		this.add(new LaukiaUI(6));
 		for(int zut = 0; zut < zutabe; zut++){
-			this.add(new KanpoLaukiaUI(7));
+			this.add(new LaukiaUI(7));
 		}
-		this.add(new KanpoLaukiaUI(8));
+		this.add(new LaukiaUI(8));
 	}
 
 }

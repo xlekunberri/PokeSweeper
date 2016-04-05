@@ -22,40 +22,35 @@ public class BarruLaukia{
 	}
 	
 	//Beste metodoak
-	public void mouseClicked(boolean pEzkerrekoBotoia) {
-		if(pEzkerrekoBotoia){
-	    	this.ezkerrekoBotoia();
-    	} 
-    	else{
-    		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
-    		if(this.egoera != 3 && !JokoaUI.bukatuta) {
-    			if(this.egoera == 0 && Tableroa.getNireTableroa().minaKontadorea.getKont() != 0){
-    				this.egoera = 1;
-    				laukiHonenUI.setIcon(Helbideak.bandera[this.ikonoZenb]);
-    				laukiHonenUI.setRolloverIcon(null);
-    				Tableroa.getNireTableroa().minaKontadorea.minaKendu();
-    			}
-    			else if(this.egoera == 1){
-    				this.egoera = 2;
-    				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
-    				laukiHonenUI.setRolloverIcon(null);
-    				Tableroa.getNireTableroa().minaKontadorea.minaGehitu();
-    			}
-    			else if((this.egoera == 0 && Tableroa.getNireTableroa().minaKontadorea.getKont() == 0)){
-    				this.egoera = 2;
-    				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
-    				laukiHonenUI.setRolloverIcon(null);
-    			} 
-    			else{
-    				this.egoera = 0;
-    				laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
-    				laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
-    			}
-    		}
-	    }
+	public void eskumakoBotoia() {
+		LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
+		if(this.egoera != 3 && !JokoaUI.bukatuta) {
+			if(this.egoera == 0 && Tableroa.getNireTableroa().minaKontadorea.getKont() != 0){
+				this.egoera = 1;
+				laukiHonenUI.setIcon(Helbideak.bandera[this.ikonoZenb]);
+				laukiHonenUI.setRolloverIcon(null);
+				Tableroa.getNireTableroa().minaKontadorea.minaKendu();
+			}
+			else if(this.egoera == 1){
+				this.egoera = 2;
+				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
+				laukiHonenUI.setRolloverIcon(null);
+				Tableroa.getNireTableroa().minaKontadorea.minaGehitu();
+			}
+			else if((this.egoera == 0 && Tableroa.getNireTableroa().minaKontadorea.getKont() == 0)){
+				this.egoera = 2;
+				laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.belar_normal[this.ikonoZenb], Helbideak.galdera));
+				laukiHonenUI.setRolloverIcon(null);
+			} 
+			else{
+				this.egoera = 0;
+				laukiHonenUI.setIcon(Helbideak.belar_normal[this.ikonoZenb]);
+				laukiHonenUI.setRolloverIcon(Helbideak.belar_mugimendu[this.ikonoZenb]);
+			}
+		}
 	}
 	
-	protected void ezkerrekoBotoia(){
+	public void ezkerrekoBotoia(){
 		
 	}
 	
