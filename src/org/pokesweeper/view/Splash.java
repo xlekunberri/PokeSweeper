@@ -1,52 +1,51 @@
 package org.pokesweeper.view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
-import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JWindow;
 
 import org.pokesweeper.model.Helbideak;
 
-public class Splash extends JWindow {
+public class Splash extends JFrame {
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
 	
 	//Eraikitzailea
 	public Splash(){
-		this.setBackground(new Color(0, 0, 0, 0));
+		setUndecorated(true);
 		
-		ImageIcon img = Helbideak.splashGif;
-		this.add(new JLabel(img),BorderLayout.CENTER);
-		setSize(img.getIconWidth(),img.getIconHeight());
-		setLocationRelativeTo(null);
-		setAlwaysOnTop(true);
-		setVisible(true);
-		this.getContentPane().addMouseListener(new MouseAdapter(){
-			public void mousePressed(MouseEvent e){
-				setVisible(false);
-				dispose();
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							JokoaUI frame = JokoaUI.getNireJokoa();
-							frame.setLocationRelativeTo(null);
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
+		JLabel label = new JLabel(Helbideak.splashGif);
+		this.add(label,BorderLayout.CENTER);
+		label.setFocusable(true);
+
+		label.addKeyListener(new KeyAdapter(){
+			public void keyPressed(KeyEvent e){
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					setVisible(false);
+					dispose();
+					EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							try {
+								JokoaUI frame = JokoaUI.getNireJokoa();
+								frame.setLocationRelativeTo(null);
+								frame.setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
 						}
-					}
-				});
+					});
+				}
 			}
 		});
 		
+		pack();
+		setLocationRelativeTo(null);
+		setAlwaysOnTop(true);
+		setVisible(true);
 	}
-	
-	//Beste metodoak
-
 }
