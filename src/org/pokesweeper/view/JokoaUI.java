@@ -43,7 +43,6 @@ public class JokoaUI extends JFrame implements ActionListener{
 		UIManager.put("Menu.font", Helbideak.iturria);
 		UIManager.put("MenuItem.font", Helbideak.iturria);
 		
-		this.setJMenuBar(new MenuaUI());
 		
 		goikoPanelaEraiki();
 		
@@ -54,8 +53,13 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		panelakEraiki();
 		
+		Tableroa.getNireTableroa().tableroaEraiki(7, 10, 0, true);
+		TableroaUI.getNireTableroaUI().tableroaEraiki();
+		behekoPanela.add(TableroaUI.getNireTableroaUI());
+		
 		Logina login = new Logina(this);
 		login.setVisible(true);
+	
 		
 		this.setVisible(true);
 		this.pack();

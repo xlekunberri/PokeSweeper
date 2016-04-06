@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 
 public class Logina extends JDialog {
@@ -36,6 +37,8 @@ public class Logina extends JDialog {
     	r1 = new JRadioButton("1. Maila");
     	r2 = new JRadioButton("2. Maila");
     	r3 = new JRadioButton("3. Maila");
+    	
+    	r1.setSelected(true);
     	
     	bg.add(r1);
     	bg.add(r2);
@@ -63,6 +66,7 @@ public class Logina extends JDialog {
     	p5.add(jbtOk, BorderLayout.CENTER);
  
     	add(p5);
+    	this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
     	
     	pack();
     	setLocationRelativeTo(null);
@@ -72,6 +76,7 @@ public class Logina extends JDialog {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
+				JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
 				if(r1.isSelected()) {
 					JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
 				}

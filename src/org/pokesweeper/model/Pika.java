@@ -24,10 +24,12 @@ public class Pika {
 	
 	//Beste metodoak
 	public void ezkerrekoKlik(){
-    	Tableroa tableroa = Tableroa.getNireTableroa();
-		JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop(), false);
-    	Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
-    	this.setPikaEgoera("normal");
+		Tableroa tableroa = Tableroa.getNireTableroa();
+		if (tableroa.getMinaKop()!=0){
+			JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop(), false);
+	    	Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
+	    	this.setPikaEgoera("normal");
+		}
 	}
 	
 	public void eskumakoKlik(){
