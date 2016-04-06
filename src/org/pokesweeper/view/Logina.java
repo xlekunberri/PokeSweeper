@@ -32,6 +32,7 @@ public class Logina extends JDialog {
     
     public Logina(JFrame pFrame) {
     	super(pFrame);
+    	this.setResizable(false);
     	
     	bg = new ButtonGroup();
     	r1 = new JRadioButton("1. Maila");
