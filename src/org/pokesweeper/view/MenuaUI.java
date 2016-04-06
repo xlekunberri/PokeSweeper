@@ -32,6 +32,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private JMenuItem maila1, maila2, maila3;
 	private JMenuItem irten, nolaJokatu, honiBuruz;
+	private JMenuItem username;
 
 	
 	//Eraikitzailea
@@ -78,6 +79,13 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		honiBuruz = new JMenuItem("Honi buruz");
 		laguntza.add(honiBuruz);
 		honiBuruz.addActionListener(this);
+		
+		this.add(Box.createHorizontalGlue());
+		
+		String izena = Logina.getLogina(null).getUserName();
+		username = new JMenuItem(izena);
+		username.setPreferredSize(new Dimension(username.getPreferredSize().width, username.getPreferredSize().height));//Esto hay que cambiarlo
+		this.add(username);
 		
 	}
 
