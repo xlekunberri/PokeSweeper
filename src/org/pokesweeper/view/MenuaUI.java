@@ -13,8 +13,10 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -32,7 +34,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private JMenuItem maila1, maila2, maila3;
 	private JMenuItem irten, nolaJokatu, honiBuruz;
-	private JMenuItem username;
+	private JLabel username;
 
 	
 	//Eraikitzailea
@@ -45,6 +47,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	
 	//Beste Metodoak
 	private void menuaEraiki() {
+				
 		JMenu jokatu = new JMenu("Jokatu");
 		this.add(jokatu);
 		
@@ -82,10 +85,14 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		this.add(Box.createHorizontalGlue());
 		
 		String izena = Logina.getLogina(null).getUserName();
-		username = new JMenu(izena);
+		username = new JLabel(izena);
 		username.setForeground(Color.CYAN);
-		username.setEnabled(false);
+		username.setFont(Helbideak.iturria);
+		username.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 5));
 		this.add(username);
+		
+		
+		
 	}
 
 	@Override
