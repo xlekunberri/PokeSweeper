@@ -84,16 +84,18 @@ public class Logina extends JDialog {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
-				if(r1.isSelected()) {
-					JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
-				}
-				else if (r2.isSelected()) {
-					JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
-				}
-				else if (r3.isSelected()) {
-					JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+				if (!erabiltzaileField.getText().isEmpty()){
+					setVisible(false);
+					JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
+					if(r1.isSelected()) {
+						JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
+					}
+					else if (r2.isSelected()) {
+						JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
+					}
+					else if (r3.isSelected()) {
+						JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+					}
 				}
 				
 			}

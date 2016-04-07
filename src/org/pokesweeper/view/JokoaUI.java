@@ -59,8 +59,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		
 		Logina login = Logina.getLogina(this);
 		login.setVisible(true);
-	
-		
+
 		this.setVisible(true);
 		this.pack();
 	}

@@ -45,7 +45,6 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	
 	//Beste Metodoak
 	private void menuaEraiki() {
-		
 		JMenu jokatu = new JMenu("Jokatu");
 		this.add(jokatu);
 		
@@ -83,10 +82,10 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		this.add(Box.createHorizontalGlue());
 		
 		String izena = Logina.getLogina(null).getUserName();
-		username = new JMenuItem(izena);
-		username.setPreferredSize(new Dimension(username.getPreferredSize().width, username.getPreferredSize().height));//Esto hay que cambiarlo
+		username = new JMenu(izena);
+		username.setForeground(Color.CYAN);
+		username.enable(false); // es grasioso pero funciona y no encuentro ninguna otra manera
 		this.add(username);
-		
 	}
 
 	@Override
