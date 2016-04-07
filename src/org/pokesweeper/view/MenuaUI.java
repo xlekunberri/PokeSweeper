@@ -84,7 +84,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		String izena = Logina.getLogina(null).getUserName();
 		username = new JMenu(izena);
 		username.setForeground(Color.CYAN);
-		username.enable(false); // es grasioso pero funciona y no encuentro ninguna otra manera
+		username.setEnabled(false);
 		this.add(username);
 	}
 
