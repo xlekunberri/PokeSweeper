@@ -1,14 +1,16 @@
-package org.pokesweeper.view;
+package org.pokesweeper.model;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
-
-import org.pokesweeper.model.Tableroa;
-
 
 public class Ranking {
 	
@@ -20,10 +22,7 @@ public class Ranking {
 		if (!fitxRanking.exists()){
 			try {
 				fitxRanking.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			} catch (IOException e) {e.printStackTrace();}
 		}
 	}
 	
@@ -76,7 +75,14 @@ public class Ranking {
 				 if (hitzak[0].equals(pIzena) && Integer.parseInt(hitzak[2])==pMaila){
 					 dago = true;
 					 if (pDenbora < Integer.parseInt(hitzak[1])){ //si se cumple, actualizar
-						 //actualizar
+						 
+						 Path path = Paths.get("ranking.txt");
+						 Charset charset = StandardCharsets.UTF_8;
+
+						 String content = new String(Files.readAllBytes(path), charset);
+						 content = content.replaceAll(lerroa ,hitzak[0] + " ### " + Integer.toString(pDenbora) + " ### " + hitzak[2]);
+						 Files.write(path, content.getBytes(charset));
+
 					 }
 				 }
 			 }
@@ -87,5 +93,44 @@ public class Ranking {
 		}
 		return dago;
 	}
+	
+	/*public void rankingIdatzi(int pMaila){
+		fitxRanking=new File("ranking.txt");
+		String[] hoberenak = new String[10];
+		int min=1000;
+		String izena=null;
+		int i=0;
+		boolean bukatua = false;
+		try{
+			while (i<10 && !bukatua){
+				 Scanner sarrera = new Scanner(new FileReader(fitxRanking));
+				 String lerroa;
+				 min=1000;
+				 while (sarrera.hasNext()) {
+					 lerroa = sarrera.nextLine();
+					 String[] hitzak=lerroa.split(" ### ");
+					 if (Integer.parseInt(hitzak[2])==pMaila){
+						 if (Integer.parseInt(hitzak[1])<min){
+							 min = Integer.parseInt(hitzak[1]);
+							 izena = hitzak[0];
+						 }
+					 }
+				 }
+				 if (izena != null ){
+					 hoberenak[i] = izena + " " + min + "s";
+					 i++;
+					 sarrera.close();
+				 }
+				 else {
+					 bukatua=true;
+				 }
+			}
+		}
+			 
+		catch(IOException e){
+			 e.printStackTrace();
+		}
+		
+	}*/
 
 }

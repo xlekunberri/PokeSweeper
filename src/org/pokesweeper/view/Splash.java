@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.Ranking;
 
 public class Splash extends JFrame {
 	

@@ -28,7 +28,7 @@ public class BarruLaukia{
 			if(this.egoera == 0 && Tableroa.getNireTableroa().minaKontadorea.getKont() != 0){
 				this.egoera = 1;
 				laukiHonenUI.setIcon(Helbideak.bandera[this.ikonoZenb]);
-				laukiHonenUI.setRolloverIcon(null);
+				laukiHonenUI.setRolloverIcon(Helbideak.bandera[this.ikonoZenb]);
 				Tableroa.getNireTableroa().minaKontadorea.minaKendu();
 			}
 			else if(this.egoera == 1){

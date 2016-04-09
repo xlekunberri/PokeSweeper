@@ -20,7 +20,7 @@ public class BichilloLaukia extends BarruLaukia {
 			LaukiaUI laukiHonenUI = TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea];
 			laukiHonenUI.setRolloverIcon(null);
 			int p = (int)(Math.random() * Helbideak.bichilloak.length);
-			laukiHonenUI.setIcon(Helbideak.bichilloak[p]);
+			laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.lurra[4], Helbideak.bichilloak[p]));
 			laukiHonenUI.repaint();
 		}
 	}

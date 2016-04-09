@@ -115,7 +115,6 @@ public class Helbideak {
 	private static void kontadoreaKargatu() {
 			for(int i = 0; i < kontadorea.length; i++)
 				kontadorea[i] = new ImageIcon("skin/kontadorea/"+i+".png");
-			//	kontadorea[i] = new ImageIcon("skin/kontadorea/besteak/"+i+".png");
 	}
 	
 }

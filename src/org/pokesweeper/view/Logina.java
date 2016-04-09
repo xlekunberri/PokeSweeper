@@ -17,7 +17,6 @@ import javax.swing.WindowConstants;
 
 
 public class Logina extends JDialog {
-	private static Logina nireLogina;
 
 	private static final long serialVersionUID = 1L;
 	
@@ -31,15 +30,8 @@ public class Logina extends JDialog {
 	
     private final JButton jbtOk = new JButton("Ok");
     
-    public static Logina getLogina(JFrame pFrame){     //Esto da muy mal rollo, hay que mirarlo
-    	if (nireLogina == null) {
-			nireLogina = new Logina(pFrame);
-		}
-		return nireLogina;
-    }
-    
-    private Logina(JFrame pFrame) {
-    	super(pFrame);
+    public Logina(JFrame frame) {
+    	super(frame, "Logina");
     	this.setResizable(false);
     	
     	bg = new ButtonGroup();
@@ -86,6 +78,7 @@ public class Logina extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				if (!erabiltzaileField.getText().isEmpty()){
 					setVisible(false);
+					JokoaUI.erabiltzailea = erabiltzaileField.getText().trim();
 					JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
 					if(r1.isSelected()) {
 						JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);

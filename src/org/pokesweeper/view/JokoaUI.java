@@ -15,6 +15,7 @@ import javax.swing.UIManager;
 
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Pika;
+import org.pokesweeper.model.Ranking;
 import org.pokesweeper.model.Tableroa;
 
 public class JokoaUI extends JFrame implements ActionListener{
@@ -26,6 +27,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	public static boolean bukatuta = false;
 	public static KontadoreaUI minaKontadorea;
 	public static KontadoreaUI denboraKontadorea;
+	public static String erabiltzailea;
 	
 	// Main metodoa
 	public static void main(String[] args) {
@@ -58,8 +60,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		behekoPanela.add(TableroaUI.getNireTableroaUI());
 		
-		Logina login = Logina.getLogina(this);
-		login.setVisible(true);
+		new Logina(this).setVisible(true);
 
 		this.setVisible(true);
 		this.pack();
@@ -119,6 +120,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 	
 	private JButton getLorea(){
 		JButton lorea = new JButton(Helbideak.lorea);
+		lorea.setRolloverIcon(Helbideak.lorea);
 		lorea.setBorder(null);
 		lorea.setContentAreaFilled(false);
 		return lorea;
@@ -135,11 +137,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
 		Pika.getNirePika().setPikaEgoera("irabazi");
 		try {
-			Ranking.getNireRanking().idatzi(Logina.getLogina(null).getUserName(), Tableroa.getNireTableroa().denboraKontadorea.getKont());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			Ranking.getNireRanking().idatzi(JokoaUI.erabiltzailea, Tableroa.getNireTableroa().denboraKontadorea.getKont());
+		} catch (IOException e) {e.printStackTrace();}
 	}
 	
 	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak) {
@@ -153,9 +152,19 @@ public class JokoaUI extends JFrame implements ActionListener{
 		this.pack();
 	}
 	
+   public String getUserName(){
+    	String username = erabiltzailea;
+    	if (username.length()<=10){
+    		username = username.substring(0, username.length());
+    	}
+    	else {
+    		username = username.substring(0, 10);
+    	}
+    	return username;
+    }
+
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -84,7 +84,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		
 		this.add(Box.createHorizontalGlue());
 		
-		String izena = Logina.getLogina(null).getUserName();
+		String izena = JokoaUI.getNireJokoa().getUserName();
 		username = new JLabel(izena);
 		username.setForeground(Color.CYAN);
 		username.setFont(Helbideak.iturria);
