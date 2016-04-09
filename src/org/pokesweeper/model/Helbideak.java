@@ -69,8 +69,7 @@ public class Helbideak {
 		kursorea = Toolkit.getDefaultToolkit().createCustomCursor(Toolkit.getDefaultToolkit().getImage("skin/kursorea.png") , new Point(3, 30), "img");
 		voltorb = new ImageIcon("skin/laukiak/voltorb/voltorb.png");
 		voltorb_s = new ImageIcon("skin/laukiak/voltorb/voltorb_s.png");
-		splash = new ImageIcon("skin/splash.png");
-		splashGif = new ImageIcon("skin/splash.gif");
+		splashGif = new ImageIcon("skin/splashEnter.gif");
 		galdera = new ImageIcon("skin/laukiak/galdera.png");
 		lorea = new ImageIcon("skin/kontadorea/lorea.gif");
 	}
