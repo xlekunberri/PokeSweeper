@@ -94,9 +94,10 @@ public class Ranking {
 		return dago;
 	}
 	
-	/*public void rankingIdatzi(int pMaila){
+	public String[] rankingIdatzi(int pMaila){
 		fitxRanking=new File("ranking.txt");
 		String[] hoberenak = new String[10];
+		String[] izenak = new String[10];
 		int min=1000;
 		String izena=null;
 		int i=0;
@@ -106,11 +107,12 @@ public class Ranking {
 				 Scanner sarrera = new Scanner(new FileReader(fitxRanking));
 				 String lerroa;
 				 min=1000;
+				 izena=null;
 				 while (sarrera.hasNext()) {
 					 lerroa = sarrera.nextLine();
 					 String[] hitzak=lerroa.split(" ### ");
 					 if (Integer.parseInt(hitzak[2])==pMaila){
-						 if (Integer.parseInt(hitzak[1])<min){
+						 if ((Integer.parseInt(hitzak[1])<min) && !barruanDago(izenak,hitzak[0]) ){
 							 min = Integer.parseInt(hitzak[1]);
 							 izena = hitzak[0];
 						 }
@@ -118,6 +120,7 @@ public class Ranking {
 				 }
 				 if (izena != null ){
 					 hoberenak[i] = izena + " " + min + "s";
+					 izenak[i] = izena;
 					 i++;
 					 sarrera.close();
 				 }
@@ -130,7 +133,20 @@ public class Ranking {
 		catch(IOException e){
 			 e.printStackTrace();
 		}
+		return hoberenak;
 		
-	}*/
+	}
+
+	private boolean barruanDago(String[] izenak, String iz) {
+		int i=0;
+		boolean dago=false;
+		while (i<10 && izenak[i] != null){
+			if (izenak[i].equals(iz)){
+				dago=true;
+			}
+			i++;
+		}
+		return dago;
+	}
 
 }
