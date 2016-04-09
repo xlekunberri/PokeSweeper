@@ -17,9 +17,6 @@ public class MinaKontadorea extends Kontadorea{
 		int hamarrekoa = (this.kont%100)/10;
 		int batekoa = (this.kont%100) % 10;
 		JokoaUI.minaKontadorea.kontadoreaEguneratu(ehunekoa, hamarrekoa, batekoa);
-		if (kont==999){
-			JokoaUI.galdu();
-		}
 	}
 	
 	public void kontadoreaErreseteatu() {

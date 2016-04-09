@@ -89,9 +89,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		username.setForeground(Color.CYAN);
 		username.setFont(Helbideak.iturria);
 		username.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 5));
-		this.add(username);
-		
-		
+		this.add(username);	
 		
 	}
 

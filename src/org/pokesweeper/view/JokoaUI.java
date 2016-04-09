@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -132,7 +133,13 @@ public class JokoaUI extends JFrame implements ActionListener{
 	public static void irabazi(){
 		JokoaUI.bukatuta = true;
 		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
-		Pika.getNirePika().setPikaEgoera("irabazi");		
+		Pika.getNirePika().setPikaEgoera("irabazi");
+		try {
+			Ranking.getNireRanking().idatzi(Logina.getLogina(null).getUserName(), Tableroa.getNireTableroa().denboraKontadorea.getKont());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak) {

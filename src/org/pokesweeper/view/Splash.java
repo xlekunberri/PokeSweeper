@@ -34,6 +34,7 @@ public class Splash extends JFrame {
 								JokoaUI frame = JokoaUI.getNireJokoa();
 								frame.setLocationRelativeTo(null);
 								frame.setVisible(true);
+								Ranking.getNireRanking();
 							} catch (Exception e) {
 								e.printStackTrace();
 							}

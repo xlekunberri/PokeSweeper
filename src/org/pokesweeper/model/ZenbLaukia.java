@@ -24,7 +24,7 @@ public class ZenbLaukia extends BarruLaukia{
 			laukiHonenUI.setIcon(new IkonoKonbinaketa(Helbideak.lurra[4],Helbideak.zenbaki[this.ingurukoMinaKop-1]));
 			laukiHonenUI.repaint();
 			this.irabaziDu();
-		//	this.belarrakBerrekalkulatu();
+			//this.belarrakBerrekalkulatu();
 		}
 	}
 	
