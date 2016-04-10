@@ -96,7 +96,7 @@ public class Helbideak {
 	
 	private static void mugimenduaKargatu() {
 		for(int i = 0; i < belar_mugimendu.length; i++)
-			belar_mugimendu[i] = new ImageIcon("skin/laukiak/belarra/mugimendua/5.gif");
+			belar_mugimendu[i] = new ImageIcon("skin/laukiak/belarra/mugimendua/"+(i+1)+".gif");
 	}
 	
 	private static void banderaKargatu() {
