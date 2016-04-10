@@ -46,6 +46,9 @@ public class Helbideak {
 	public static Icon galdera;
 	
 	public static Icon win;
+	public static Icon lugia;
+	public static Icon hooh;
+	public static Icon[] dominak = new Icon[10];
 	
 	//Eraikitzailea
 	
@@ -60,6 +63,7 @@ public class Helbideak {
 		Helbideak.bichilloakKargatu();
 		Helbideak.kontadoreaKargatu();
 		Helbideak.banderaKargatu();
+		Helbideak.medallakKargatu();
 	}
 	
 	private static void besteakKargatu(){
@@ -75,6 +79,9 @@ public class Helbideak {
 		galdera = new ImageIcon("skin/laukiak/galdera.png");
 		lorea = new ImageIcon("skin/kontadorea/lorea.gif");
 		win = new ImageIcon("skin/hallDeFama/winTrasparentzia.gif");
+		lugia = new ImageIcon("skin/hallDeFama/lugia.png"); 
+		hooh = new ImageIcon("skin/hallDeFama/ho-oh.png");
+		
 	}
 		
 	private static void pikaKargatu(){
@@ -118,5 +125,12 @@ public class Helbideak {
 			for(int i = 0; i < kontadorea.length; i++)
 				kontadorea[i] = new ImageIcon("skin/kontadorea/"+i+".png");
 	}
+	
+	private static void medallakKargatu() {
+		for(int i = 0; i < dominak.length; i++)
+				dominak[i] = new ImageIcon("skin/hallDeFama/medalla"+(i+1)+".png");
+	}
+	
+	
 	
 }

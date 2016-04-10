@@ -1,6 +1,7 @@
 package org.pokesweeper.view;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -22,14 +23,32 @@ public class RankingUI extends JDialog {
 	public RankingUI(JFrame frame, boolean m){
 		super(frame, m);
 		setTitle("Pokésweeper - Ranking");
-		setPreferredSize(new Dimension(325, 400));
+		setPreferredSize(new Dimension(450, 560));
+		setResizable(false);
         
         JPanel panela = new JPanel(new GridLayout(2, 1));
+        JPanel goikoa = new JPanel(new GridLayout(1, 3));
+        
+        JButton hooh = new JButton(Helbideak.hooh);
+        hooh.setBorder(null);
+        hooh.setContentAreaFilled(false);
+        hooh.setFocusable(false);
+        goikoa.add(hooh);
         
         JButton win = new JButton(Helbideak.win);
         win.setBorder(null);
         win.setContentAreaFilled(false);
-        panela.add(win);
+        win.setRolloverIcon(Helbideak.win);
+        win.setFocusable(false);
+        goikoa.add(win);
+        
+        JButton lugia = new JButton(Helbideak.lugia);
+        lugia.setBorder(null);
+        lugia.setContentAreaFilled(false);
+        lugia.setFocusable(false);
+        goikoa.add(lugia);
+        
+        panela.add(goikoa);
       
         JTabbedPane erlaitzak = new JTabbedPane();
         
@@ -53,12 +72,17 @@ public class RankingUI extends JDialog {
 	
 	//Beste metodoak
 	private JPanel mailaLortu(int pMaila){
-       JPanel panela = new JPanel(new GridLayout(10, 1));
+       JPanel panela = new JPanel(new GridLayout(5, 2));
        String[] rankinga = Ranking.getNireRanking().rankingLortu(pMaila);
-       JLabel[] jLabel = new JLabel[rankinga.length];
        for(int i = 0; i < rankinga.length; i++){
-    	   jLabel[i] = new JLabel(rankinga[i]);
-    	   panela.add(jLabel[i]);
+    	   JPanel panelaAux = new JPanel();
+    	   JButton domina = new JButton(Helbideak.dominak[i]);
+    	   domina.setBorder(null);
+    	   domina.setContentAreaFilled(false);
+    	   domina.setFocusable(false);
+    	   panelaAux.add(domina);
+    	   panelaAux.add(new JLabel(rankinga[i]));
+    	   panela.add(panelaAux);
        }
        return panela;
 	}
