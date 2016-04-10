@@ -38,16 +38,15 @@ public class Ranking {
 		fitxRanking=new File("ranking.txt");
 		int maila;
 		int minakop = Tableroa.getNireTableroa().getMinaKop();
-		if (minakop == 7){
-			maila=1;
-		}
-		else{
-			if (minakop==20){
-				maila=2;
-			}
-			else{
-				maila=3;
-			}
+		switch (minakop) {
+		case 7:
+			maila = 1;
+			break;
+		case 20:
+			maila = 2;
+		default:
+			maila = 3;
+			break;
 		}
 		try{
 			if (!baDago(pIzena,pDenbora,maila)){

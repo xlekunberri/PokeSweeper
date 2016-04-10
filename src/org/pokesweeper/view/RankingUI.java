@@ -3,6 +3,7 @@ package org.pokesweeper.view;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,6 +24,13 @@ public class RankingUI extends JFrame {
         this.setIconImage(Helbideak.ikonoa);
 		this.setCursor(Helbideak.kursorea);
         this.setTitle("Pokésweeper - Ranking");
+        
+        JPanel panela = new JPanel(new GridLayout(2, 1));
+        
+        JButton win = new JButton(Helbideak.win);
+        win.setBorder(null);
+        win.setContentAreaFilled(false);
+        panela.add(win);
       
         JTabbedPane erlaitzak = new JTabbedPane();
         
@@ -35,11 +43,13 @@ public class RankingUI extends JFrame {
         JPanel maila3 = this.mailaLortu(3);
         erlaitzak.addTab("3. Maila", maila3);
         
-        getContentPane().add(erlaitzak);
-		setLocationRelativeTo(null);
+        panela.add(erlaitzak);
+        
+        add(panela);
 		setAlwaysOnTop(true);
-		this.setVisible(true);
-		this.pack();
+		setVisible(true);
+		pack();
+		setLocationRelativeTo(null);
     }
 	
 	//Beste metodoak
