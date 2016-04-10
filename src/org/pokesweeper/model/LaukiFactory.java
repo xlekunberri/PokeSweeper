@@ -8,8 +8,6 @@ public class LaukiFactory {
 	private int zutabeKop;
 	private int minaKop;
 	private int[][] minak; // -1 = MinaLauki, 0 = LurLauki, 1-8 = ZenbLauki
-	private int errenkada;
-	private int zutabe;
 	
 	//Eraikitzailea
 	private LaukiFactory(){}
@@ -23,22 +21,20 @@ public class LaukiFactory {
 	
 	//Beste metodoak	
 	public BarruLaukia createLaukia(int pErrenkada, int pZutabe, boolean pBichilloak){
-		this.errenkada = pErrenkada;
-		this.zutabe = pZutabe;
 		BarruLaukia laukia;
-		int ikonoZenb = this.zenbakiaLortu();
+		int ikonoZenb = this.zenbakiaLortu(pErrenkada, pZutabe);
 		int egungoa = this.minak[pErrenkada][pZutabe];
 		if(pBichilloak){
-			laukia = new BichilloLaukia(this.errenkada, this.zutabe, ikonoZenb);
+			laukia = new BichilloLaukia(pErrenkada, pZutabe, ikonoZenb);
 		} 
 		else{
 			if(egungoa == 0){
-				laukia = new LurLaukia(this.errenkada, this.zutabe, ikonoZenb);
+				laukia = new LurLaukia(pErrenkada, pZutabe, ikonoZenb);
 			} else if (egungoa == -1){
-				laukia = new MinaLaukia(this.errenkada, this.zutabe, ikonoZenb);
+				laukia = new MinaLaukia(pErrenkada, pZutabe, ikonoZenb);
 				Tableroa.getNireTableroa().minak.add((MinaLaukia) laukia);
 			} else {
-				laukia = new ZenbLaukia(this.errenkada, this.zutabe, ikonoZenb, egungoa);
+				laukia = new ZenbLaukia(pErrenkada, pZutabe, ikonoZenb, egungoa);
 			}	
 		}
 		return laukia;
@@ -79,28 +75,28 @@ public class LaukiFactory {
 		return !(pErrenkada < 0 || pErrenkada >= this.errenkadaKop || pZutabe < 0 || pZutabe >= this.zutabeKop);
 	}
 	
-	private int zenbakiaLortu(){
+	private int zenbakiaLortu(int pErrenkada, int pZutabe){
 		int zenbakia;
-		if(this.errenkada == 0){
-			if(this.zutabe == 0){
+		if(pErrenkada == 0){
+			if(pZutabe == 0){
 				zenbakia = 0;
-			} else if (this.zutabe != this.zutabeKop - 1){
+			} else if (pZutabe != this.zutabeKop - 1){
 				zenbakia = 1;
 			} else {
 				zenbakia = 2;
 			}
-		} else if(this.errenkada != this.errenkadaKop - 1){
-			if(this.zutabe == 0){
+		} else if(pErrenkada != this.errenkadaKop - 1){
+			if(pZutabe == 0){
 				zenbakia = 3;
-			} else if (this.zutabe != this.zutabeKop - 1){
+			} else if (pZutabe != this.zutabeKop - 1){
 				zenbakia = 4;
 			} else {
 				zenbakia = 5;
 			}
 		} else {
-			if(this.zutabe == 0){
+			if(pZutabe == 0){
 				zenbakia = 6;
-			} else if (this.zutabe != this.zutabeKop - 1){
+			} else if (pZutabe != this.zutabeKop - 1){
 				zenbakia = 7;
 			} else {
 				zenbakia = 8;

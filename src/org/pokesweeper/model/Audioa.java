@@ -9,9 +9,11 @@ import javafx.scene.media.Media;
 
 public class Audioa{
 	
+	//Atributoak
 	private static Media md;
 	private static MediaPlayer player;
 	
+	//Eraikitzailea
 	public Audioa(File pAudio){
 		URI kanta = pAudio.toURI();
 		md = new Media(kanta.toString());
@@ -19,6 +21,7 @@ public class Audioa{
 		player.setVolume(0.1);
 	}
 	
+	//Beste metodoak
 	public void play(){
 		try{
 			player.play();

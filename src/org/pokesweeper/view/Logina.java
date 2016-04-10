@@ -19,19 +19,17 @@ import org.pokesweeper.model.Helbideak;
 
 
 public class Logina extends JDialog {
-
-	private static final long serialVersionUID = 1L;
 	
+	//Atributoak
+	private static final long serialVersionUID = 1L;
 	private final JLabel erabiltzailea = new JLabel("Erabiltzailea");
 	private final JLabel maila = new JLabel("Maila");
-	
 	private final JTextField erabiltzaileField = new JTextField(15);
-	
 	private ButtonGroup bg;
 	private JRadioButton r1, r2, r3;
-	
     private final JButton jbtOk = new JButton("Ok");
     
+    //Eraikitzailea
     public Logina(JFrame frame) {
     	super(frame, "Logina");
     	this.setResizable(false);
@@ -108,6 +106,7 @@ public class Logina extends JDialog {
    
     }
     
+    //Beste metodoak
     public String getUserName(){
     	String username = erabiltzaileField.getText().trim();
     	if (username.length()<=10){

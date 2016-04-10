@@ -70,7 +70,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		
 		jokatu.addSeparator();
 		
-		rankinga = new JMenuItem("Rankinga");
+		rankinga = new JMenuItem("Hall of Fame");
 		jokatu.add(rankinga);
 		rankinga.addActionListener(this);
 		
