@@ -27,6 +27,10 @@ public class Audioa{
 		}
 	}
 	
+	public void setVolume(double z){
+		player.setVolume(z);
+	}
+	
 	public void stop(){
 		try{
 			player.stop();

@@ -42,6 +42,9 @@ public class Logina extends JDialog {
     	r3 = new JRadioButton("3. Maila");
     	
     	r1.setSelected(true);
+    	r1.setFocusPainted(false);
+    	r2.setFocusPainted(false);
+    	r3.setFocusPainted(false);
     	
     	bg.add(r1);
     	bg.add(r2);
