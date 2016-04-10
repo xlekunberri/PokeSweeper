@@ -1,7 +1,6 @@
 package org.pokesweeper.view;
 
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;

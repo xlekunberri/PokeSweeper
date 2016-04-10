@@ -8,16 +8,26 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Ranking;
+
+import javafx.embed.swing.JFXPanel;
+
 
 public class Splash extends JFrame {
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
-	
+	final JFXPanel jfx;
 	//Eraikitzailea
 	public Splash(){
+		
+		jfx = new JFXPanel();
+		
+		final Audioa audio = new Audioa(Helbideak.splashSound);
+		audio.play();
+		
 		setUndecorated(true);
 		
 		JLabel label = new JLabel(Helbideak.splashGif);
@@ -32,6 +42,7 @@ public class Splash extends JFrame {
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
+								audio.stop();
 								JokoaUI frame = JokoaUI.getNireJokoa();
 								frame.setLocationRelativeTo(null);
 								frame.setVisible(true);

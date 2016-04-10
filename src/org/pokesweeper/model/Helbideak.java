@@ -50,6 +50,10 @@ public class Helbideak {
 	public static Icon hooh;
 	public static Icon[] dominak = new Icon[10];
 	
+	public static File splashSound;
+	public static File intro;
+	public static File bucle;
+	
 	//Eraikitzailea
 	
 	//Beste metodoak
@@ -64,6 +68,7 @@ public class Helbideak {
 		Helbideak.kontadoreaKargatu();
 		Helbideak.banderaKargatu();
 		Helbideak.medallakKargatu();
+		Helbideak.audioaKargatu();
 	}
 	
 	private static void besteakKargatu(){
@@ -131,6 +136,10 @@ public class Helbideak {
 				dominak[i] = new ImageIcon("skin/hallDeFama/medalla"+(i+1)+".png");
 	}
 	
-	
+	private static void audioaKargatu(){
+		splashSound = new File("skin/audioa/splash.wav");
+		intro = new File("skin/audioa/mainTheme/intro.wav");
+		bucle = new File("skin/audioa/mainTheme/bucle.wav");
+	}
 	
 }
