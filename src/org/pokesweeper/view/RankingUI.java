@@ -28,23 +28,13 @@ public class RankingUI extends JDialog {
         JPanel panela = new JPanel(new GridLayout(2, 1));
         JPanel goikoa = new JPanel(new GridLayout(1, 3));
         
-        JButton hooh = new JButton(Helbideak.hooh);
-        hooh.setBorder(null);
-        hooh.setContentAreaFilled(false);
-        hooh.setFocusable(false);
+        JLabel hooh = new JLabel(Helbideak.hooh);
         goikoa.add(hooh);
         
-        JButton win = new JButton(Helbideak.win);
-        win.setBorder(null);
-        win.setContentAreaFilled(false);
-        win.setRolloverIcon(Helbideak.win);
-        win.setFocusable(false);
+        JLabel win = new JLabel(Helbideak.win);
         goikoa.add(win);
         
-        JButton lugia = new JButton(Helbideak.lugia);
-        lugia.setBorder(null);
-        lugia.setContentAreaFilled(false);
-        lugia.setFocusable(false);
+        JLabel lugia = new JLabel(Helbideak.lugia);
         goikoa.add(lugia);
         
         panela.add(goikoa);

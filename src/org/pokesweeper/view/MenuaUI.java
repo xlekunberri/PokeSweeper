@@ -130,7 +130,6 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 				
 			}
 			else if (e.getSource()==honiBuruz) {
-				//JPanel panel = new JPanel(new GridLayout(2, 1, 0, 0));
 				JPanel panel = new JPanel(new BorderLayout());
 				panel.setBackground(new Color(160, 224, 192));
 				JTextPane f = new JTextPane();
@@ -157,7 +156,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		                    try {
 		                            Desktop.getDesktop().browse(new URI("https://github.com/Xabiier/PokeSweeper"));
 		                    } catch (URISyntaxException | IOException ex) {
-		                            //It looks like there's a problem
+		                            ex.printStackTrace();
 		                    }
 		            }
 		        });

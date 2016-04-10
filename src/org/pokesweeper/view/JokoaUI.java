@@ -7,13 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-import javax.swing.JButton;
+import javafx.util.Duration;
+
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-
-import javafx.util.Duration;
 
 import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
@@ -137,11 +137,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 		goikoPanela.add(this.getLorea());
 	}
 	
-	private JButton getLorea(){
-		JButton lorea = new JButton(Helbideak.lorea);
-		lorea.setRolloverIcon(Helbideak.lorea);
-		lorea.setBorder(null);
-		lorea.setContentAreaFilled(false);
+	private JLabel getLorea(){
+		JLabel lorea = new JLabel(Helbideak.lorea);
 		return lorea;
 	}
 	

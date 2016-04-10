@@ -50,6 +50,8 @@ public class Helbideak {
 	public static Icon hooh;
 	public static Icon[] dominak = new Icon[10];
 	
+	public static ImageIcon oak;
+	
 	public static File splashSound;
 	public static File intro;
 	public static File bucle;
@@ -86,6 +88,7 @@ public class Helbideak {
 		win = new ImageIcon("skin/hallDeFama/winTrasparentzia.gif");
 		lugia = new ImageIcon("skin/hallDeFama/lugia.png"); 
 		hooh = new ImageIcon("skin/hallDeFama/ho-oh.png");
+		oak = new ImageIcon("skin/oak.gif");
 		
 	}
 		

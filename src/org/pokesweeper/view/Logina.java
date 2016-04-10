@@ -15,6 +15,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import org.pokesweeper.model.Helbideak;
+
 
 public class Logina extends JDialog {
 
@@ -65,8 +67,15 @@ public class Logina extends JDialog {
     	JPanel p5 = new JPanel(new BorderLayout());
     	p5.add(p4, BorderLayout.NORTH);
     	p5.add(jbtOk, BorderLayout.CENTER);
- 
-    	add(p5);
+    	
+    	JLabel oak = new JLabel(Helbideak.oak);
+        
+        JPanel p6 = new JPanel();
+        p6.setLayout(new BorderLayout(0, 0));
+        p6.add(oak, BorderLayout.NORTH);
+        p6.add(p5, BorderLayout.SOUTH);
+        
+    	getContentPane().add(p6);
     	this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
     	
     	pack();

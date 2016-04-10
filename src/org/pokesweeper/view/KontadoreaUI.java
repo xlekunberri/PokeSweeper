@@ -3,7 +3,7 @@ package org.pokesweeper.view;
 import java.awt.Color;
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import org.pokesweeper.model.Helbideak;
@@ -12,7 +12,7 @@ public class KontadoreaUI extends JPanel {
 
 	//Atributoak
 	private static final long serialVersionUID = 1L;
-	private JButton[] kontadorea = new JButton[3];
+	private JLabel[] kontadorea = new JLabel[3];
 
 	//Eraikitzailea
 	public KontadoreaUI() {
@@ -20,9 +20,7 @@ public class KontadoreaUI extends JPanel {
 		GridLayout grid = new GridLayout(1, 3, 0, 0);
 		this.setLayout(grid);
 		for(int i = 0; i < kontadorea.length; i++){
-			kontadorea[i] = new JButton(Helbideak.kontadorea[0]);
-			kontadorea[i].setBorder(null);
-			kontadorea[i].setContentAreaFilled(false);
+			kontadorea[i] = new JLabel(Helbideak.kontadorea[0]);
 			this.add(kontadorea[i]);
 		}
 	}
