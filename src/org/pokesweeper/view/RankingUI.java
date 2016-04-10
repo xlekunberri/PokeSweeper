@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,18 +13,16 @@ import javax.swing.JTabbedPane;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Ranking;
 
-public class RankingUI extends JFrame {
+public class RankingUI extends JDialog {
 	
 	//Atributuak
 	private static final long serialVersionUID = 1L;
 
 	//Eraikitzailea
-	public RankingUI(){
-		this.setResizable(false);
-		this.setPreferredSize(new Dimension(325, 400));
-        this.setIconImage(Helbideak.ikonoa);
-		this.setCursor(Helbideak.kursorea);
-        this.setTitle("Pokésweeper - Ranking");
+	public RankingUI(JFrame frame, boolean m){
+		super(frame, m);
+		setTitle("Pokésweeper - Ranking");
+		setPreferredSize(new Dimension(325, 400));
         
         JPanel panela = new JPanel(new GridLayout(2, 1));
         

@@ -92,7 +92,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		
 		String izena = JokoaUI.getNireJokoa().getUserName();
 		username = new JLabel(izena);
-		username.setForeground(Color.CYAN);
+		username.setForeground(new Color(248, 208, 0));
 		username.setFont(Helbideak.iturria);
 		username.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 5));
 		this.add(username);	
@@ -112,7 +112,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		 		JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
 	        }
 		 	else if (e.getSource()==rankinga){
-		 		new RankingUI();
+		 		new RankingUI(JokoaUI.getNireJokoa(), false);
 		 	}
 		 	else if (e.getSource()==irten) {
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");
