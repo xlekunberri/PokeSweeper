@@ -13,10 +13,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Pika;
 import org.pokesweeper.model.Ranking;
 import org.pokesweeper.model.Tableroa;
+
+
+import javafx.util.Duration;
 
 public class JokoaUI extends JFrame implements ActionListener{
 	
@@ -64,6 +68,22 @@ public class JokoaUI extends JFrame implements ActionListener{
 
 		this.setVisible(true);
 		this.pack();
+		
+		Audioa intro = new Audioa(Helbideak.intro);
+		intro.play();
+		intro.getPlayer().setOnEndOfMedia(new Runnable(){
+			@Override
+			public void run(){
+				Audioa bucle = new Audioa(Helbideak.bucle);
+				bucle.play();
+				bucle.getPlayer().setOnEndOfMedia(new Runnable(){
+					@Override
+					public void run(){
+						bucle.getPlayer().seek(Duration.ZERO);
+					}
+				});
+			}
+		});
 	}
 	
 	public static JokoaUI getNireJokoa(){

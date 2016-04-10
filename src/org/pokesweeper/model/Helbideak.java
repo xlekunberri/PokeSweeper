@@ -47,6 +47,10 @@ public class Helbideak {
 	
 	public static Icon win;
 	
+	public static File splashSound;
+	public static File intro;
+	public static File bucle;
+	
 	//Eraikitzailea
 	
 	//Beste metodoak
@@ -60,6 +64,7 @@ public class Helbideak {
 		Helbideak.bichilloakKargatu();
 		Helbideak.kontadoreaKargatu();
 		Helbideak.banderaKargatu();
+		Helbideak.audioaKargatu();
 	}
 	
 	private static void besteakKargatu(){
@@ -117,6 +122,12 @@ public class Helbideak {
 	private static void kontadoreaKargatu() {
 			for(int i = 0; i < kontadorea.length; i++)
 				kontadorea[i] = new ImageIcon("skin/kontadorea/"+i+".png");
+	}
+	
+	private static void audioaKargatu(){
+		splashSound = new File("skin/audioa/splash.wav");
+		intro = new File("skin/audioa/mainTheme/intro.wav");
+		bucle = new File("skin/audioa/mainTheme/bucle.wav");
 	}
 	
 }
