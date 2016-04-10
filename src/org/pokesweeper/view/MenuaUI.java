@@ -25,6 +25,8 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.plaf.ColorUIResource;
 
 import org.pokesweeper.model.Audioa;
@@ -36,6 +38,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private JMenuItem maila1, maila2, maila3, rankinga;
 	private JMenuItem irten, nolaJokatu, honiBuruz;
+	private JMenuItem soinua;
 	private JLabel username;
 
 	
@@ -76,18 +79,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		irten = new JMenuItem("Irten");
 		jokatu.add(irten);
 		irten.addActionListener(this);
-		
-		jokatu.addSeparator();
-		
-		JSlider sDuration=new JSlider(JSlider.HORIZONTAL,0,100,20);
-	    sDuration.setPaintLabels(true);
-	    sDuration.setPaintTicks(true);
-	    sDuration.setMajorTickSpacing(20);
-	    sDuration.setMinorTickSpacing(10);
-	    sDuration.setToolTipText("Volume");
-	    jokatu.add(sDuration);
-	    Audioa.setVolume((double)sDuration.getValue());
-		
+	    
 		JMenu laguntza = new JMenu("Laguntza");
 		this.add(laguntza);
 		
@@ -100,6 +92,25 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		honiBuruz = new JMenuItem("Honi buruz");
 		laguntza.add(honiBuruz);
 		honiBuruz.addActionListener(this);
+		
+		soinua = new JMenu("Bolum");
+		this.add(soinua);
+		
+		final JSlider sDuration=new JSlider(JSlider.HORIZONTAL,0,100,10);
+	    sDuration.setPaintLabels(true);
+	    sDuration.setPaintTicks(true);
+	    sDuration.setMajorTickSpacing(20);
+	    sDuration.setMinorTickSpacing(10);
+	    sDuration.setToolTipText("Volume");
+	    sDuration.addChangeListener(new ChangeListener() {
+			
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				Audioa.setVolume((double)sDuration.getValue());
+				
+			}
+		});
+	    soinua.add(sDuration);
 		
 		this.add(Box.createHorizontalGlue());
 		

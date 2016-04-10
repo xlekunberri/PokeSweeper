@@ -16,11 +16,11 @@ public class Audioa{
 		URI kanta = pAudio.toURI();
 		md = new Media(kanta.toString());
 		player = new MediaPlayer(md);
+		player.setVolume(0.1);
 	}
 	
 	public void play(){
 		try{
-			
 			player.play();
 		}catch (Exception e){
 			e.printStackTrace();
@@ -28,7 +28,7 @@ public class Audioa{
 	}
 	
 	public static void setVolume(double z){
-		player.setVolume(z);
+		player.setVolume(z/100);
 	}
 	
 	public void stop(){
