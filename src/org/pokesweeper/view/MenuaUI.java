@@ -22,10 +22,12 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 
+import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
 
 public class MenuaUI extends JMenuBar implements ActionListener{
@@ -75,6 +77,17 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		jokatu.add(irten);
 		irten.addActionListener(this);
 		
+		jokatu.addSeparator();
+		
+		JSlider sDuration=new JSlider(JSlider.HORIZONTAL,0,100,20);
+	    sDuration.setPaintLabels(true);
+	    sDuration.setPaintTicks(true);
+	    sDuration.setMajorTickSpacing(20);
+	    sDuration.setMinorTickSpacing(10);
+	    sDuration.setToolTipText("Volume");
+	    jokatu.add(sDuration);
+	    Audioa.setVolume((double)sDuration.getValue());
+		
 		JMenu laguntza = new JMenu("Laguntza");
 		this.add(laguntza);
 		
@@ -96,7 +109,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		username.setFont(Helbideak.iturria);
 		username.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 5));
 		this.add(username);	
-		
+
 	}
 
 	@Override

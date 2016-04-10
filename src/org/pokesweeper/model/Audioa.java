@@ -27,7 +27,7 @@ public class Audioa{
 		}
 	}
 	
-	public void setVolume(double z){
+	public static void setVolume(double z){
 		player.setVolume(z);
 	}
 	
