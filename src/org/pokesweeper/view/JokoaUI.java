@@ -13,14 +13,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import javafx.util.Duration;
+
 import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Pika;
 import org.pokesweeper.model.Ranking;
 import org.pokesweeper.model.Tableroa;
-
-
-import javafx.util.Duration;
 
 public class JokoaUI extends JFrame implements ActionListener{
 	

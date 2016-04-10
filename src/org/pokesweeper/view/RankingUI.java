@@ -21,7 +21,7 @@ public class RankingUI extends JDialog {
 	//Eraikitzailea
 	public RankingUI(JFrame frame, boolean m){
 		super(frame, m);
-		setTitle("Pokésweeper - Ranking");
+		setTitle("Hall of Fame");
 		setPreferredSize(new Dimension(450, 560));
 		setResizable(false);
         
@@ -64,7 +64,6 @@ public class RankingUI extends JDialog {
         
         add(panela);
 		setAlwaysOnTop(true);
-		setVisible(true);
 		pack();
 		setLocationRelativeTo(null);
     }
