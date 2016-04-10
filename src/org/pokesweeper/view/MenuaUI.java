@@ -32,7 +32,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
-	private JMenuItem maila1, maila2, maila3;
+	private JMenuItem maila1, maila2, maila3, rankinga;
 	private JMenuItem irten, nolaJokatu, honiBuruz;
 	private JLabel username;
 
@@ -62,6 +62,12 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		maila3 = new JMenuItem("3. maila");
 		jokatu.add(maila3);
 		maila3.addActionListener(this);
+		
+		jokatu.addSeparator();
+		
+		rankinga = new JMenuItem("Rankinga");
+		jokatu.add(rankinga);
+		rankinga.addActionListener(this);
 		
 		jokatu.addSeparator();
 		
@@ -104,7 +110,10 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	        }       
 		 	else if (e.getSource()==maila3) {
 		 		JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
-	        }       
+	        }
+		 	else if (e.getSource()==rankinga){
+		 		new RankingUI();
+		 	}
 		 	else if (e.getSource()==irten) {
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");
 		 		UIManager.put("OptionPane.noButtonText", "Ez");

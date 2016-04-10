@@ -45,6 +45,8 @@ public class Helbideak {
 	public static ImageIcon[] bandera = new ImageIcon[9];
 	public static Icon galdera;
 	
+	public static Icon win;
+	
 	//Eraikitzailea
 	
 	//Beste metodoak
@@ -72,6 +74,7 @@ public class Helbideak {
 		splashGif = new ImageIcon("skin/splashEnter.gif");
 		galdera = new ImageIcon("skin/laukiak/galdera.png");
 		lorea = new ImageIcon("skin/kontadorea/lorea.gif");
+		win = new ImageIcon("skin/hallDeFama/winTrasparentzia.gif");
 	}
 		
 	private static void pikaKargatu(){

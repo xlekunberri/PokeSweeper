@@ -94,7 +94,7 @@ public class Ranking {
 		return dago;
 	}
 	
-	public String[] rankingIdatzi(int pMaila){
+	public String[] rankingLortu(int pMaila){
 		fitxRanking=new File("ranking.txt");
 		String[] hoberenak = new String[10];
 		String[] izenak = new String[10];
