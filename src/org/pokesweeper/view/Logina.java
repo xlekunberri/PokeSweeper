@@ -22,8 +22,8 @@ public class Logina extends JDialog {
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
-	private final JLabel erabiltzailea = new JLabel("Erabiltzailea");
-	private final JLabel maila = new JLabel("Maila");
+	private final JLabel erabiltzailea = new JLabel("Erabiltzailea: ");
+	private final JLabel maila = new JLabel("Maila: ");
 	private final JTextField erabiltzaileField = new JTextField(15);
 	private ButtonGroup bg;
 	private JRadioButton r1, r2, r3;
@@ -48,20 +48,20 @@ public class Logina extends JDialog {
     	bg.add(r2);
     	bg.add(r3);
     	
-    	JPanel p1 = new JPanel(new GridLayout(2,  1));
+    	JPanel p1 = new JPanel();
     	p1.add(erabiltzailea);
-    	p1.add(maila);
+    	p1.add(erabiltzaileField);
     	
     	JPanel p3 = new JPanel(new GridLayout(1,  3));
     	p3.add(r1);
     	p3.add(r2);
     	p3.add(r3);
     	
-    	JPanel p2 = new JPanel(new GridLayout(2,  1));
-    	p2.add(erabiltzaileField);
+    	JPanel p2 = new JPanel();
+    	p2.add(maila);
     	p2.add(p3);
     	
-    	JPanel p4 = new JPanel();
+    	JPanel p4 = new JPanel(new GridLayout(2, 1));
     	p4.add(p1);
     	p4.add(p2);
     	
