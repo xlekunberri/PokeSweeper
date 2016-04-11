@@ -3,7 +3,6 @@ package org.pokesweeper.view;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -64,10 +63,7 @@ public class RankingUI extends JDialog {
        String[] rankinga = Ranking.getNireRanking().rankingLortu(pMaila);
        for(int i = 0; i < rankinga.length; i++){
     	   JPanel panelaAux = new JPanel();
-    	   JButton domina = new JButton(Helbideak.dominak[i]);
-    	   domina.setBorder(null);
-    	   domina.setContentAreaFilled(false);
-    	   domina.setFocusable(false);
+    	   JLabel domina = new JLabel(Helbideak.dominak[i]);
     	   panelaAux.add(domina);
     	   panelaAux.add(new JLabel(rankinga[i]));
     	   panela.add(panelaAux);
