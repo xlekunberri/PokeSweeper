@@ -31,7 +31,7 @@ public class Audioa{
 	}
 	
 	public static void setVolume(double z){
-		player.setVolume(z/100);
+		player.setVolume(1-(float)(Math.log(100-z)/Math.log(100)));
 	}
 	
 	public void stop(){

@@ -44,6 +44,7 @@ public class Ranking {
 			break;
 		case 20:
 			maila = 2;
+			break;
 		default:
 			maila = 3;
 			break;

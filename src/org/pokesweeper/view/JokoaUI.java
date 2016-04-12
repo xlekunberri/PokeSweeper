@@ -165,7 +165,8 @@ public class JokoaUI extends JFrame implements ActionListener{
 		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
 		Pika.getNirePika().setPikaEgoera("normal");
 		Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
-		this.pack();
+		pack();
+		setLocationRelativeTo(null);
 	}
 	
    public String getUserName(){
