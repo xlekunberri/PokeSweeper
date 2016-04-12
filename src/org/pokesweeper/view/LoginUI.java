@@ -16,10 +16,11 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import org.pokesweeper.model.Login;
 import org.pokesweeper.model.Helbideak;
 
 
-public class LoginaUI extends JDialog {
+public class LoginUI extends JDialog {
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
@@ -27,13 +28,13 @@ public class LoginaUI extends JDialog {
 	private final JLabel pasahitza = new JLabel("Pasahitza:  ");
 	private final JLabel maila = new JLabel("Maila: ");
 	private final JTextField erabiltzaileField = new JTextField(15);
-	private final JPasswordField pasahitzaField = new JPasswordField(16);
+	private final JTextField pasahitzaField = new JPasswordField(16);
 	private ButtonGroup bg;
 	private JRadioButton r1, r2, r3;
-    private final JButton jbtOk = new JButton("Ok");
+    private final JButton jbtOk = new JButton("Sartu");
     
     //Eraikitzailea
-    public LoginaUI(JFrame frame) {
+    public LoginUI(JFrame frame) {
     	super(frame, "Logina");
     	this.setResizable(false);
     	
@@ -101,9 +102,9 @@ public class LoginaUI extends JDialog {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String erabiltzailea = erabiltzaileField.getText().trim();
-				String pasahitza = pasahitzaField.getPassword().toString();
+				String pasahitza = pasahitzaField.getText().trim();
 				if (!(erabiltzailea == null || pasahitza == null)){
-					if(Erabiltzaileak.getNireErabiltzaileak.logeatu(erabiltzailea, pasahitza)){
+					if(Login.getNireLogin().logeatu(erabiltzailea, pasahitza)){
 						setVisible(false);
 						JokoaUI.erabiltzailea = erabiltzailea;
 						JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());

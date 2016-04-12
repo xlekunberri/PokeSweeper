@@ -7,12 +7,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Erabiltzaileak {
+public class Login {
 	
 	File fitxErabiltzaileak;
-	private static Erabiltzaileak nireErabiltzaileak;
+	private static Login nireErabiltzaileak;
 	
-	private Erabiltzaileak(){
+	private Login(){
 		fitxErabiltzaileak=new File("erabiltzaileak.txt");
 		if (!fitxErabiltzaileak.exists()){
 			try {
@@ -21,10 +21,10 @@ public class Erabiltzaileak {
 		}
 	}
 	
-	public static Erabiltzaileak getNireErabiltzaileak(){ 
+	public static Login getNireLogin(){ 
 		 
 	    	if (nireErabiltzaileak == null) {
-				nireErabiltzaileak = new Erabiltzaileak();
+				nireErabiltzaileak = new Login();
 			}
 			return nireErabiltzaileak;
 	    }
@@ -46,8 +46,8 @@ public class Erabiltzaileak {
 		}
 	}
 
-	private boolean logeatu(String user, String pass) { //if true actualiza
-		fitxErabiltzaileak=new File("ranking.txt");
+	public boolean logeatu(String user, String pass) {
+		fitxErabiltzaileak=new File("erabiltzaileak.txt");
 		boolean dago=false;
 		try{
 			 Scanner sarrera = new Scanner(new FileReader(fitxErabiltzaileak));
