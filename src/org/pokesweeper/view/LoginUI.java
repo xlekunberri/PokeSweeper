@@ -32,6 +32,7 @@ public class LoginUI extends JDialog {
 	private ButtonGroup bg;
 	private JRadioButton r1, r2, r3;
     private final JButton jbtOk = new JButton("Sartu");
+    private final JButton jbtNew = new JButton("Erregistratu");
     
     //Eraikitzailea
     public LoginUI(JFrame frame) {
@@ -79,7 +80,8 @@ public class LoginUI extends JDialog {
     	
     	JPanel p5 = new JPanel(new BorderLayout());
     	p5.add(p4, BorderLayout.NORTH);
-    	p5.add(jbtOk, BorderLayout.CENTER);
+    	p5.add(jbtOk, BorderLayout.WEST);
+    	p5.add(jbtNew, BorderLayout.EAST);
     	
     	JLabel oak = new JLabel(Helbideak.oak);
         

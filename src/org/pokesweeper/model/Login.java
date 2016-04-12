@@ -92,15 +92,15 @@ public class Login {
 	private void erabiltzaileaSortu(String user, String pass) {
 		fitxErabiltzaileak=new File("erabiltzaileak.txt");
 		try{
-			 if (!baDago(user)){
+			if (!baDago(user)){
 				FileWriter fw=new FileWriter(fitxErabiltzaileak, true);
 				BufferedWriter output=new BufferedWriter(fw);
 				output.write(user + " ### " + pass);
 				output.newLine();
 				output.close();
-
-				 }
-			 }
+	
+			}
+		}
 		catch(IOException e){
 			 e.printStackTrace();
 		}
