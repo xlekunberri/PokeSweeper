@@ -11,6 +11,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -23,8 +24,10 @@ public class Logina extends JDialog {
 	//Atributoak
 	private static final long serialVersionUID = 1L;
 	private final JLabel erabiltzailea = new JLabel("Erabiltzailea: ");
+	private final JLabel pasahitza = new JLabel("Pasahitza:  ");
 	private final JLabel maila = new JLabel("Maila: ");
 	private final JTextField erabiltzaileField = new JTextField(15);
+	private final JPasswordField pasahitzaField = new JPasswordField(16);
 	private ButtonGroup bg;
 	private JRadioButton r1, r2, r3;
     private final JButton jbtOk = new JButton("Ok");
@@ -52,6 +55,14 @@ public class Logina extends JDialog {
     	p1.add(erabiltzailea);
     	p1.add(erabiltzaileField);
     	
+    	JPanel p12 = new JPanel();
+    	p12.add(pasahitza);
+    	p12.add(pasahitzaField);
+    	
+    	JPanel p13 = new JPanel(new BorderLayout());
+    	p13.add(p1, BorderLayout.NORTH);
+    	p13.add(p12, BorderLayout.SOUTH);
+    	
     	JPanel p3 = new JPanel(new GridLayout(1,  3));
     	p3.add(r1);
     	p3.add(r2);
@@ -62,7 +73,7 @@ public class Logina extends JDialog {
     	p2.add(p3);
     	
     	JPanel p4 = new JPanel(new GridLayout(2, 1));
-    	p4.add(p1);
+    	p4.add(p13);
     	p4.add(p2);
     	
     	JPanel p5 = new JPanel(new BorderLayout());
