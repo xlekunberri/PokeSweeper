@@ -11,6 +11,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -18,19 +19,21 @@ import javax.swing.WindowConstants;
 import org.pokesweeper.model.Helbideak;
 
 
-public class Logina extends JDialog {
+public class LoginaUI extends JDialog {
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
 	private final JLabel erabiltzailea = new JLabel("Erabiltzailea: ");
+	private final JLabel pasahitza = new JLabel("Pasahitza:  ");
 	private final JLabel maila = new JLabel("Maila: ");
 	private final JTextField erabiltzaileField = new JTextField(15);
+	private final JPasswordField pasahitzaField = new JPasswordField(16);
 	private ButtonGroup bg;
 	private JRadioButton r1, r2, r3;
     private final JButton jbtOk = new JButton("Ok");
     
     //Eraikitzailea
-    public Logina(JFrame frame) {
+    public LoginaUI(JFrame frame) {
     	super(frame, "Logina");
     	this.setResizable(false);
     	
@@ -52,6 +55,14 @@ public class Logina extends JDialog {
     	p1.add(erabiltzailea);
     	p1.add(erabiltzaileField);
     	
+    	JPanel p12 = new JPanel();
+    	p12.add(pasahitza);
+    	p12.add(pasahitzaField);
+    	
+    	JPanel p13 = new JPanel(new BorderLayout());
+    	p13.add(p1, BorderLayout.NORTH);
+    	p13.add(p12, BorderLayout.SOUTH);
+    	
     	JPanel p3 = new JPanel(new GridLayout(1,  3));
     	p3.add(r1);
     	p3.add(r2);
@@ -62,7 +73,7 @@ public class Logina extends JDialog {
     	p2.add(p3);
     	
     	JPanel p4 = new JPanel(new GridLayout(2, 1));
-    	p4.add(p1);
+    	p4.add(p13);
     	p4.add(p2);
     	
     	JPanel p5 = new JPanel(new BorderLayout());
@@ -89,18 +100,22 @@ public class Logina extends JDialog {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (!erabiltzaileField.getText().isEmpty()){
-					setVisible(false);
-					JokoaUI.erabiltzailea = erabiltzaileField.getText().trim();
-					JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
-					if(r1.isSelected()) {
-						JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
-					}
-					else if (r2.isSelected()) {
-						JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
-					}
-					else if (r3.isSelected()) {
-						JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+				String erabiltzailea = erabiltzaileField.getText().trim();
+				String pasahitza = pasahitzaField.getPassword().toString();
+				if (!(erabiltzailea == null || pasahitza == null)){
+					if(Erabiltzaileak.getNireErabiltzaileak.logeatu(erabiltzailea, pasahitza)){
+						setVisible(false);
+						JokoaUI.erabiltzailea = erabiltzailea;
+						JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
+						if(r1.isSelected()) {
+							JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
+						}
+						else if (r2.isSelected()) {
+							JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
+						}
+						else if (r3.isSelected()) {
+							JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+						}
 					}
 				}
 				

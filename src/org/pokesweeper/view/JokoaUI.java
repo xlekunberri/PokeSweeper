@@ -63,7 +63,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
 		behekoPanela.add(TableroaUI.getNireTableroaUI());
 		
-		new Logina(this).setVisible(true);
+		new LoginaUI(this).setVisible(true);
 
 		this.setVisible(true);
 		this.pack();
