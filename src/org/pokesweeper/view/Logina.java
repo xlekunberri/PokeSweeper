@@ -76,7 +76,10 @@ public class Logina extends JDialog {
         p6.add(oak, BorderLayout.NORTH);
         p6.add(p5, BorderLayout.SOUTH);
         
-    	getContentPane().add(p6);
+    	add(p6);
+    	
+    	getRootPane().setDefaultButton(jbtOk);
+    	
     	this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
     	
     	pack();
