@@ -28,23 +28,6 @@ public class Login {
 			}
 			return nireErabiltzaileak;
 	    }
-	
-	public void idatzi(String user, String pass) throws IOException{
-		
-		fitxErabiltzaileak=new File("erabiltzaileak.txt");
-		try{
-			if (!baDago(user)){
-				FileWriter fw=new FileWriter(fitxErabiltzaileak, true);
-				BufferedWriter output=new BufferedWriter(fw);
-				output.write(user + " ### " + pass);
-				output.newLine();
-				output.close();
-			}
-		}
-		catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	public boolean logeatu(String user, String pass) {
 		fitxErabiltzaileak=new File("erabiltzaileak.txt");
@@ -89,8 +72,9 @@ public class Login {
 	}
 	
 	
-	private void erabiltzaileaSortu(String user, String pass) {
+	public boolean erabiltzaileaSortu(String user, String pass) {
 		fitxErabiltzaileak=new File("erabiltzaileak.txt");
+		boolean sortuta = false;
 		try{
 			if (!baDago(user)){
 				FileWriter fw=new FileWriter(fitxErabiltzaileak, true);
@@ -98,12 +82,14 @@ public class Login {
 				output.write(user + " ### " + pass);
 				output.newLine();
 				output.close();
+				sortuta=true;
 	
 			}
 		}
 		catch(IOException e){
 			 e.printStackTrace();
 		}
+		return sortuta;
 	}
 
 

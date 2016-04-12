@@ -10,14 +10,15 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import org.pokesweeper.model.Login;
 import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.Login;
 
 
 public class LoginUI extends JDialog {
@@ -25,10 +26,10 @@ public class LoginUI extends JDialog {
 	//Atributoak
 	private static final long serialVersionUID = 1L;
 	private final JLabel erabiltzailea = new JLabel("Erabiltzailea: ");
-	private final JLabel pasahitza = new JLabel("Pasahitza:  ");
+	private final JLabel pasahitza = new JLabel("Pasahitza:     ");
 	private final JLabel maila = new JLabel("Maila: ");
 	private final JTextField erabiltzaileField = new JTextField(15);
-	private final JTextField pasahitzaField = new JPasswordField(16);
+	private final JTextField pasahitzaField = new JPasswordField(15);
 	private ButtonGroup bg;
 	private JRadioButton r1, r2, r3;
     private final JButton jbtOk = new JButton("Sartu");
@@ -97,14 +98,34 @@ public class LoginUI extends JDialog {
     	this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
     	
     	pack();
+    	
     	setLocationRelativeTo(null);
     	
+    	jbtNew.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String erabiltzailea = getErabiltzaileIzena();
+				String pasahitza = getPasahitza();
+				if (!(erabiltzailea == null || pasahitza == null)){
+					if(Login.getNireLogin().erabiltzaileaSortu(erabiltzailea,pasahitza)){
+						JOptionPane.showMessageDialog(null, "Erabiltzailea sortu da");
+					}
+					else{
+						JOptionPane.showMessageDialog(null, "Ezin da erabiltzailea sortu, izen hori duen beste bat existitzen delako");
+					}
+				}
+				pasahitzaField.setText("");
+				
+			}
+		});
+
     	jbtOk.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String erabiltzailea = erabiltzaileField.getText().trim();
-				String pasahitza = pasahitzaField.getText().trim();
+				String erabiltzailea = getErabiltzaileIzena();
+				String pasahitza = getPasahitza();
 				if (!(erabiltzailea == null || pasahitza == null)){
 					if(Login.getNireLogin().logeatu(erabiltzailea, pasahitza)){
 						setVisible(false);
@@ -120,6 +141,10 @@ public class LoginUI extends JDialog {
 							JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
 						}
 					}
+					else{
+						JOptionPane.showMessageDialog(null, "Erabiltzaile edo pasahitz okerrak");
+						pasahitzaField.setText("");
+					}
 				}
 				
 			}
@@ -128,15 +153,32 @@ public class LoginUI extends JDialog {
     }
     
     //Beste metodoak
-    public String getUserName(){
+    public String getErabiltzaileIzena(){
     	String username = erabiltzaileField.getText().trim();
     	if (username.length()<=10){
     		username = username.substring(0, username.length());
     	}
     	else {
-    		username = username.substring(0, 10);
+    		JOptionPane.showMessageDialog(null, "Erabiltzaileak ezin du 10 karaktere baino gehiago izan");
+    		username=null;
+    		erabiltzaileField.setText("");
+    		pasahitzaField.setText("");
     	}
     	return username;
     }
+    
+    public String getPasahitza(){
+    	String pass = pasahitzaField.getText().trim();
+    	if (pass.length()<=16){
+    		pass = pass.substring(0, pass.length());
+    	}
+    	else {
+    		JOptionPane.showMessageDialog(null, "Pasahitzak ezin du 16 karaktere baino gehiago izan");
+    		pass=null;
+    		pasahitzaField.setText("");
+    	}
+    	return pass;
+    }
+    
 
 }
