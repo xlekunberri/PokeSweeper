@@ -19,7 +19,7 @@ import javax.swing.WindowConstants;
 import org.pokesweeper.model.Helbideak;
 
 
-public class Logina extends JDialog {
+public class LoginaUI extends JDialog {
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
@@ -33,7 +33,7 @@ public class Logina extends JDialog {
     private final JButton jbtOk = new JButton("Ok");
     
     //Eraikitzailea
-    public Logina(JFrame frame) {
+    public LoginaUI(JFrame frame) {
     	super(frame, "Logina");
     	this.setResizable(false);
     	
@@ -100,18 +100,22 @@ public class Logina extends JDialog {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (!erabiltzaileField.getText().isEmpty()){
-					setVisible(false);
-					JokoaUI.erabiltzailea = erabiltzaileField.getText().trim();
-					JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
-					if(r1.isSelected()) {
-						JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
-					}
-					else if (r2.isSelected()) {
-						JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
-					}
-					else if (r3.isSelected()) {
-						JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+				String erabiltzailea = erabiltzaileField.getText().trim();
+				String pasahitza = pasahitzaField.getPassword().toString();
+				if (!(erabiltzailea == null || pasahitza == null)){
+					if(Erabiltzaileak.getNireErabiltzaileak.logeatu(erabiltzailea, pasahitza)){
+						setVisible(false);
+						JokoaUI.erabiltzailea = erabiltzailea;
+						JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
+						if(r1.isSelected()) {
+							JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
+						}
+						else if (r2.isSelected()) {
+							JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
+						}
+						else if (r3.isSelected()) {
+							JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+						}
 					}
 				}
 				
