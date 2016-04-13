@@ -7,8 +7,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -89,8 +87,6 @@ public class LoginUI extends JPanel {
         p6.add(p5, BorderLayout.SOUTH);
         
     	add(p6);
-    	
-    	//getRootPane().setDefaultButton(jbtOk);
     	
     	jbtOk.addActionListener(new ActionListener() {
 			
