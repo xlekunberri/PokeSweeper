@@ -15,13 +15,13 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 
-import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Login;
+import org.pokesweeper.model.PokéSweeper;
+import org.pokesweeper.model.Helbideak;
 
 
-public class LoginUI extends JDialog {
+public class LoginUI extends JPanel {
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
@@ -36,10 +36,7 @@ public class LoginUI extends JDialog {
     private final JButton jbtNew = new JButton("Erregistratu");
     
     //Eraikitzailea
-    public LoginUI(JFrame frame) {
-    	super(frame, "Logina");
-    	this.setResizable(false);
-    	
+    public LoginUI() {    	
     	bg = new ButtonGroup();
     	r1 = new JRadioButton("1. Maila");
     	r2 = new JRadioButton("2. Maila");
@@ -93,33 +90,8 @@ public class LoginUI extends JDialog {
         
     	add(p6);
     	
-    	getRootPane().setDefaultButton(jbtOk);
+    	//getRootPane().setDefaultButton(jbtOk);
     	
-    	this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-    	
-    	pack();
-    	
-    	setLocationRelativeTo(null);
-    	
-    	jbtNew.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String erabiltzailea = getErabiltzaileIzena();
-				String pasahitza = getPasahitza();
-				if (!(erabiltzailea == null || pasahitza == null)){
-					if(Login.getNireLogin().erabiltzaileaSortu(erabiltzailea,pasahitza)){
-						JOptionPane.showMessageDialog(null, "Erabiltzailea sortu da");
-					}
-					else{
-						JOptionPane.showMessageDialog(null, "Ezin da erabiltzailea sortu, izen hori duen beste bat existitzen delako");
-					}
-				}
-				pasahitzaField.setText("");
-				
-			}
-		});
-
     	jbtOk.addActionListener(new ActionListener() {
 			
 			@Override
@@ -128,18 +100,18 @@ public class LoginUI extends JDialog {
 				String pasahitza = getPasahitza();
 				if (!(erabiltzailea == null || pasahitza == null)){
 					if(Login.getNireLogin().logeatu(erabiltzailea, pasahitza)){
-						setVisible(false);
+						JokoaUI.getNireJokoa();
 						JokoaUI.erabiltzailea = erabiltzailea;
-						JokoaUI.getNireJokoa().setJMenuBar(new MenuaUI());
 						if(r1.isSelected()) {
-							JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
+							JokoaUI.maila = 1;
 						}
 						else if (r2.isSelected()) {
-							JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
+							JokoaUI.maila = 2;
 						}
 						else if (r3.isSelected()) {
-							JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+							JokoaUI.maila = 3;
 						}
+						PokéSweeper.getNirePokéSweeper().hurrengoa(2);
 					}
 					else{
 						JOptionPane.showMessageDialog(null, "Erabiltzaile edo pasahitz okerrak");
@@ -149,7 +121,9 @@ public class LoginUI extends JDialog {
 				
 			}
 		});
-   
+    	
+    	PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
+		PokéSweeperUI.getNirePokéSweeperUI().setLocationRelativeTo(null);
     }
     
     //Beste metodoak
