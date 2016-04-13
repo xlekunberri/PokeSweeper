@@ -26,15 +26,14 @@ public class Pika {
 	public void ezkerrekoKlik(){
 		Tableroa tableroa = Tableroa.getNireTableroa();
 		if (tableroa.getMinaKop()!=0){
-			JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop(), false);
+			JokoaUI.getNireJokoa().erreseteatu(JokoaUI.maila, false);
 	    	Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
 	    	this.setPikaEgoera("normal");
 		}
 	}
 	
 	public void eskumakoKlik(){
-    	Tableroa tableroa = Tableroa.getNireTableroa();
-		JokoaUI.getNireJokoa().erreseteatu(tableroa.getErrenkadaKop(), tableroa.getZutabeKop(), tableroa.getMinaKop(), true);
+		JokoaUI.getNireJokoa().erreseteatu(JokoaUI.maila, true);
     	Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
     	this.setPikaEgoera("normal");
 	}

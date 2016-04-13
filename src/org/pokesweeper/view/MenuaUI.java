@@ -127,16 +127,16 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 	            
 	        if (e.getSource()==maila1) {
-	        	JokoaUI.getNireJokoa().erreseteatu(7, 10, 7, false);
+	        	JokoaUI.getNireJokoa().erreseteatu(1, false);
 	        }
 		 	else if (e.getSource()==maila2) {
-		 		JokoaUI.getNireJokoa().erreseteatu(10, 15, 20, false);
+		 		JokoaUI.getNireJokoa().erreseteatu(2, false);
 	        }       
 		 	else if (e.getSource()==maila3) {
-		 		JokoaUI.getNireJokoa().erreseteatu(12, 25, 36, false);
+		 		JokoaUI.getNireJokoa().erreseteatu(3, false);
 	        }
 		 	else if (e.getSource()==rankinga){
-		 		new RankingUI(JokoaUI.getNireJokoa(), true).setVisible(true);
+		 		new RankingUI(PokéSweeperUI.getNirePokéSweeperUI(), true).setVisible(true);
 		 	}
 		 	else if (e.getSource()==irten) {
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");

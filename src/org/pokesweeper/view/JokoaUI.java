@@ -7,84 +7,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-import javafx.util.Duration;
-
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
 
-import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
 import org.pokesweeper.model.Pika;
 import org.pokesweeper.model.Ranking;
 import org.pokesweeper.model.Tableroa;
 
-public class JokoaUI extends JFrame implements ActionListener{
+public class JokoaUI extends JPanel implements ActionListener{
 	
 	//Atributoak
 	private static JokoaUI nirejokoa;
 	private static final long serialVersionUID = 1L;
-	private static JPanel behekoPanela;
 	public static boolean bukatuta = false;
+	private static JPanel goikoPanela;
+	private static JPanel behekoPanela;
 	public static KontadoreaUI minaKontadorea;
 	public static KontadoreaUI denboraKontadorea;
 	public static String erabiltzailea;
-	
-	// Main metodoa
-	public static void main(String[] args) {
-		Helbideak.denakKargatu();
-		new Splash();
-		JDialog.setDefaultLookAndFeelDecorated(true);
-	}
+	public static int maila;
 	
 	//Eraikitzailea
-	private JokoaUI(){
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(false);
-		this.setTitle("PokéSweeper");
-		this.setIconImage(Helbideak.ikonoa);
-		this.setCursor(Helbideak.kursorea);
-		UIManager.put("Menu.font", Helbideak.iturria);
-		UIManager.put("MenuItem.font", Helbideak.iturria);
-		
-		
-		goikoPanelaEraiki();
-		
-		behekoPanela = new JPanel();
-		behekoPanela.setBackground(new Color(112, 200, 160));
-		behekoPanela.setLayout(new BorderLayout(0, 0));
-		getContentPane().add(behekoPanela, BorderLayout.CENTER);
-		
-		panelakEraiki();
-		
-		Tableroa.getNireTableroa().tableroaEraiki(7, 10, 0, true);
-		TableroaUI.getNireTableroaUI().tableroaEraiki();
-		behekoPanela.add(TableroaUI.getNireTableroaUI());
-		
-		new LoginUI(this).setVisible(true);
-
-		this.setVisible(true);
-		this.pack();
-		
-		Audioa intro = new Audioa(Helbideak.intro);
-		intro.play();
-		intro.getPlayer().setOnEndOfMedia(new Runnable(){
-			@Override
-			public void run(){
-				final Audioa bucle = new Audioa(Helbideak.bucle);
-				bucle.play();
-				bucle.getPlayer().setOnEndOfMedia(new Runnable(){
-					@Override
-					public void run(){
-						bucle.getPlayer().seek(Duration.ZERO);
-					}
-				});
-			}
-		});
-	}
-	
 	public static JokoaUI getNireJokoa(){
 		if (nirejokoa == null){
 			nirejokoa = new JokoaUI();
@@ -92,31 +36,20 @@ public class JokoaUI extends JFrame implements ActionListener{
 		return nirejokoa;
 	}
 	
-	//Beste metodoak
-	private void panelakEraiki() {
-		
-		JPanel panelIpar = new JPanel();
-		panelIpar.setBackground(new Color(112, 200, 160));
-		behekoPanela.add(panelIpar, BorderLayout.NORTH);
-		
-		JPanel panelMendebal = new JPanel();
-		panelMendebal.setBackground(new Color(112, 200, 160));
-		behekoPanela.add(panelMendebal, BorderLayout.WEST);
-		
-		JPanel panelEkial = new JPanel();
-		panelEkial.setBackground(new Color(112, 200, 160));
-		behekoPanela.add(panelEkial, BorderLayout.EAST);
-		
-		JPanel panelHegoal = new JPanel();
-		panelHegoal.setBackground(new Color(112, 200, 160));
-		behekoPanela.add(panelHegoal, BorderLayout.SOUTH);
-		
+	private JokoaUI(){
+		this.setLayout(new BorderLayout());
+		goikoPanela = goikoPanelaEraiki();
+		add(goikoPanela, BorderLayout.NORTH);
+		behekoPanela = behekoPanelakEraiki();
+		add(behekoPanela, BorderLayout.CENTER);
+		PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
+		PokéSweeperUI.getNirePokéSweeperUI().setLocationRelativeTo(null);
 	}
 	
-	private void goikoPanelaEraiki() {
-		JPanel goikoPanela = new JPanel(new FlowLayout());
+	//Beste metodoak
+	private JPanel goikoPanelaEraiki() {
+		JPanel goikoPanela = new JPanel(new FlowLayout()); 
 		goikoPanela.setBackground(new Color(112, 200, 160));
-		getContentPane().add(goikoPanela, BorderLayout.NORTH);
 		
 		JPanel goikoPanelaGoian = new JPanel();
 		goikoPanelaGoian.setBackground(new Color(112, 200, 160));
@@ -134,7 +67,36 @@ public class JokoaUI extends JFrame implements ActionListener{
 		goikoPanela.add(behean);
 		goikoPanela.add(this.getLorea());
 		goikoPanela.add(JokoaUI.denboraKontadorea = new KontadoreaUI());
-		goikoPanela.add(this.getLorea());
+		goikoPanela.add(this.getLorea());	
+		
+		return goikoPanela;
+	}
+	
+	private JPanel behekoPanelakEraiki() {
+		JPanel behekoPanela = new JPanel(new BorderLayout());
+		setBackground(new Color(112, 200, 160));
+		
+		JPanel panelIpar = new JPanel();
+		panelIpar.setBackground(new Color(112, 200, 160));
+		behekoPanela.add(panelIpar, BorderLayout.NORTH);
+		
+		JPanel panelMendebal = new JPanel();
+		panelMendebal.setBackground(new Color(112, 200, 160));
+		behekoPanela.add(panelMendebal, BorderLayout.WEST);
+		
+		JPanel panelEkial = new JPanel();
+		panelEkial.setBackground(new Color(112, 200, 160));
+		behekoPanela.add(panelEkial, BorderLayout.EAST);
+		
+		JPanel panelHegoal = new JPanel();
+		panelHegoal.setBackground(new Color(112, 200, 160));
+		behekoPanela.add(panelHegoal, BorderLayout.SOUTH);
+		
+		Tableroa.getNireTableroa().tableroaEraiki(7, 10, 0, true);
+		TableroaUI.getNireTableroaUI().tableroaEraiki();
+		behekoPanela.add(TableroaUI.getNireTableroaUI());
+		
+		return behekoPanela;
 	}
 	
 	private JLabel getLorea(){
@@ -157,7 +119,7 @@ public class JokoaUI extends JFrame implements ActionListener{
 		} catch (IOException e) {e.printStackTrace();}
 	}
 	
-	public void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak) {
+	private void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak) {
 		JokoaUI.behekoPanela.remove(TableroaUI.getNireTableroaUI());
 		Tableroa.getNireTableroa().tableroaEraiki(pErrenkada, pZutabe, pMinaKop, pBichilloak);
 		TableroaUI.getNireTableroaUI().tableroaEraiki();
@@ -165,8 +127,25 @@ public class JokoaUI extends JFrame implements ActionListener{
 		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
 		Pika.getNirePika().setPikaEgoera("normal");
 		Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
-		pack();
-		setLocationRelativeTo(null);
+		PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
+		PokéSweeperUI.getNirePokéSweeperUI().setLocationRelativeTo(null);
+	}
+	
+	public void erreseteatu(int pMaila, boolean pBichilloak) {
+		switch (pMaila) {
+		case 1:
+        	JokoaUI.maila = 1;
+        	erreseteatu(7, 10, 7, pBichilloak);
+			break;
+		case 2:
+        	JokoaUI.maila = 2;
+        	erreseteatu(10, 15, 20, pBichilloak);
+			break;
+		case 3:
+        	JokoaUI.maila = 3;
+        	erreseteatu(12, 25, 36, pBichilloak);
+			break;
+		}
 	}
 	
    public String getUserName(){
