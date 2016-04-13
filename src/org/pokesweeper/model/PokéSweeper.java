@@ -43,6 +43,7 @@ public class PokéSweeper {
 			this.splash();
 			break;
 		case 1:
+			this.musikaJarri();
 			this.login();
 			break;
 		case 2:
@@ -56,8 +57,7 @@ public class PokéSweeper {
 		new Splash();
 	}
 	
-	private void login(){
-		this.musikaJarri();
+	public void login(){
 		new LoginUI();
 	}
 	

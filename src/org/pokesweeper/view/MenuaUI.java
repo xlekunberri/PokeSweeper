@@ -16,7 +16,6 @@ import java.net.URISyntaxException;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -31,15 +30,16 @@ import javax.swing.plaf.ColorUIResource;
 
 import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
+import org.pokesweeper.model.PokéSweeper;
 
 public class MenuaUI extends JMenuBar implements ActionListener{
 	
 	//Atributoak
 	private static final long serialVersionUID = 1L;
-	private JMenuItem maila1, maila2, maila3, rankinga;
+	private JMenuItem maila1, maila2, maila3, ezarpenak;
 	private JMenuItem irten, nolaJokatu, honiBuruz;
-	private JMenuItem soinua;
-	private JLabel username;
+	private JMenuItem rankinga, deskonektatu;
+	//private JLabel username;
 
 	
 	//Eraikitzailea
@@ -70,9 +70,9 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		
 		jokatu.addSeparator();
 		
-		rankinga = new JMenuItem("Hall of Fame");
-		jokatu.add(rankinga);
-		rankinga.addActionListener(this);
+		ezarpenak = new JMenuItem("Ezarpenak");
+		jokatu.add(ezarpenak);
+		ezarpenak.addActionListener(this);
 		
 		jokatu.addSeparator();
 		
@@ -93,32 +93,24 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		laguntza.add(honiBuruz);
 		honiBuruz.addActionListener(this);
 		
-		soinua = new JMenu("Bolum");
-		this.add(soinua);
-		
-		final JSlider sDuration=new JSlider(JSlider.HORIZONTAL,0,100,10);
-	    sDuration.setPaintLabels(true);
-	    sDuration.setPaintTicks(true);
-	    sDuration.setMajorTickSpacing(20);
-	    sDuration.setMinorTickSpacing(10);
-	    sDuration.setToolTipText("Volume");
-	    sDuration.addChangeListener(new ChangeListener() {
-			
-			@Override
-			public void stateChanged(ChangeEvent e) {
-				Audioa.setVolume((double)sDuration.getValue());
-				
-			}
-		});
-	    soinua.add(sDuration);
-		
 		this.add(Box.createHorizontalGlue());
 		
 		String izena = JokoaUI.getNireJokoa().getUserName();
-		username = new JLabel(izena);
+		JMenu username = new JMenu(izena);
 		username.setForeground(new Color(248, 208, 0));
 		username.setFont(Helbideak.iturria);
 		username.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 5));
+		
+		rankinga = new JMenuItem("Hall of Fame");
+		username.add(rankinga);
+		rankinga.addActionListener(this);
+		
+		username.addSeparator();
+		
+		deskonektatu = new JMenuItem("Deskonektatu");
+		username.add(deskonektatu);
+		deskonektatu.addActionListener(this);	
+		
 		this.add(username);	
 
 	}
@@ -196,6 +188,47 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		        UIManager.put("Panel.background",new ColorUIResource(160, 224, 192));
 		        UIManager.put("OptionPane.okButtonText", "Itzuli");
 		        JOptionPane.showMessageDialog(frame, panel, "Egileak", JOptionPane.PLAIN_MESSAGE);
+			}
+			else if (e.getSource() == deskonektatu){
+				PokéSweeperUI.getNirePokéSweeperUI().menuaKendu();
+				PokéSweeper.getNirePokéSweeper().login();
+
+			}
+			else if (e.getSource() == ezarpenak){
+				JPanel panel = new JPanel(new BorderLayout());
+				panel.setBackground(new Color(160, 224, 192));
+				
+				JTextPane f = new JTextPane();
+				f.setContentType("text/html");
+				f.setText("<html><center><b><font size = +2>Musikaren bolumena</font></b></center></html>");
+		        f.setEditable(false);
+				f.setBackground(null);
+				f.setBorder(null);
+				
+				final JSlider sDuration = new JSlider(JSlider.HORIZONTAL,0,100,10);
+			    sDuration.setPaintLabels(true);
+			    sDuration.setPaintTicks(true);
+			    sDuration.setMajorTickSpacing(20);
+			    sDuration.setMinorTickSpacing(10);
+			    sDuration.setToolTipText("Volume");
+			//  sDuration.setBackground(null); <- Si se descomenta la pantalla de login y el hall de fama se bugean
+			    sDuration.addChangeListener(new ChangeListener() {
+					
+					@Override
+					public void stateChanged(ChangeEvent e) {
+						Audioa.setVolume((double)sDuration.getValue());
+						
+					}
+				});
+		        
+		        panel.add(f, BorderLayout.NORTH);
+		        panel.add(sDuration, BorderLayout.CENTER);
+		        
+		        JFrame frame = new JFrame();
+		        UIManager.put("OptionPane.background",new ColorUIResource(160, 224, 192));
+		        UIManager.put("Panel.background",new ColorUIResource(160, 224, 192));
+		        UIManager.put("OptionPane.okButtonText", "Itzuli");
+		        JOptionPane.showMessageDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE);
 			}
 	}
 	

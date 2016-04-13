@@ -50,4 +50,8 @@ public class PokéSweeperUI extends JFrame{
 		this.setJMenuBar(new MenuaUI());
 	}
 	
+	public void menuaKendu(){
+		this.setJMenuBar(null);
+	}
+	
 }
