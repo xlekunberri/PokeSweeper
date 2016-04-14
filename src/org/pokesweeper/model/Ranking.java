@@ -14,15 +14,19 @@ import java.util.Scanner;
 
 public class Ranking {
 	
+	//Atributoak
 	File fitxRanking;
 	private static Ranking nireRanking;
 	
+	//Eraikitzailea
 	private Ranking(){
-		fitxRanking=new File("ranking.txt");
+		fitxRanking = new File("ranking.txt");
 		if (!fitxRanking.exists()){
 			try {
 				fitxRanking.createNewFile();
-			} catch (IOException e) {e.printStackTrace();}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -34,8 +38,9 @@ public class Ranking {
 			return nireRanking;
 	    }
 	
+	//Beste metodoak
 	public void idatzi(String pIzena, int pDenbora) throws IOException{
-		fitxRanking=new File("ranking.txt");
+		fitxRanking = new File("ranking.txt");
 		int maila;
 		int minakop = Tableroa.getNireTableroa().getMinaKop();
 		switch (minakop) {
@@ -51,8 +56,8 @@ public class Ranking {
 		}
 		try{
 			if (!baDago(pIzena,pDenbora,maila)){
-				FileWriter fw=new FileWriter(fitxRanking, true);
-				BufferedWriter output=new BufferedWriter(fw);
+				FileWriter fw = new FileWriter(fitxRanking, true);
+				BufferedWriter output = new BufferedWriter(fw);
 				output.write(pIzena + " ### " + Integer.toString(pDenbora) + " ### " + maila);
 				output.newLine();
 				output.close();
@@ -63,19 +68,18 @@ public class Ranking {
 		}
 	}
 
-	private boolean baDago(String pIzena, int pDenbora, int pMaila) { //if true actualiza
-		fitxRanking=new File("ranking.txt");
-		boolean dago=false;
+	private boolean baDago(String pIzena, int pDenbora, int pMaila) {
+		fitxRanking = new File("ranking.txt");
+		boolean dago = false;
 		try{
 			 Scanner sarrera = new Scanner(new FileReader(fitxRanking));
 			 String lerroa;
 			 while (sarrera.hasNext() && !dago) {
 				 lerroa = sarrera.nextLine();
-				 String[] hitzak=lerroa.split(" ### ");
-				 if (hitzak[0].equals(pIzena) && Integer.parseInt(hitzak[2])==pMaila){
+				 String[] hitzak = lerroa.split(" ### ");
+				 if (hitzak[0].equals(pIzena) && Integer.parseInt(hitzak[2]) == pMaila){
 					 dago = true;
-					 if (pDenbora < Integer.parseInt(hitzak[1])){ //si se cumple, actualizar
-						 
+					 if (pDenbora < Integer.parseInt(hitzak[1])){
 						 Path path = Paths.get("ranking.txt");
 						 Charset charset = StandardCharsets.UTF_8;
 
@@ -104,19 +108,19 @@ public class Ranking {
 		boolean bukatua = false;
 		try{
 			while (i<10 && !bukatua){
-				 Scanner sarrera = new Scanner(new FileReader(fitxRanking));
-				 String lerroa;
-				 min=1000;
-				 izena=null;
-				 while (sarrera.hasNext()) {
-					 lerroa = sarrera.nextLine();
-					 String[] hitzak=lerroa.split(" ### ");
-					 if (Integer.parseInt(hitzak[2])==pMaila){
-						 if ((Integer.parseInt(hitzak[1])<min) && !barruanDago(izenak,hitzak[0]) ){
-							 min = Integer.parseInt(hitzak[1]);
-							 izena = hitzak[0];
-						 }
-					 }
+				Scanner sarrera = new Scanner(new FileReader(fitxRanking));
+				String lerroa;
+				min=1000;
+				izena=null;
+				while (sarrera.hasNext()) {
+					lerroa = sarrera.nextLine();
+					String[] hitzak=lerroa.split(" ### ");
+					if (Integer.parseInt(hitzak[2])==pMaila){
+						if ((Integer.parseInt(hitzak[1])<min) && !barruanDago(izenak,hitzak[0]) ){
+							min = Integer.parseInt(hitzak[1]);
+							izena = hitzak[0];
+						}
+					}
 				 }
 				 if (izena != null ){
 					 hoberenak[i] = izena + " " + min + "s";
@@ -125,7 +129,7 @@ public class Ranking {
 					 sarrera.close();
 				 }
 				 else {
-					 bukatua=true;
+					 bukatua = true;
 				 }
 			}
 		}
@@ -138,9 +142,9 @@ public class Ranking {
 	}
 
 	private boolean barruanDago(String[] izenak, String iz) {
-		int i=0;
-		boolean dago=false;
-		while (i<10 && izenak[i] != null){
+		int i = 0;
+		boolean dago = false;
+		while (i < 10 && izenak[i] != null){
 			if (izenak[i].equals(iz)){
 				dago=true;
 			}

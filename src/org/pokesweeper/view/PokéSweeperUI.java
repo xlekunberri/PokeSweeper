@@ -38,8 +38,8 @@ public class PokéSweeperUI extends JFrame{
 		}
 		egungoPanela = pPanela;
 		this.add(pPanela);
-		this.setVisible(true);
 		this.pack();
+		this.setVisible(true);
 	}
 	
 	public JPanel panelaLortu(){

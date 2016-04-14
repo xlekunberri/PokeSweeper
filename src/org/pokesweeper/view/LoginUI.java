@@ -86,13 +86,14 @@ public class LoginUI extends JPanel {
         p6.add(oak, BorderLayout.NORTH);
         p6.add(p5, BorderLayout.SOUTH);
         
-    	add(p6);
+    	this.add(p6);
+
+    	//this.getRootPane().setDefaultButton(jbtOk);
     	
-    	jbtOk.addActionListener(new ActionListener() {
-			
+    	jbtOk.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String erabiltzailea = getErabiltzaileIzena();
+				String erabiltzailea = getErabiltzaila();
 				String pasahitza = getPasahitza();
 				if (!(erabiltzailea == null || pasahitza == null)){
 					if(Login.getNireLogin().logeatu(erabiltzailea, pasahitza)){
@@ -118,12 +119,30 @@ public class LoginUI extends JPanel {
 			}
 		});
     	
+    	jbtNew.addActionListener(new ActionListener() {				
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String erabiltzailea = getErabiltzaila();
+				String pasahitza = getPasahitza();
+				if (!(erabiltzailea == null || pasahitza == null)){
+					if(Login.getNireLogin().erabiltzaileaSortu(erabiltzailea,pasahitza)){
+						JOptionPane.showMessageDialog(null, "Erabiltzailea sortu da");
+					}
+					else{
+						JOptionPane.showMessageDialog(null, "Ezin da erabiltzailea sortu, izen hori duen beste bat existitzen delako");
+					}
+				}
+				pasahitzaField.setText("");
+				
+			}
+		});
+    	
     	PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
 		PokéSweeperUI.getNirePokéSweeperUI().setLocationRelativeTo(null);
     }
     
     //Beste metodoak
-    public String getErabiltzaileIzena(){
+    public String getErabiltzaila(){
     	String username = erabiltzaileField.getText().trim();
     	if (username.length()<=10){
     		username = username.substring(0, username.length());

@@ -3,8 +3,6 @@ package org.pokesweeper.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.JLabel;
@@ -15,7 +13,7 @@ import org.pokesweeper.model.Pika;
 import org.pokesweeper.model.Ranking;
 import org.pokesweeper.model.Tableroa;
 
-public class JokoaUI extends JPanel implements ActionListener{
+public class JokoaUI extends JPanel{
 	
 	//Atributoak
 	private static JokoaUI nirejokoa;
@@ -158,10 +156,5 @@ public class JokoaUI extends JPanel implements ActionListener{
     	}
     	return username;
     }
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		
-	}
 
 }

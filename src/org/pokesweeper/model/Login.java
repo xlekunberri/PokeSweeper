@@ -9,9 +9,11 @@ import java.util.Scanner;
 
 public class Login {
 	
+	//Atributoak
 	File fitxErabiltzaileak;
 	private static Login nireErabiltzaileak;
 	
+	//Eraikitzailea
 	private Login(){
 		fitxErabiltzaileak=new File("erabiltzaileak.txt");
 		if (!fitxErabiltzaileak.exists()){
@@ -29,6 +31,7 @@ public class Login {
 			return nireErabiltzaileak;
 	    }
 
+	//Beste metodoak
 	public boolean logeatu(String user, String pass) {
 		fitxErabiltzaileak=new File("erabiltzaileak.txt");
 		boolean dago=false;
@@ -50,7 +53,7 @@ public class Login {
 		return dago;
 	}
 	
-	private boolean baDago(String user) { //if true actualiza
+	private boolean baDago(String user) {
 		fitxErabiltzaileak=new File("erabiltzaileak.txt");
 		boolean dago=false;
 		try{

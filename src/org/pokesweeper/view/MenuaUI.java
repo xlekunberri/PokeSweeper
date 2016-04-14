@@ -26,7 +26,6 @@ import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.plaf.ColorUIResource;
 
 import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
@@ -147,7 +146,6 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 			}
 			else if (e.getSource()==honiBuruz) {
 				JPanel panel = new JPanel(new BorderLayout());
-				panel.setBackground(new Color(160, 224, 192));
 				JTextPane f = new JTextPane();
 				f.setContentType("text/html");
 				f.setText("<html><center><b><font size = +2>PokéSweeper</font></b><br><br>"
@@ -184,8 +182,6 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		        panel.add(website,  BorderLayout.CENTER);
 		        
 		        JFrame frame = new JFrame();
-		        UIManager.put("OptionPane.background",new ColorUIResource(160, 224, 192));
-		        UIManager.put("Panel.background",new ColorUIResource(160, 224, 192));
 		        UIManager.put("OptionPane.okButtonText", "Itzuli");
 		        JOptionPane.showMessageDialog(frame, panel, "Egileak", JOptionPane.PLAIN_MESSAGE);
 			}
@@ -196,11 +192,10 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 			}
 			else if (e.getSource() == ezarpenak){
 				JPanel panel = new JPanel(new BorderLayout());
-				panel.setBackground(new Color(160, 224, 192));
 				
 				JTextPane f = new JTextPane();
 				f.setContentType("text/html");
-				f.setText("<html><center><b><font size = +2>Musikaren bolumena</font></b></center></html>");
+				f.setText("<html><center><b><font size = +1>Musikaren bolumena</font></b></center></html>");
 		        f.setEditable(false);
 				f.setBackground(null);
 				f.setBorder(null);
@@ -211,7 +206,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 			    sDuration.setMajorTickSpacing(20);
 			    sDuration.setMinorTickSpacing(10);
 			    sDuration.setToolTipText("Volume");
-			//  sDuration.setBackground(null); <- Si se descomenta la pantalla de login y el hall de fama se bugean
+			    sDuration.setBackground(null);
 			    sDuration.addChangeListener(new ChangeListener() {
 					
 					@Override
@@ -225,9 +220,6 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		        panel.add(sDuration, BorderLayout.CENTER);
 		        
 		        JFrame frame = new JFrame();
-		        UIManager.put("OptionPane.background",new ColorUIResource(160, 224, 192));
-		        UIManager.put("Panel.background",new ColorUIResource(160, 224, 192));
-		        UIManager.put("OptionPane.okButtonText", "Itzuli");
 		        JOptionPane.showMessageDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE);
 			}
 	}
