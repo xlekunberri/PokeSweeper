@@ -35,6 +35,8 @@ public class LoginUI extends JPanel {
     
     //Eraikitzailea
     public LoginUI() {    	
+    	this.setLayout(new BorderLayout());
+    	
     	bg = new ButtonGroup();
     	r1 = new JRadioButton("1. Maila");
     	r2 = new JRadioButton("2. Maila");
@@ -70,25 +72,32 @@ public class LoginUI extends JPanel {
     	p2.add(maila);
     	p2.add(p3);
     	
-    	JPanel p4 = new JPanel(new GridLayout(2, 1));
-    	p4.add(p13);
-    	p4.add(p2);
+    	JPanel p4 = new JPanel(new BorderLayout());
+    	p4.add(p13, BorderLayout.NORTH);
+    	p4.add(p2, BorderLayout.SOUTH);
+    	
+    	JPanel p7 = new JPanel();
+    	p7.add(jbtOk);
+    	
+    	JPanel p8 = new JPanel();
+    	p8.add(jbtNew);
     	
     	JPanel p5 = new JPanel(new BorderLayout());
     	p5.add(p4, BorderLayout.NORTH);
-    	p5.add(jbtOk, BorderLayout.WEST);
-    	p5.add(jbtNew, BorderLayout.EAST);
+    	p5.add(p7, BorderLayout.CENTER);
+    	p5.add(p8, BorderLayout.SOUTH);
     	
     	JLabel oak = new JLabel(Helbideak.oak);
         
         JPanel p6 = new JPanel();
         p6.setLayout(new BorderLayout(0, 0));
-        p6.add(oak, BorderLayout.NORTH);
+        p6.add(new JPanel(), BorderLayout.NORTH);
+        p6.add(oak, BorderLayout.CENTER);
         p6.add(p5, BorderLayout.SOUTH);
         
     	this.add(p6);
 
-    	//this.getRootPane().setDefaultButton(jbtOk);
+    	PokéSweeperUI.getNirePokéSweeperUI().getRootPane().setDefaultButton(jbtOk);
     	
     	jbtOk.addActionListener(new ActionListener() {	
 			@Override
@@ -138,7 +147,6 @@ public class LoginUI extends JPanel {
 		});
     	
     	PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
-		PokéSweeperUI.getNirePokéSweeperUI().setLocationRelativeTo(null);
     }
     
     //Beste metodoak

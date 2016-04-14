@@ -41,7 +41,6 @@ public class JokoaUI extends JPanel{
 		behekoPanela = behekoPanelakEraiki();
 		add(behekoPanela, BorderLayout.CENTER);
 		PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
-		PokéSweeperUI.getNirePokéSweeperUI().setLocationRelativeTo(null);
 	}
 	
 	//Beste metodoak

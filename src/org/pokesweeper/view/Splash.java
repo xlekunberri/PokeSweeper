@@ -18,6 +18,7 @@ public class Splash extends JPanel {
 
 	//Eraikitzailea
 	public Splash(){
+		this.setLayout(new BorderLayout());
 		final Audioa audio = new Audioa(Helbideak.splashSound);
 		audio.play();
 		JLabel label = new JLabel(Helbideak.splashGif);
@@ -26,11 +27,12 @@ public class Splash extends JPanel {
 		label.addKeyListener(new KeyAdapter(){
 			public void keyPressed(KeyEvent e){
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					PokéSweeperUI.getNirePokéSweeperUI().dispose();
+					PokéSweeperUI.getNirePokéSweeperUI().setUndecorated(false);
 					PokéSweeper.getNirePokéSweeper().hurrengoa(1);
 				}
 			}
 		});
 		PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
-		PokéSweeperUI.getNirePokéSweeperUI().setLocationRelativeTo(null);
 	}
 }

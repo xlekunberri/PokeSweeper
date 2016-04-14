@@ -11,7 +11,6 @@ public class PokéSweeperUI extends JFrame{
 	//Atributuak
 	private static final long serialVersionUID = 1L;
 	private static PokéSweeperUI nirePokéSweeperUI = null;
-	private JPanel egungoPanela;
 	
 	//Eraikitzailea
 	public static PokéSweeperUI getNirePokéSweeperUI(){
@@ -27,23 +26,22 @@ public class PokéSweeperUI extends JFrame{
 		this.setTitle("PokéSweeper");
 		this.setIconImage(Helbideak.ikonoa);
 		this.setCursor(Helbideak.kursorea);
+		this.setUndecorated(true);
 		UIManager.put("Menu.font", Helbideak.iturria);
 		UIManager.put("MenuItem.font", Helbideak.iturria);
 	}
 	
 	//Beste metodoak
 	public void panelaAldatu(JPanel pPanela){
-		if(egungoPanela != null){
+		/*if(egungoPanela != null){
 			getContentPane().remove(egungoPanela);
 		}
-		egungoPanela = pPanela;
+		egungoPanela = pPanela;*/
+		getContentPane().removeAll();
 		this.add(pPanela);
 		this.pack();
 		this.setVisible(true);
-	}
-	
-	public JPanel panelaLortu(){
-		return this.egungoPanela;
+		this.setLocationRelativeTo(null);
 	}
 	
 	public void menuaJarri(){
