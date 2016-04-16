@@ -104,7 +104,7 @@ public class LoginUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				String erabiltzailea = getErabiltzaila();
 				String pasahitza = getPasahitza();
-				if (!(erabiltzailea == null || pasahitza == null)){
+				if (!(erabiltzailea.isEmpty() || pasahitza.isEmpty())){
 					if(Login.getNireLogin().logeatu(erabiltzailea, pasahitza)){
 						JokoaUI.getNireJokoa();
 						JokoaUI.erabiltzailea = erabiltzailea;
@@ -119,12 +119,11 @@ public class LoginUI extends JPanel {
 						}
 						PokéSweeper.getNirePokéSweeper().hurrengoa(2);
 					}
-					else{
-						JOptionPane.showMessageDialog(null, "Erabiltzaile edo pasahitz okerrak");
-						pasahitzaField.setText("");
-					}
 				}
-				
+				else{
+					JOptionPane.showMessageDialog(null, "Erabiltzaile edo pasahitz okerrak");
+					pasahitzaField.setText("");
+				}
 			}
 		});
     	
@@ -133,7 +132,7 @@ public class LoginUI extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				String erabiltzailea = getErabiltzaila();
 				String pasahitza = getPasahitza();
-				if (!(erabiltzailea == null || pasahitza == null)){
+				if (!(erabiltzailea.isEmpty() || pasahitza.isEmpty())){
 					if(Login.getNireLogin().erabiltzaileaSortu(erabiltzailea,pasahitza)){
 						JOptionPane.showMessageDialog(null, "Erabiltzailea sortu da");
 					}

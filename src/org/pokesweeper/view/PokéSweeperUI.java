@@ -33,10 +33,6 @@ public class PokéSweeperUI extends JFrame{
 	
 	//Beste metodoak
 	public void panelaAldatu(JPanel pPanela){
-		/*if(egungoPanela != null){
-			getContentPane().remove(egungoPanela);
-		}
-		egungoPanela = pPanela;*/
 		getContentPane().removeAll();
 		this.add(pPanela);
 		this.pack();
