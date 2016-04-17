@@ -1,6 +1,7 @@
 package org.pokesweeper.view;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JDialog;
@@ -62,7 +63,7 @@ public class RankingUI extends JDialog {
        JPanel panela = new JPanel(new GridLayout(5, 2));
        String[] rankinga = Ranking.getNireRanking().rankingLortu(pMaila);
        for(int i = 0; i < rankinga.length; i++){
-    	   JPanel panelaAux = new JPanel();
+    	   JPanel panelaAux = new JPanel(new FlowLayout(FlowLayout.LEFT));
     	   JLabel domina = new JLabel(Helbideak.dominak[i]);
     	   panelaAux.add(domina);
     	   panelaAux.add(new JLabel(rankinga[i]));
