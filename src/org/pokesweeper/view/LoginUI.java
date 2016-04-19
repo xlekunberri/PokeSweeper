@@ -26,8 +26,8 @@ public class LoginUI extends JPanel {
 	private final JLabel erabiltzailea = new JLabel("Erabiltzailea: ");
 	private final JLabel pasahitza = new JLabel("Pasahitza:     ");
 	private final JLabel maila = new JLabel("Maila: ");
-	private final JTextField erabiltzaileField = new JTextField(15);
-	private final JTextField pasahitzaField = new JPasswordField(15);
+	private final JTextField erabiltzaileField = new JTextField(10);
+	private final JTextField pasahitzaField = new JPasswordField(10);
 	private ButtonGroup bg;
 	private JRadioButton r1, r2, r3;
     private final JButton jbtOk = new JButton("Sartu");
@@ -50,6 +50,9 @@ public class LoginUI extends JPanel {
     	bg.add(r1);
     	bg.add(r2);
     	bg.add(r3);
+    	
+    	erabiltzaileField.setDocument(new JTextFieldLimit(10));
+    	pasahitzaField.setDocument(new JTextFieldLimit(10));
     	
     	JPanel p1 = new JPanel();
     	p1.add(erabiltzailea);
@@ -82,10 +85,13 @@ public class LoginUI extends JPanel {
     	JPanel p8 = new JPanel();
     	p8.add(jbtNew);
     	
+    	JPanel p9 = new JPanel(new GridLayout());
+    	p9.add(p7);
+    	p9.add(p8);
+    			
     	JPanel p5 = new JPanel(new BorderLayout());
     	p5.add(p4, BorderLayout.NORTH);
-    	p5.add(p7, BorderLayout.CENTER);
-    	p5.add(p8, BorderLayout.SOUTH);
+    	p5.add(p9, BorderLayout.SOUTH);
     	
     	JLabel oak = new JLabel(Helbideak.oak);
         
@@ -102,8 +108,8 @@ public class LoginUI extends JPanel {
     	jbtOk.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String erabiltzailea = getErabiltzaila();
-				String pasahitza = getPasahitza();
+				String erabiltzailea = erabiltzaileField.getText().trim();
+				String pasahitza = pasahitzaField.getText().trim();
 				if (!(erabiltzailea.isEmpty() || pasahitza.isEmpty())){
 					if(Login.getNireLogin().logeatu(erabiltzailea, pasahitza)){
 						JokoaUI.getNireJokoa();
@@ -130,8 +136,8 @@ public class LoginUI extends JPanel {
     	jbtNew.addActionListener(new ActionListener() {				
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String erabiltzailea = getErabiltzaila();
-				String pasahitza = getPasahitza();
+				String erabiltzailea = erabiltzaileField.getText().trim();
+				String pasahitza = pasahitzaField.getText().trim();
 				if (!(erabiltzailea.isEmpty() || pasahitza.isEmpty())){
 					if(Login.getNireLogin().erabiltzaileaSortu(erabiltzailea,pasahitza)){
 						JOptionPane.showMessageDialog(null, "Erabiltzailea sortu da");
@@ -148,33 +154,4 @@ public class LoginUI extends JPanel {
     	PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
     }
     
-    //Beste metodoak
-    public String getErabiltzaila(){
-    	String username = erabiltzaileField.getText().trim();
-    	if (username.length()<=10){
-    		username = username.substring(0, username.length());
-    	}
-    	else {
-    		JOptionPane.showMessageDialog(null, "Erabiltzaileak ezin du 10 karaktere baino gehiago izan");
-    		username=null;
-    		erabiltzaileField.setText("");
-    		pasahitzaField.setText("");
-    	}
-    	return username;
-    }
-    
-    public String getPasahitza(){
-    	String pass = pasahitzaField.getText().trim();
-    	if (pass.length()<=16){
-    		pass = pass.substring(0, pass.length());
-    	}
-    	else {
-    		JOptionPane.showMessageDialog(null, "Pasahitzak ezin du 16 karaktere baino gehiago izan");
-    		pass=null;
-    		pasahitzaField.setText("");
-    	}
-    	return pass;
-    }
-    
-
 }
