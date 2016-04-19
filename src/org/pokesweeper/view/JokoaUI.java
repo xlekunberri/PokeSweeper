@@ -97,8 +97,7 @@ public class JokoaUI extends JPanel{
 	}
 	
 	private JLabel getLorea(){
-		JLabel lorea = new JLabel(Helbideak.lorea);
-		return lorea;
+		return new JLabel(Helbideak.lorea);
 	}
 	
 	public static void galdu(){
@@ -111,9 +110,7 @@ public class JokoaUI extends JPanel{
 		JokoaUI.bukatuta = true;
 		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
 		Pika.getNirePika().setPikaEgoera("irabazi");
-		try {
-			Ranking.getNireRanking().idatzi(JokoaUI.erabiltzailea, Tableroa.getNireTableroa().denboraKontadorea.getKont());
-		} catch (IOException e) {e.printStackTrace();}
+		Ranking.getNireRanking().idatzi(JokoaUI.erabiltzailea, Tableroa.getNireTableroa().denboraKontadorea.getKont());
 	}
 	
 	private void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak) {

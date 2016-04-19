@@ -127,7 +127,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		 		JokoaUI.getNireJokoa().erreseteatu(3, false);
 	        }
 		 	else if (e.getSource()==rankinga){
-		 		new RankingUI(PokéSweeperUI.getNirePokéSweeperUI(), true).setVisible(true);
+		 		new RankingUI(PokéSweeperUI.getNirePokéSweeperUI()).setVisible(true);
 		 	}
 		 	else if (e.getSource()==irten) {
 		 		UIManager.put("OptionPane.yesButtonText", "Bai");
