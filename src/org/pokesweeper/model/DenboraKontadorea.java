@@ -46,9 +46,4 @@ public class DenboraKontadorea extends Kontadorea{
 		kontadoreaEguneratu();
 		timer.start();
 	}
-	
-	public int getKont() {
-		return this.kont;
-	}
-	
 }
