@@ -83,7 +83,11 @@ public class BarruLaukia{
     	}
 	}
 	
-	boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
+	protected boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
+		return !(pErrenkada< 0 || pErrenkada >= tableroLogicoa.getErrenkadaKop() || pZutabe < 0 || pZutabe >= tableroLogicoa.getZutabeKop());
+	}
+	
+	public boolean jKoordenadaEgokiak(int pErrenkada, int pZutabe){//JUNIT-entzako
 		return !(pErrenkada< 0 || pErrenkada >= tableroLogicoa.getErrenkadaKop() || pZutabe < 0 || pZutabe >= tableroLogicoa.getZutabeKop());
 	}
 	
