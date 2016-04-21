@@ -152,5 +152,10 @@ public class JokoaUI extends JPanel{
     	}
     	return username;
     }
+   
+   //JUnitentzako
+   public void setMaila(int pMaila){
+	   this.maila = pMaila;
+   }
 
 }

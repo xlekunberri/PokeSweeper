@@ -25,7 +25,7 @@ public class Pika {
 	//Beste metodoak
 	public void ezkerrekoKlik(){
 		Tableroa tableroa = Tableroa.getNireTableroa();
-		if (tableroa.getMinaKop()!=0){
+		if (tableroa.getMinaKop() != 0){
 			JokoaUI.getNireJokoa().erreseteatu(JokoaUI.maila, false);
 	    	Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
 	    	this.setPikaEgoera("normal");
@@ -55,6 +55,11 @@ public class Pika {
 			break;
 		}
 		PikaUI.getNirePika().setPikaEgoera(ikonoa);
+	}
+	
+	//JUnitentzako
+	public Icon getIkonoa(){
+		return PikaUI.getNirePika().getIcon();
 	}
 
 }
