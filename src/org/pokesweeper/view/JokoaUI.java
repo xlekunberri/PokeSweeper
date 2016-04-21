@@ -3,7 +3,6 @@ package org.pokesweeper.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.io.IOException;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -155,7 +154,7 @@ public class JokoaUI extends JPanel{
    
    //JUnitentzako
    public void setMaila(int pMaila){
-	   this.maila = pMaila;
+	   JokoaUI.maila = pMaila;
    }
 
 }
