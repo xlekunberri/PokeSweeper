@@ -20,6 +20,11 @@ public class BarruLaukia{
 		this.ikonoZenb = pIkonoZenb;
 		this.egoera = 0; // 0 = Zabaldu gabe; 1 = Bandera; 2 = Galdera ikurra; 3 = Zabalik;
 	}
+	public BarruLaukia(int pErrenkada, int pZutabea) {//JUNIT-entzako
+		this.errenkada = pErrenkada;
+		this.zutabea = pZutabea;
+		this.egoera = 0; // 0 = Zabaldu gabe; 1 = Bandera; 2 = Galdera ikurra; 3 = Zabalik;
+	}
 	
 	//Beste metodoak
 	public void eskumakoBotoia() {
@@ -98,6 +103,17 @@ public class BarruLaukia{
 			JokoaUI.irabazi();
 		}
 	}
+	
+	public boolean jIrabaziDu(){//JUNIT-entzako
+		Tableroa tableroa = Tableroa.getNireTableroa();
+		tableroa.laukiFalta--;
+		if(tableroa.laukiFalta == tableroa.getMinaKop()){
+			JokoaUI.irabazi();
+			return true;
+		}
+		return false;
+	}
+	
 	
 	int getEgoera() {
 		return this.egoera;
