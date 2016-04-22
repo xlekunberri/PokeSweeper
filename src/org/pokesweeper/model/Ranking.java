@@ -39,7 +39,7 @@ public class Ranking {
 	    }
 	
 	//Beste metodoak
-	public void idatzi(String pIzena, int pDenbora) throws IOException{
+	public void idatzi(String pIzena, int pDenbora) {
 		fitxRanking = new File("ranking.txt");
 		int maila;
 		int minakop = Tableroa.getNireTableroa().getMinaKop();

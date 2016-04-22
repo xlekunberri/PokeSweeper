@@ -1,7 +1,11 @@
 package org.pokesweeper.model;
+
 import org.pokesweeper.view.JokoaUI;
 import org.pokesweeper.view.LaukiaUI;
 import org.pokesweeper.view.TableroaUI;
+
+//JUnitentzako
+import javax.swing.Icon;
 
 public class BichilloLaukia extends BarruLaukia {
 	
@@ -38,6 +42,15 @@ public class BichilloLaukia extends BarruLaukia {
 	@Override
 	public void mouseReleased(){
 		
+	}
+	
+	//JUnitentzako
+	public void setEgoera(int pEgoera){
+		this.egoera= pEgoera;
+	}
+	
+	public Icon getIkonoa(){
+		return TableroaUI.getNireTableroaUI().laukia[this.errenkada][this.zutabea].getIcon();
 	}
 
 }

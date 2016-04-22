@@ -19,8 +19,8 @@ public class RankingUI extends JDialog {
 	private static final long serialVersionUID = 1L;
 
 	//Eraikitzailea
-	public RankingUI(JFrame frame, boolean m){
-		super(frame, m);
+	public RankingUI(JFrame frame){
+		super(frame, true);
 		setTitle("Hall of Fame");
 		setPreferredSize(new Dimension(450, 560));
 		setResizable(false);

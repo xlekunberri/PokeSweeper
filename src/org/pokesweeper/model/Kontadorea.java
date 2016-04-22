@@ -11,9 +11,7 @@ public abstract class Kontadorea {
 	}
 	
 	//Beste metodoak
-	protected void kontadoreaEguneratu(){
-
-	}
+	protected void kontadoreaEguneratu(){}
 
 	public int getKont() {
 		return this.kont;

@@ -66,4 +66,9 @@ public class Tableroa {
 		return this.minaKop;
 	}
 	
+	//JUnitentzako
+	public void setMinaKop(int pMinaKop){
+		this.minaKop = pMinaKop;
+	}
+	
 }

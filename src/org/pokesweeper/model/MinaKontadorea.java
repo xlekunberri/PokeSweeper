@@ -37,9 +37,4 @@ public class MinaKontadorea extends Kontadorea{
 		this.kont = pZenbakia;
 		this.kontadoreaEguneratu();
 	}
-	
-	public int getKont() {
-		return this.kont;
-	}
-
 }
