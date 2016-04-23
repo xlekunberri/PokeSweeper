@@ -125,6 +125,10 @@ public class LoginUI extends JPanel {
 						}
 						PokéSweeper.getNirePokéSweeper().hurrengoa(2);
 					}
+					else{
+						JOptionPane.showMessageDialog(null, "Erabiltzaile edo pasahitz okerrak");
+						pasahitzaField.setText("");
+					}
 				}
 				else{
 					JOptionPane.showMessageDialog(null, "Erabiltzaile edo pasahitz okerrak");
