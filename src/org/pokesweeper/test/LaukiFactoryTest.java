@@ -7,6 +7,7 @@ import org.pokesweeper.model.BarruLaukia;
 import org.pokesweeper.model.LaukiFactory;
 import org.pokesweeper.model.LurLaukia;
 import org.pokesweeper.model.MinaLaukia;
+import org.pokesweeper.view.JokoaUI;
 
 public class LaukiFactoryTest {
 	
@@ -20,8 +21,10 @@ public class LaukiFactoryTest {
 	BarruLaukia test8;
 	BarruLaukia test9;
 	
+	JokoaUI nireJokoaUI = JokoaUI.getNireJokoa();
+	
 	@Test
-	public void createLurLaukia() {
+	public void testCreateLaukia() {
 		/*
 		 * Metodo honek ez du begiratzen esa parametrotzat dituen koordenatuak egokiak diren.
 		 * Metodoaren deiak, beste metodo batek egiten ditu (Tableroa/tableroaEraiki())
@@ -51,12 +54,6 @@ public class LaukiFactoryTest {
 		assertTrue(test8 instanceof LurLaukia);
 		assertTrue(test9 instanceof LurLaukia);
 		
-	
-	}
-	
-	@Test
-	public void createMinaLaukia() {
-		LaukiFactory nireFactory = LaukiFactory.getNireFactory();
 		nireFactory.setTamaina(5, 5, 25);
 		
 		test1 = nireFactory.createLaukia(0, 0, false);
@@ -78,6 +75,11 @@ public class LaukiFactoryTest {
 		assertTrue(test7 instanceof MinaLaukia);
 		assertTrue(test8 instanceof MinaLaukia);
 		assertTrue(test9 instanceof MinaLaukia);
+		
+		/*
+		 * ZenbakiLaukiak probatzeko orduan, minak ausaz ipintzen direnez, ez dakigu minak non ipiniko diren.
+		 * Beraz, hauek probatzeko, bisualki egin behar izan dugu, hau da, jolasten dugun bitartean.
+		 */
 	}
 
 }

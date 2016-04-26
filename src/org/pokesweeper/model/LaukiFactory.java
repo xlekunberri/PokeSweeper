@@ -104,10 +104,5 @@ public class LaukiFactory {
 		}
 		return zenbakia;
 	}
-	
-	/*
-	 * JUNIT-entzako
-	 */
-	
 
 }
