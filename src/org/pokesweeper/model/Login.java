@@ -12,10 +12,11 @@ public class Login {
 	//Atributoak
 	File fitxErabiltzaileak;
 	private static Login nireErabiltzaileak;
+	private String fitxIzena = "erabiltzaileak.txt";
 	
 	//Eraikitzailea
 	private Login(){
-		fitxErabiltzaileak=new File("erabiltzaileak.txt");
+		fitxErabiltzaileak = new File(fitxIzena);
 		if (!fitxErabiltzaileak.exists()){
 			try {
 				fitxErabiltzaileak.createNewFile();
@@ -23,8 +24,7 @@ public class Login {
 		}
 	}
 	
-	public static Login getNireLogin(){ 
-		 
+	public static Login getNireLogin(){ 		 
 	    	if (nireErabiltzaileak == null) {
 				nireErabiltzaileak = new Login();
 			}
@@ -33,8 +33,8 @@ public class Login {
 
 	//Beste metodoak
 	public boolean logeatu(String user, String pass) {
-		fitxErabiltzaileak=new File("erabiltzaileak.txt");
-		boolean dago=false;
+		fitxErabiltzaileak = new File(fitxIzena);
+		boolean dago = false;
 		try{
 			 Scanner sarrera = new Scanner(new FileReader(fitxErabiltzaileak));
 			 String lerroa;
@@ -54,8 +54,8 @@ public class Login {
 	}
 	
 	private boolean baDago(String user) {
-		fitxErabiltzaileak=new File("erabiltzaileak.txt");
-		boolean dago=false;
+		fitxErabiltzaileak = new File(fitxIzena);
+		boolean dago = false;
 		try{
 			 Scanner sarrera = new Scanner(new FileReader(fitxErabiltzaileak));
 			 String lerroa;
@@ -74,9 +74,8 @@ public class Login {
 		return dago;
 	}
 	
-	
 	public boolean erabiltzaileaSortu(String user, String pass) {
-		fitxErabiltzaileak=new File("erabiltzaileak.txt");
+		fitxErabiltzaileak = new File(fitxIzena);
 		boolean sortuta = false;
 		try{
 			if (!baDago(user)){
@@ -93,6 +92,17 @@ public class Login {
 			 e.printStackTrace();
 		}
 		return sortuta;
+	}
+	
+	//JUnit-entzako
+	public void jUniteraAldatu(){
+		this.fitxIzena = "jUnit-erabiltzaileak.txt";
+		nireErabiltzaileak = null;
+		Login.getNireLogin();
+	}
+	
+	public void jUnitEzabatu(){
+		fitxErabiltzaileak.delete();
 	}
 
 
