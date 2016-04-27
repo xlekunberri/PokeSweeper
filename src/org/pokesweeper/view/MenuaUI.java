@@ -220,6 +220,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		        panel.add(sDuration, BorderLayout.CENTER);
 		        
 		        JFrame frame = new JFrame();
+		        UIManager.put("OptionPane.okButtonText", "Ezarri");
 		        int response = JOptionPane.showConfirmDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE);
 		        if (response == JOptionPane.YES_OPTION) {
 			 	      PokéSweeper.getNirePokéSweeper().sLekuaAldatu(sDuration.getValue());
