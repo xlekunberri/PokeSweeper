@@ -15,6 +15,7 @@ public class PokéSweeper {
 	//Atributoak
 	private static PokéSweeper nirePokéSweeper = null;
 	final JFXPanel jfx;
+	private int sLekua = 10;
 	
 	//Main metodoa
 	public static void main(String[] args) {
@@ -82,6 +83,13 @@ public class PokéSweeper {
 				});
 			}
 		});
+	}
+	
+	public void sLekuaAldatu(int i){
+		sLekua=i;
+	}
+	public int getSLekua(){
+		return sLekua;
 	}
 
 

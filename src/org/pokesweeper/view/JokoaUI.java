@@ -142,14 +142,7 @@ public class JokoaUI extends JPanel{
 	}
 	
    public String getUserName(){
-    	String username = erabiltzailea;
-    	if (username.length()<=10){
-    		username = username.substring(0, username.length());
-    	}
-    	else {
-    		username = username.substring(0, 10);
-    	}
-    	return username;
+    	return erabiltzailea;
     }
    
    //JUnitentzako

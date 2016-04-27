@@ -18,7 +18,7 @@ public class Audioa{
 		URI kanta = pAudio.toURI();
 		md = new Media(kanta.toString());
 		player = new MediaPlayer(md);
-		player.setVolume(0.1);
+		setVolume(10);
 	}
 	
 	//Beste metodoak
@@ -32,14 +32,6 @@ public class Audioa{
 	
 	public static void setVolume(double z){
 		player.setVolume(1-(float)(Math.log(100-z)/Math.log(100)));
-	}
-	
-	public void stop(){
-		try{
-			player.stop();
-		}catch (Exception e){
-			e.printStackTrace();
-		}
 	}
 	
 	public MediaPlayer getPlayer(){

@@ -200,7 +200,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 				f.setBackground(null);
 				f.setBorder(null);
 				
-				final JSlider sDuration = new JSlider(JSlider.HORIZONTAL,0,100,10);
+				final JSlider sDuration = new JSlider(JSlider.HORIZONTAL,0,100,PokéSweeper.getNirePokéSweeper().getSLekua());
 			    sDuration.setPaintLabels(true);
 			    sDuration.setPaintTicks(true);
 			    sDuration.setMajorTickSpacing(20);
@@ -220,7 +220,13 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		        panel.add(sDuration, BorderLayout.CENTER);
 		        
 		        JFrame frame = new JFrame();
-		        JOptionPane.showMessageDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE);
+		        int response = JOptionPane.showConfirmDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE);
+		        if (response == JOptionPane.YES_OPTION) {
+			 	      PokéSweeper.getNirePokéSweeper().sLekuaAldatu(sDuration.getValue());
+			 	 }
+		        else{
+		        	Audioa.setVolume((double)PokéSweeper.getNirePokéSweeper().getSLekua());
+		        }
 			}
 	}
 	

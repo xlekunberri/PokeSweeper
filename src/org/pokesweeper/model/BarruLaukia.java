@@ -115,7 +115,7 @@ public class BarruLaukia{
 	}
 	
 	
-	int getEgoera() {
+	public int getEgoera() {
 		return this.egoera;
 	}
 	
