@@ -23,6 +23,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextPane;
+import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -200,6 +201,9 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 				f.setBackground(null);
 				f.setBorder(null);
 				
+			    UIDefaults defaults = UIManager.getDefaults();
+			    defaults.put("Slider.horizontalThumbIcon", Helbideak.sliderIcon);
+			    
 				final JSlider sDuration = new JSlider(JSlider.HORIZONTAL,0,100,PokéSweeper.getNirePokéSweeper().getSLekua());
 			    sDuration.setPaintLabels(true);
 			    sDuration.setPaintTicks(true);
@@ -221,7 +225,9 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		        
 		        JFrame frame = new JFrame();
 		        UIManager.put("OptionPane.okButtonText", "Ezarri");
-		        int response = JOptionPane.showConfirmDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE);
+		        int response = JOptionPane.showConfirmDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, Helbideak.flute);
+		       // int response = JOptionPane.showConfirmDialog(parentComponent, message, title, optionType)
+		        //int response = JOptionPane.showConfirmDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE);
 		        if (response == JOptionPane.YES_OPTION) {
 			 	      PokéSweeper.getNirePokéSweeper().sLekuaAldatu(sDuration.getValue());
 			 	 }

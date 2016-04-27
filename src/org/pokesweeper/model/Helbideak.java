@@ -56,6 +56,8 @@ public class Helbideak {
 	public static File intro;
 	public static File bucle;
 	
+	public static Icon sliderIcon;
+	public static Icon flute;
 	//Eraikitzailea
 	
 	//Beste metodoak
@@ -89,7 +91,8 @@ public class Helbideak {
 		lugia = new ImageIcon("skin/hallDeFama/lugia.png"); 
 		hooh = new ImageIcon("skin/hallDeFama/ho-oh.png");
 		oak = new ImageIcon("skin/oak.gif");
-		
+		sliderIcon = new ImageIcon("skin/sliderIcon.png");
+		flute = new ImageIcon("skin/flute.png");
 	}
 		
 	private static void pikaKargatu(){
