@@ -8,7 +8,7 @@ public class Tableroa {
 	
 	//Atributoak
 	private static Tableroa nireTableroa;
-	public BarruLaukia laukia[][];
+	private BarruLaukia laukia[][];
 	private ArrayList<MinaLaukia> minak;
 	public static MinaKontadorea minaKontadorea;
 	public static DenboraKontadorea denboraKontadorea;
