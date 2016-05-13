@@ -101,15 +101,15 @@ public class JokoaUI extends JPanel{
 	
 	public static void galdu(){
 		JokoaUI.bukatuta = true;
-		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
+		Tableroa.denboraKontadorea.denboraGelditu();
 		Pika.getNirePika().setPikaEgoera("galdu");
 	}
 	
 	public static void irabazi(){
 		JokoaUI.bukatuta = true;
-		Tableroa.getNireTableroa().denboraKontadorea.denboraGelditu();
+		Tableroa.denboraKontadorea.denboraGelditu();
 		Pika.getNirePika().setPikaEgoera("irabazi");
-		Ranking.getNireRanking().idatzi(JokoaUI.erabiltzailea, Tableroa.getNireTableroa().denboraKontadorea.getKont());
+		Ranking.getNireRanking().idatzi(JokoaUI.erabiltzailea, Tableroa.denboraKontadorea.getKont());
 	}
 	
 	private void erreseteatu(int pErrenkada, int pZutabe, int pMinaKop, boolean pBichilloak) {
@@ -119,7 +119,7 @@ public class JokoaUI extends JPanel{
 		JokoaUI.bukatuta = false;
 		JokoaUI.behekoPanela.add(TableroaUI.getNireTableroaUI());
 		Pika.getNirePika().setPikaEgoera("normal");
-		Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
+		Tableroa.denboraKontadorea.denboraErreseteatu();
 		PokéSweeperUI.getNirePokéSweeperUI().panelaAldatu(this);
 		PokéSweeperUI.getNirePokéSweeperUI().setLocationRelativeTo(null);
 	}

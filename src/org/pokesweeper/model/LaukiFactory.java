@@ -32,7 +32,7 @@ public class LaukiFactory {
 				laukia = new LurLaukia(pErrenkada, pZutabe, ikonoZenb);
 			} else if (egungoa == -1){
 				laukia = new MinaLaukia(pErrenkada, pZutabe, ikonoZenb);
-				Tableroa.getNireTableroa().minak.add((MinaLaukia) laukia);
+				Tableroa.getNireTableroa().minaGehitu((MinaLaukia) laukia);
 			} else {
 				laukia = new ZenbLaukia(pErrenkada, pZutabe, ikonoZenb, egungoa);
 			}	

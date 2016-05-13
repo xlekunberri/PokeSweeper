@@ -16,7 +16,7 @@ public class DenboraKontadorea extends Kontadorea{
     	ActionListener actListner = new ActionListener() {
 	    	@Override
 	    	public void actionPerformed(ActionEvent event) {
-	   			if (Tableroa.getNireTableroa().denboraKontadorea != null){
+	   			if (Tableroa.denboraKontadorea != null){
 	   				kont += 1;
 	   				kontadoreaEguneratu();
 	   			}

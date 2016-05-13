@@ -27,14 +27,14 @@ public class Pika {
 		Tableroa tableroa = Tableroa.getNireTableroa();
 		if (tableroa.getMinaKop() != 0){
 			JokoaUI.getNireJokoa().erreseteatu(JokoaUI.maila, false);
-	    	Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
+	    	Tableroa.denboraKontadorea.denboraErreseteatu();
 	    	this.setPikaEgoera("normal");
 		}
 	}
 	
 	public void eskumakoKlik(){
 		JokoaUI.getNireJokoa().erreseteatu(JokoaUI.maila, true);
-    	Tableroa.getNireTableroa().denboraKontadorea.denboraErreseteatu();
+    	Tableroa.denboraKontadorea.denboraErreseteatu();
     	this.setPikaEgoera("normal");
 	}
 	

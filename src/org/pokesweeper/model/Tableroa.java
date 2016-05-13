@@ -9,9 +9,9 @@ public class Tableroa {
 	//Atributoak
 	private static Tableroa nireTableroa;
 	public BarruLaukia laukia[][];
-	public ArrayList<MinaLaukia> minak;
-	public MinaKontadorea minaKontadorea;
-	public DenboraKontadorea denboraKontadorea;
+	private ArrayList<MinaLaukia> minak;
+	public static MinaKontadorea minaKontadorea;
+	public static DenboraKontadorea denboraKontadorea;
 	private int errenkadaKop;
 	private int zutabeKop;
 	private int minaKop;
@@ -23,8 +23,8 @@ public class Tableroa {
 	public static Tableroa getNireTableroa(){
 		if (nireTableroa == null){
 			nireTableroa = new Tableroa();
-			nireTableroa.denboraKontadorea = new DenboraKontadorea();
-			nireTableroa.minaKontadorea = new MinaKontadorea();
+			Tableroa.denboraKontadorea = new DenboraKontadorea();
+			Tableroa.minaKontadorea = new MinaKontadorea();
 		}
 		return nireTableroa;
 	}
@@ -34,7 +34,7 @@ public class Tableroa {
 		this.errenkadaKop = pErrenkada;
 		this.zutabeKop = pZutabe;
 		this.minaKop = pMinaKop;
-		Tableroa.getNireTableroa().minaKontadorea.minaKopuruaJarri(this.minaKop);
+		Tableroa.minaKontadorea.minaKopuruaJarri(this.minaKop);
 		this.laukiFalta = this.errenkadaKop * this.zutabeKop;
 		this.laukia = new BarruLaukia[this.errenkadaKop][this.zutabeKop];
 		this.minak = new ArrayList<MinaLaukia>();
@@ -64,6 +64,10 @@ public class Tableroa {
 	
 	public int getMinaKop(){
 		return this.minaKop;
+	}
+	
+	public void minaGehitu(MinaLaukia pMinaLaukia) {
+		minak.add(pMinaLaukia);
 	}
 	
 	//JUnitentzako
