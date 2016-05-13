@@ -34,16 +34,6 @@ public class BichilloLaukia extends BarruLaukia {
 		
 	}
 	
-	@Override
-	public void mousePressed(){
-		
-	}
-	
-	@Override
-	public void mouseReleased(){
-		
-	}
-	
 	//JUnitentzako
 	public void setEgoera(int pEgoera){
 		this.egoera= pEgoera;
