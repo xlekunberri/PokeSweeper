@@ -23,7 +23,7 @@ public class LaukiaUI extends JButton implements MouseListener {
 		//BarruLaukia (belarra daukan laukia)
 		this.errenkada = pErrenkada;
 		this.zutabe = pZutabe;
-		BarruLaukia laukiLogikoa = Tableroa.getNireTableroa().laukia[pErrenkada][pZutabe];
+		BarruLaukia laukiLogikoa = Tableroa.getNireTableroa().getLaukiBat(pErrenkada, pZutabe);
 		this.setBorder(BorderFactory.createEmptyBorder());
 		this.setContentAreaFilled(false);
         this.addMouseListener(this);
@@ -44,34 +44,34 @@ public class LaukiaUI extends JButton implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(e.getButton() == MouseEvent.BUTTON1){
-			Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].ezkerrekoBotoia();
+			Tableroa.getNireTableroa().getLaukiBat(this.errenkada,this.zutabe).ezkerrekoBotoia();
     	} 
     	else if(e.getButton() == MouseEvent.BUTTON3){
-    		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].eskumakoBotoia();	
+    		Tableroa.getNireTableroa().getLaukiBat(this.errenkada,this.zutabe).eskumakoBotoia();	
     	}
 	
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseEntered();		
+		Tableroa.getNireTableroa().getLaukiBat(this.errenkada,this.zutabe).mouseEntered();		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseExited();		
+		Tableroa.getNireTableroa().getLaukiBat(this.errenkada,this.zutabe).mouseExited();		
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		if(e.getButton() == MouseEvent.BUTTON1){
-			Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mousePressed();	
+			Tableroa.getNireTableroa().getLaukiBat(this.errenkada,this.zutabe).mousePressed();	
 		}
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		Tableroa.getNireTableroa().laukia[this.errenkada][this.zutabe].mouseReleased();	
+		Tableroa.getNireTableroa().getLaukiBat(this.errenkada,this.zutabe).mouseReleased();	
 	}
 
 }

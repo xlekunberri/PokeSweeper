@@ -10,27 +10,27 @@ import org.pokesweeper.view.Splash;
 import javafx.embed.swing.JFXPanel;
 import javafx.util.Duration;
 
-public class PokéSweeper {
+public class PokeSweeper {
 	
 	//Atributoak
-	private static PokéSweeper nirePokéSweeper = null;
+	private static PokeSweeper nirePokéSweeper = null;
 	final JFXPanel jfx;
 	private int sLekua = 10;
 	
 	//Main metodoa
 	public static void main(String[] args) {
-		new PokéSweeper();
+		new PokeSweeper();
 	}
 	
 	//Eraikitzailea
-	public static PokéSweeper getNirePokéSweeper(){
+	public static PokeSweeper getNirePokéSweeper(){
 		if(nirePokéSweeper == null){
-			nirePokéSweeper = new PokéSweeper();
+			nirePokéSweeper = new PokeSweeper();
 		}
 		return nirePokéSweeper;
 	}
 	
-	private PokéSweeper(){
+	private PokeSweeper(){
 		Helbideak.denakKargatu();
 		jfx = new JFXPanel();
 		this.hurrengoa(0);

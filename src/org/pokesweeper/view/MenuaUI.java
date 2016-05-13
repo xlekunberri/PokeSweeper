@@ -30,7 +30,7 @@ import javax.swing.event.ChangeListener;
 
 import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
-import org.pokesweeper.model.PokéSweeper;
+import org.pokesweeper.model.PokeSweeper;
 
 public class MenuaUI extends JMenuBar implements ActionListener{
 	
@@ -188,7 +188,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 			}
 			else if (e.getSource() == deskonektatu){
 				PokéSweeperUI.getNirePokéSweeperUI().menuaKendu();
-				PokéSweeper.getNirePokéSweeper().login();
+				PokeSweeper.getNirePokéSweeper().login();
 
 			}
 			else if (e.getSource() == ezarpenak){
@@ -204,7 +204,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 			    UIDefaults defaults = UIManager.getDefaults();
 			    defaults.put("Slider.horizontalThumbIcon", Helbideak.sliderIcon);
 			    
-				final JSlider sDuration = new JSlider(JSlider.HORIZONTAL,0,100,PokéSweeper.getNirePokéSweeper().getSLekua());
+				final JSlider sDuration = new JSlider(JSlider.HORIZONTAL,0,100,PokeSweeper.getNirePokéSweeper().getSLekua());
 			    sDuration.setPaintLabels(true);
 			    sDuration.setPaintTicks(true);
 			    sDuration.setMajorTickSpacing(20);
@@ -229,10 +229,10 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		       // int response = JOptionPane.showConfirmDialog(parentComponent, message, title, optionType)
 		        //int response = JOptionPane.showConfirmDialog(frame, panel, "Ezarpenak", JOptionPane.PLAIN_MESSAGE);
 		        if (response == JOptionPane.YES_OPTION) {
-			 	      PokéSweeper.getNirePokéSweeper().sLekuaAldatu(sDuration.getValue());
+			 	      PokeSweeper.getNirePokéSweeper().sLekuaAldatu(sDuration.getValue());
 			 	 }
 		        else{
-		        	Audioa.setVolume((double)PokéSweeper.getNirePokéSweeper().getSLekua());
+		        	Audioa.setVolume((double)PokeSweeper.getNirePokéSweeper().getSLekua());
 		        }
 			}
 	}

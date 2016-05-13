@@ -70,6 +70,18 @@ public class Tableroa {
 		minak.add(pMinaLaukia);
 	}
 	
+	public void irabaziDu(){
+		Tableroa tableroa = Tableroa.getNireTableroa();
+		tableroa.laukiFalta--;
+		if(tableroa.laukiFalta == tableroa.getMinaKop()){
+			JokoaUI.irabazi();
+		}
+	}
+	
+	public BarruLaukia getLaukiBat(int pErrenkada, int pZutabe){
+		return this.laukia[pErrenkada][pZutabe];
+	}
+	
 	//JUnitentzako
 	public void setMinaKop(int pMinaKop){
 		this.minaKop = pMinaKop;

@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 import org.pokesweeper.model.Audioa;
 import org.pokesweeper.model.Helbideak;
-import org.pokesweeper.model.PokéSweeper;
+import org.pokesweeper.model.PokeSweeper;
 
 public class Splash extends JPanel {
 	
@@ -31,7 +31,7 @@ public class Splash extends JPanel {
 					if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 						PokéSweeperUI.getNirePokéSweeperUI().dispose();
 						PokéSweeperUI.getNirePokéSweeperUI().setUndecorated(false);
-						PokéSweeper.getNirePokéSweeper().hurrengoa(1);
+						PokeSweeper.getNirePokéSweeper().hurrengoa(1);
 					}
 				}
 			}

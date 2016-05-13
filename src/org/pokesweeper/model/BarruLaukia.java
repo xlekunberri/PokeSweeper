@@ -11,7 +11,6 @@ public class BarruLaukia{
 	protected int zutabea;
 	protected int egoera;
 	private int ikonoZenb;
-	final Tableroa tableroLogicoa = Tableroa.getNireTableroa();
 	
 	//Eraikitzailea
 	protected BarruLaukia(int pErrenkada, int pZutabea, int pIkonoZenb) {
@@ -90,19 +89,11 @@ public class BarruLaukia{
 	}
 	
 	protected boolean koordenadaEgokiak(int pErrenkada, int pZutabe){
-		return !(pErrenkada< 0 || pErrenkada >= tableroLogicoa.getErrenkadaKop() || pZutabe < 0 || pZutabe >= tableroLogicoa.getZutabeKop());
+		return !(pErrenkada< 0 || pErrenkada >= Tableroa.getNireTableroa().getErrenkadaKop() || pZutabe < 0 || pZutabe >= Tableroa.getNireTableroa().getZutabeKop());
 	}
 	
 	public boolean jKoordenadaEgokiak(int pErrenkada, int pZutabe){//JUNIT-entzako
-		return !(pErrenkada< 0 || pErrenkada >= tableroLogicoa.getErrenkadaKop() || pZutabe < 0 || pZutabe >= tableroLogicoa.getZutabeKop());
-	}
-	
-	protected void irabaziDu(){
-		Tableroa tableroa = Tableroa.getNireTableroa();
-		tableroa.laukiFalta--;
-		if(tableroa.laukiFalta == tableroa.getMinaKop()){
-			JokoaUI.irabazi();
-		}
+		return !(pErrenkada< 0 || pErrenkada >= Tableroa.getNireTableroa().getErrenkadaKop() || pZutabe < 0 || pZutabe >= Tableroa.getNireTableroa().getZutabeKop());
 	}
 	
 	public boolean jIrabaziDu(){//JUNIT-entzako

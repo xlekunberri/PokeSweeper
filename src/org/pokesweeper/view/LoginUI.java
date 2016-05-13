@@ -15,7 +15,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import org.pokesweeper.model.Login;
-import org.pokesweeper.model.PokéSweeper;
+import org.pokesweeper.model.PokeSweeper;
 import org.pokesweeper.model.Helbideak;
 
 
@@ -123,7 +123,7 @@ public class LoginUI extends JPanel {
 						else if (r3.isSelected()) {
 							JokoaUI.maila = 3;
 						}
-						PokéSweeper.getNirePokéSweeper().hurrengoa(2);
+						PokeSweeper.getNirePokéSweeper().hurrengoa(2);
 					}
 					else{
 						JOptionPane.showMessageDialog(null, "Erabiltzaile edo pasahitz okerrak");

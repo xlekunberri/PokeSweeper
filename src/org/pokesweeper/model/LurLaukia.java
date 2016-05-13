@@ -21,7 +21,7 @@ public class LurLaukia extends BarruLaukia{
 			laukiHonenUI.setRolloverIcon(null);
 			laukiHonenUI.setIcon(Helbideak.lurra[4]);
 			laukiHonenUI.repaint();
-			this.irabaziDu();
+			Tableroa.getNireTableroa().irabaziDu();
 			this.albokoakZabaldu();
 		}
 	}
@@ -30,7 +30,7 @@ public class LurLaukia extends BarruLaukia{
 		for (int x = this.errenkada - 1; x <= this.errenkada + 1; x++){
 			for(int y = this.zutabea - 1; y <= this.zutabea + 1; y++ ){
 				if (koordenadaEgokiak(x,y)){
-					tableroLogicoa.laukia[x][y].ezkerrekoBotoia();
+					Tableroa.getNireTableroa().getLaukiBat(x,y).ezkerrekoBotoia();
 				}
 			}
 		}		
