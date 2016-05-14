@@ -10,7 +10,7 @@ public class PokéSweeperUI extends JFrame{
 
 	//Atributuak
 	private static final long serialVersionUID = 1L;
-	private static PokéSweeperUI nirePokéSweeperUI = null;
+	private static PokéSweeperUI nirePokéSweeperUI;
 	
 	//Eraikitzailea
 	public static PokéSweeperUI getNirePokéSweeperUI(){
