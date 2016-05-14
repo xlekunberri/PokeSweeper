@@ -13,7 +13,7 @@ import javafx.util.Duration;
 public class PokeSweeper {
 	
 	//Atributoak
-	private static PokeSweeper nirePokéSweeper = null;
+	private static PokeSweeper nirePokéSweeper;
 	final JFXPanel jfx;
 	private int sLekua = 10;
 	
