@@ -19,7 +19,7 @@ public class PokeSweeper {
 	
 	//Main metodoa
 	public static void main(String[] args) {
-		new PokeSweeper();
+		PokeSweeper.getNirePokéSweeper();
 	}
 	
 	//Eraikitzailea
