@@ -22,6 +22,7 @@ public class Splash extends JPanel {
 	public Splash(){
 		this.setLayout(new BorderLayout());
 		final Audioa audio = new Audioa(Helbideak.splashSound);
+		Audioa.setVolume(10);
 		audio.play();
 		JLabel label = new JLabel(Helbideak.splashGif);
 		this.add(label,BorderLayout.CENTER);

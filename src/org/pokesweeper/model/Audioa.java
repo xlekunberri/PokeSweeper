@@ -18,7 +18,6 @@ public class Audioa{
 		URI kanta = pAudio.toURI();
 		md = new Media(kanta.toString());
 		player = new MediaPlayer(md);
-		setVolume(10);
 	}
 	
 	//Beste metodoak

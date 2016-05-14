@@ -19,7 +19,7 @@ public class PokeSweeper {
 	
 	//Main metodoa
 	public static void main(String[] args) {
-		new PokeSweeper();
+		PokeSweeper.getNirePokéSweeper();
 	}
 	
 	//Eraikitzailea
@@ -69,11 +69,13 @@ public class PokeSweeper {
 	
 	private void musikaJarri(){
 		Audioa intro = new Audioa(Helbideak.intro);
+		Audioa.setVolume(PokeSweeper.getNirePokéSweeper().getSLekua());
 		intro.play();
 		intro.getPlayer().setOnEndOfMedia(new Runnable(){
 			@Override
 			public void run(){
 				final Audioa bucle = new Audioa(Helbideak.bucle);
+				Audioa.setVolume(PokeSweeper.getNirePokéSweeper().getSLekua());
 				bucle.play();
 				bucle.getPlayer().setOnEndOfMedia(new Runnable(){
 					@Override
