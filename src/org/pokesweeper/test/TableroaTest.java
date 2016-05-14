@@ -26,7 +26,7 @@ public class TableroaTest {
 	@Test
 	public void testTableroaEraiki() {
 		nireTableroa.tableroaEraiki(7, 10, 7, false);
-		assertTrue(nireTableroa.laukiFalta == 70);
+		assertTrue(nireTableroa.getLaukiFalta() == 70);
 	}
 	
 	@Test

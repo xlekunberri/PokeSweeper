@@ -39,16 +39,6 @@ public class BarruLaukiaTest {
 		BarruLaukia b4 = new BarruLaukia(3, 6);
 		assertFalse(b4.jKoordenadaEgokiak(3, 6));
 	}
-	
-	@Test
-	public void testIrabaziDu() {
-		tab.tableroaEraiki(5, 5, 5, false);
-		BarruLaukia b1 = new BarruLaukia(3, 3);
-		tab.laukiFalta=6;
-		assertTrue(b1.jIrabaziDu());
-		tab.laukiFalta=7;
-		assertFalse(b1.jIrabaziDu());
-	}
 
 }
 

@@ -96,16 +96,6 @@ public class BarruLaukia{
 		return !(pErrenkada< 0 || pErrenkada >= Tableroa.getNireTableroa().getErrenkadaKop() || pZutabe < 0 || pZutabe >= Tableroa.getNireTableroa().getZutabeKop());
 	}
 	
-	public boolean jIrabaziDu(){//JUNIT-entzako
-		Tableroa tableroa = Tableroa.getNireTableroa();
-		tableroa.laukiFalta--;
-		if(tableroa.laukiFalta == tableroa.getMinaKop()){
-			JokoaUI.irabazi();
-			return true;
-		}
-		return false;
-	}
-	
 	
 	public int getEgoera() {
 		return this.egoera;

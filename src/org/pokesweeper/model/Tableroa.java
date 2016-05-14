@@ -15,7 +15,7 @@ public class Tableroa {
 	private int errenkadaKop;
 	private int zutabeKop;
 	private int minaKop;
-	public int laukiFalta;
+	private int laukiFalta;
 	
 	//Eraikitzailea
 	private Tableroa(){}
@@ -85,6 +85,10 @@ public class Tableroa {
 	//JUnitentzako
 	public void setMinaKop(int pMinaKop){
 		this.minaKop = pMinaKop;
+	}
+	
+	public int getLaukiFalta(){
+		return this.laukiFalta;
 	}
 	
 }
