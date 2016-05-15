@@ -143,7 +143,11 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 		 	    }
 	        }     
 			else if (e.getSource()==nolaJokatu) {
-				
+				try {
+                    Desktop.getDesktop().browse(new URI("https://github.com/Xabiier/PokeSweeper"));
+				} catch (URISyntaxException | IOException ex) {
+                    ex.printStackTrace();
+				}
 			}
 			else if (e.getSource()==honiBuruz) {
 				JPanel panel = new JPanel(new BorderLayout());
