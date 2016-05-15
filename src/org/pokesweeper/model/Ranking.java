@@ -12,8 +12,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-import org.pokesweeper.model.PokeSweeper;
-
 public class Ranking {
 	
 	//Atributoak
