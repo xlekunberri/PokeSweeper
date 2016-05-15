@@ -144,7 +144,7 @@ public class MenuaUI extends JMenuBar implements ActionListener{
 	        }     
 			else if (e.getSource()==nolaJokatu) {
 				try {
-                    Desktop.getDesktop().browse(new URI("https://github.com/Xabiier/PokeSweeper"));
+                    Desktop.getDesktop().browse(new URI("https://github.com/Xabiier/PokeSweeper/blob/master/dokumentazioa/Software%20Ingeniritza%20-%20Erabiltzaile%20Gida.pdf"));
 				} catch (URISyntaxException | IOException ex) {
                     ex.printStackTrace();
 				}
